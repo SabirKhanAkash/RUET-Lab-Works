@@ -1,0 +1,35 @@
+1.
+SELECT Movie_Name,Genre, IMDB_Rating FROM movie WHERE IMDB_Rating>8.0
+
+2.
+SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre
+
+3.
+SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre HAVING AVG(IMDB_Rating)>8.0 
+
+4.
+SELECT MIN(Avg_IMDb_rating) AS Min_Avg_Rating 
+FROM (SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS MIn_IMDb_Table
+
+5.
+SELECT Genre,Avg_IMDb_rating AS Max_Avg_Rating 
+FROM (SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS Max_IMDb_Table 
+WHERE Avg_IMDb_rating = (SELECT MAX(Avg_IMDb_rating) 
+FROM (SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS Max_Table)  
+
+Alternate way: 
+SELECT Genre,round(AVG(IMDb_rating),1) Avg_IMDb_rating FROM movie GROUP BY Genre
+HAVING Avg_IMDb_rating = (SELECT MAX(Avg_IMDb_rating) FROM (SELECT round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS IMDb_Table);
+
+6.
+SELECT Movie_Name,Genre,IMDB_Rating FROM movie WHERE IMDB_Rating < (SELECT AVG(IMDB_Rating) FROM movie)
+
+7.
+SELECT Genre,Avg_IMDb_rating AS Avg_Rating 
+FROM (SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS IMDb_Table 
+WHERE Avg_IMDb_rating < (SELECT AVG(Avg_IMDb_rating) 
+FROM (SELECT Genre, round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS Avg_IMDb_Table)
+
+Alternate Way:
+SELECT Genre,round(AVG(IMDb_rating),1) Avg_IMDb_rating FROM movie GROUP BY Genre
+HAVING Avg_IMDb_rating < (SELECT AVG(Avg_IMDb_rating) FROM (SELECT round(AVG(IMDB_Rating),1) AS Avg_IMDb_rating FROM movie GROUP BY Genre) AS IMDb_Table);

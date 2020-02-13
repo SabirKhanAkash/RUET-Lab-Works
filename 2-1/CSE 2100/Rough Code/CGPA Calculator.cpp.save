@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+    string name;
+    int t;
+    double credit,cgpa,answer;
+    double sumCGPA=0,sumCredit=0;
+    cout<<"How many Courses? ";
+    cin>>t;
+    for(int i=1;i<=t;i++)
+    {
+        cout<<"Course Name: ";
+        cin>>name;
+        cout<<"Course Credit: ";
+        cin>>credit;
+        cout<<"Acquired GPA: ";
+        cin>>cgpa;
+        double x=cgpa*credit;
+        sumCGPA=sumCGPA+x;
+        sumCredit=sumCredit+credit;
+        
+    }
+    answer = sumCGPA/(sumCredit);
+    printf("%0.2lf",answer);
+    return 0;
+}

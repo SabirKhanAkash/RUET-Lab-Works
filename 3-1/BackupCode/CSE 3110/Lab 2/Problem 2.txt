@@ -1,0 +1,168 @@
+.MODEL SMALL
+.STACK 100H
+.DATA   
+    PROMPT1 DB 'Type a 4 digit Hexadecimal number: ','$' 
+    PROMPT2 DB 'This is an Even number $'
+    PROMPT3 DB 'This is an Odd number $'  
+    A DB ?
+    B DB ?
+    C DB ?
+    D DB ?
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX 
+    
+    MOV AH,9
+    LEA DX,PROMPT1
+    INT 21H
+    
+    MOV AH,1      
+    INT 21H
+    MOV A,AL
+    
+    MOV AH,1      
+    INT 21H
+    MOV B,AL 
+    
+    MOV AH,1      
+    INT 21H
+    MOV C,AL
+             
+    MOV AH,1      
+    INT 21H
+    MOV D,AL
+    
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H 
+    
+
+    EX6:
+    CMP D,30H
+    JE E
+    
+    JMP EX7 
+    
+    EX7:
+    CMP D,31H
+    JE O 
+    
+    JMP EX8  
+    
+    EX8:
+    CMP D,32H
+    JE E   
+    
+    JMP EX9
+    
+    EX9:
+    CMP D,33H
+    JE O   
+    
+    JMP EX10
+    
+    EX10:
+    CMP D,34H
+    JE E   
+    
+    JMP EX11
+    
+    EX11:
+    CMP D,35H
+    JE O   
+    
+    JMP EX12
+    
+    EX12:
+    CMP D,36H
+    JE E   
+    
+    JMP EX13
+    
+    EX13:
+    CMP D,37H
+    JE O   
+    
+    JMP EX14
+    
+    EX14:
+    CMP D,38H
+    JE E   
+    
+    JMP EX15
+    
+    EX15:
+    CMP D,39H
+    JE O    
+           
+    JMP EX16   
+    
+    EX16:    
+    CMP D,41H
+    JE E   
+    
+    JMP EX17
+    
+    EX17:
+    CMP D,42H
+    JE O   
+    
+    JMP EX18
+    
+    EX18:
+    CMP D,43H
+    JE E   
+    
+    JMP EX19     
+    
+    EX19:
+    CMP D,44H
+    JE O   
+    
+    JMP EX20
+    
+    EX20:
+    CMP D,45H
+    JE E   
+    
+    JMP EX21
+    
+    EX21:
+    CMP D,46H
+    JE O   
+    
+    JMP EX6
+        
+    E:  
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
+    MOV AH,9
+    LEA DX,PROMPT2
+    INT 21H 
+    JMP EXIT
+    
+    O:  
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
+    MOV AH,9
+    LEA DX,PROMPT3
+    INT 21H 
+    JMP EXIT
+    
+    
+    EXIT:
+    MOV AH,4CH    ;this is for DOS exiting
+    INT 21H       
+    
+    MAIN ENDP
+END MAIN
+    

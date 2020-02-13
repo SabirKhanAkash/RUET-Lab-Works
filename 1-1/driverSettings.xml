@@ -1,0 +1,14 @@
+<audConfig>
+	
+	<WaveSlotsConfig value="audio:/config/waveslots.xml"/>
+	<WaveRootPath value="audio:/sfx/"/>
+  <RpfConfig value="audio:/config/rpf.xml"/>
+	
+	<NumVirtualVoices value="2048"/>
+	<NumPhysicalVoices value="96"/>
+	<NumNewPhysicalVoiceBufferVoices value="20"/>
+	
+  <NumOutputSpeakers value="2"/>
+  <EffectsRootPath value="/app_home/ps3/audio/effects/"/>
+
+</audConfig>

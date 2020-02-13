@@ -1,0 +1,218 @@
+create table Author(
+Author_ID int,
+Author_Name varchar(50),
+Birth_Year int,
+No_of_Books int, 
+No_of_Awards int
+);
+
+alter table author add primary key(author_id);
+
+insert into Author values(1,'Rabindranath Thakur',1861,171,50);
+insert into Author values(2,'Zahir Raihan',1935,8,5);
+insert into Author values(3,'Saytajid Ray',1921,145,30);
+insert into Author values(4,'Sir Arthur Conan Doyle',1859,15,12);
+insert into Author values(5,'Anthony Mascarenhas',1928,3,null);
+insert into Author values(6,'Jahanara Imam',1929,25,10);
+insert into Author values(7,'Sufia Kamal',1911,10,3);
+insert into Author values(8,'Robert Frost',1874,null,null);
+
+create table Book(
+Book_no int,
+Book_Name varchar(50),
+Genre varchar(50),
+Language varchar(50),
+primary key(Book_No)
+);
+
+insert into Book values(1,'Shesher Kobita','Drama','Bangla');
+insert into Book values(2,'Noukadubi','Drama','Bangla');
+insert into Book values(3,'GolpoGuccho','Short Stories','Bangla');
+insert into Book values(4,'Chokher Bali','Drama','Bangla');
+insert into Book values(5,'Gitanjali','Poetry','Bangla');
+insert into Book values(6,'Hajar Bochor Dhore','Drama','Bangla');
+insert into Book values(7,'Borof Gola Nodi','Drama','Bangla');
+insert into Book values(8,'Shesh Bikeler Meye','Drama','Bangla');
+insert into Book values(9,'Shonku Samagra','Science Fiction','Bangla');
+insert into Book values(10,'Golpo 101','Short Stories','Bangla');
+insert into Book values(11,'Hottyapuri','Detective','Bangla');
+insert into Book values(12,'Chinnomostar Ovishap','Detective','Bangla');
+insert into Book values(13,'A Study in Scarlet ','Detective','English');
+insert into Book values(14,'The Case-book of Sherlock Holmes','Detective','English');
+insert into Book values(15,'Bangladesh: A Legacy of Blood','History','English');
+insert into Book values(16,'Ekattorer Dinguli','History','Bangla');
+insert into Book values(17,'Ekattorer Diary','History','Bangla');
+insert into Book values(18,'Kobita Somogro','Poetry','Bangla');
+insert into Book values(19,'Mountain Interval','Poetry','English');
+
+create table Characters(
+    Character_ID int,
+    Character_name varchar(50),
+    age int
+    );
+
+alter table Characters add primary key(character_id);
+
+insert into Characters values(1,'Amit Ray',26);
+insert into Characters values(2,'Ketaki',22);
+insert into Characters values(3,'Labanya',20);
+insert into Characters values(4,'Ramesh',27);
+insert into Characters values(5,'Hemnalini',24);
+insert into Characters values(6,'Nalinaksha',30);
+insert into Characters values(7,'Kamala',20);
+insert into Characters values(8,'Nirupoma',15);
+insert into Characters values(9,'Postmaster',24);
+insert into Characters values(10,'Roton',10);
+insert into Characters values(11,'Fotik',10);
+insert into Characters values(12,'Kadombini',18);
+insert into Characters values(13,'Mahendra',25);
+insert into Characters values(14,'Binodini',18);
+insert into Characters values(15,'Bihari',23);
+insert into Characters values(16,'Tuni',18);
+insert into Characters values(17,'Montu',21);
+insert into Characters values(18,'Mokbul',45);
+insert into Characters values(19,'Moriyom',23);
+insert into Characters values(20,'Mahmud',28);
+insert into Characters values(21,'Kashed',27);
+insert into Characters values(22,'Jahanara',24);
+insert into Characters values(23,'Professor Shonku',58);
+insert into Characters values(24,'Nokur Chandra Biswas',49);
+insert into Characters values(25,'Abinash Chandra Majumdar',53);
+insert into Characters values(26,'Tarini Charan Banerjee',65);
+insert into Characters values(27,'Nypla',11);
+insert into Characters values(28,'Bonku Babu',48);
+insert into Characters values(29,'Professor Hijibijbij',null);
+insert into Characters values(30,'Feluda',26);
+insert into Characters values(31,'Jotayu',48);
+insert into Characters values(32,'Topshe',16);
+insert into Characters values(33,'Lakshman Bhattacharya',35);
+insert into Characters values(34,'Mahesh Choudhury',70);
+insert into Characters values(35,'Sherlock Holmes',30);
+insert into Characters values(36,'Dr. Watson',32);
+insert into Characters values(37,'Brigham Young',33);
+insert into Characters values(38,'Adelbert Gruner',35);
+insert into Characters values(39,'Grace Dunbar',27);
+insert into Characters values(40,'Rumi',21);
+insert into Characters values(41,'Sharif',40);
+
+
+create table Book_Character_Relationship(
+  
+  Character_ID int,
+  Book_No int
+);
+
+insert into Book_Character_Relationship values(1,1);
+insert into Book_Character_Relationship values(2,1);
+insert into Book_Character_Relationship values(3,1);
+insert into Book_Character_Relationship values(4,2);
+insert into Book_Character_Relationship values(5,2);
+insert into Book_Character_Relationship values(6,2);
+insert into Book_Character_Relationship values(7,2);
+insert into Book_Character_Relationship values(8,3);
+insert into Book_Character_Relationship values(9,3);
+insert into Book_Character_Relationship values(10,3);
+insert into Book_Character_Relationship values(11,3);
+insert into Book_Character_Relationship values(12,3);
+insert into Book_Character_Relationship values(13,4);
+insert into Book_Character_Relationship values(14,4);
+insert into Book_Character_Relationship values(15,4);
+insert into Book_Character_Relationship values(16,6);
+insert into Book_Character_Relationship values(17,6);
+insert into Book_Character_Relationship values(18,6);
+insert into Book_Character_Relationship values(19,7);
+insert into Book_Character_Relationship values(20,7);
+insert into Book_Character_Relationship values(21,8);
+insert into Book_Character_Relationship values(22,8);
+insert into Book_Character_Relationship values(23,9);
+insert into Book_Character_Relationship values(24,9);
+insert into Book_Character_Relationship values(25,9);
+insert into Book_Character_Relationship values(26,10);
+insert into Book_Character_Relationship values(27,10);
+insert into Book_Character_Relationship values(28,10);
+insert into Book_Character_Relationship values(29,10);
+insert into Book_Character_Relationship values(30,11);
+insert into Book_Character_Relationship values(31,11);
+insert into Book_Character_Relationship values(32,11);
+insert into Book_Character_Relationship values(33,11);
+insert into Book_Character_Relationship values(30,12);
+insert into Book_Character_Relationship values(31,12);
+insert into Book_Character_Relationship values(32,12);
+insert into Book_Character_Relationship values(34,12);
+insert into Book_Character_Relationship values(35,13);
+insert into Book_Character_Relationship values(36,13);
+insert into Book_Character_Relationship values(37,13);
+insert into Book_Character_Relationship values(35,14);
+insert into Book_Character_Relationship values(36,14);
+insert into Book_Character_Relationship values(38,14);
+insert into Book_Character_Relationship values(39,14);
+insert into Book_Character_Relationship values(40,16);
+insert into Book_Character_Relationship values(41,16);
+
+
+
+
+alter table Book_Character_Relationship
+add foreign key(Character_ID) references Characters(Character_ID);
+
+alter table Book_Character_Relationship
+add foreign key(Book_No) references Book(Book_No);
+
+create table Publisher(
+	Publisher_ID int,
+    Publisher_Name varchar(50),
+    Country varchar(50)
+);
+alter table Publisher add primary key(Publisher_ID); 
+
+insert into Publisher values(1,'Baatighar','Bangladesh');
+insert into Publisher values(2,'Suchoyoni Publishers','Bangladesh');
+insert into Publisher values(3,'Bishwasahitto Vobon','Bangladesh');
+insert into Publisher values(4,'The Sky Publishers','Bangladesh');
+insert into Publisher values(5,'Muktodhara','Bangladesh');
+insert into Publisher values(6,'Dip Prokason','India');
+insert into Publisher values(7,'Kalantor Prokashani','Bangladesh');
+insert into Publisher values(8,'Anupom Prokashani','Bangladesh');
+insert into Publisher values(9,'Ananda publishers','India');
+insert into Publisher values(10,'Nowroze Kitabistan','Bangladesh');
+insert into Publisher values(11,'Little Scholarz Books','India');
+insert into Publisher values(12,'Rupa Publications','India');
+insert into Publisher values(13,'Hodder And Stoughton’,'India');
+
+
+insert into Publisher values(14,'Charulipi Prokashon','Bangladesh');
+insert into Publisher values(15,'Sondhani Prokashoni','Bangladesh');
+insert into Publisher values(16,'Hawlder Prokashoni','Bangladesh');
+insert into Publisher values(17,'Henry Holt','America');
+
+create table Author_Book_Relationship(
+	Book_No int,
+    Author_ID int
+);
+
+insert into Author_Book_Relationship VALUES(1,1);
+insert into Author_Book_Relationship VALUES(2,1);
+insert into Author_Book_Relationship VALUES(3,1);
+insert into Author_Book_Relationship VALUES(4,1);
+insert into Author_Book_Relationship VALUES(5,1);
+insert into Author_Book_Relationship VALUES(6,2);
+insert into Author_Book_Relationship VALUES(7,2);
+insert into Author_Book_Relationship VALUES(8,2);
+insert into Author_Book_Relationship VALUES(9,3);
+insert into Author_Book_Relationship VALUES(10,3);
+insert into Author_Book_Relationship VALUES(11,3);
+insert into Author_Book_Relationship VALUES(12,3);
+insert into Author_Book_Relationship VALUES(13,4);
+insert into Author_Book_Relationship VALUES(14,4);
+insert into Author_Book_Relationship VALUES(15,5);
+insert into Author_Book_Relationship VALUES(16,6);
+insert into Author_Book_Relationship VALUES(17,7);
+insert into Author_Book_Relationship VALUES(18,7);
+insert into Author_Book_Relationship VALUES(19,8);
+
+
+alter table Author_Book_Relationship
+add foreign key(Book_No) references Book(Book_No);
+
+alter table Author_Book_Relationship
+add foreign key(Author_ID) references author(Author_ID);

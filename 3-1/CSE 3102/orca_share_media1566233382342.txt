@@ -1,0 +1,113 @@
+______________________________________________________________________________________________________________________________________________________________________
+
+
+										T A B L E - 1
+
+CREATE TABLE movie_characters(
+	character_id int,
+	character_name varchar(20),
+	age int,
+
+	PRIMARY KEY (character_id)
+);
+
+
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('1', 'Apu', '7');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('2', 'Durga', '10');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('3', 'Harihar', '42');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('4', 'Sarbajaya', '35');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('5', 'Ramesh', '28');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('6', 'Hemanalini', '25');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('7', 'Nalinaksha', '30');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('8', 'Kamala', '20');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('9', 'Shikha', '21');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('10', 'Apratim', '26');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('11', 'Felida', '25');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('12', 'Maganlal Meghraj', '35');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('13', 'Jatayu', '45');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('14', 'Topshe', '18');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('15', 'Ruku', '6');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('16', 'Faruk', '22');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('17', 'Bithi', '19');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('18', 'Sathi', '24');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('19', 'Lalon', null);
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('20', 'Kaluah', '25');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('21', 'Siraj Saain', '45');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('22', 'Komli', '25');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('23', 'Subir Banaerjee', null);
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('24', 'Ashima', '24');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('25', 'Rashmoni', null);
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('26', 'Somalota', '24');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('27', 'Chaitali', '18');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('28', 'Byomkesh Bakshi', '26');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('29', 'Ajit', '27');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('30', 'Malati', '16');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('31', 'Debkumar', '50');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('32', 'Doctor Anukul', '45');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('33', 'Prabhat', '27');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('34', 'Satyabati', '22');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('35', 'Anadi Babu', '55');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('36', 'PK', null);
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('37', 'Jaggu', '26');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('38', 'Sarfaraz', '29');
+INSERT INTO movie_characters (`character_id`, `character_name`, `age`) VALUES ('39', 'Tapasvi Maharaj', '50');
+
+
+
+______________________________________________________________________________________________________________________________________________________________________
+
+
+										T A B L E - 2
+
+
+CREATE TABLE movie_character_relationship(
+    character_id int AUTO_INCREMENT,
+    movie_id int,
+    
+    PRIMARY KEY (character_id, movie_id)
+);
+
+
+
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('1', '1');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('2', '1');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('3', '1');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('4', '1');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('5', '2');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('6', '2');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('7', '2');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('8', '2');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('9', '3');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('10', '3');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('11', '4');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('12', '4');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('13', '4');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('14', '4');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('15', '4');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('16', '5');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('17', '5');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('18', '5');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('19', '6');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('20', '6');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('21', '6');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('22', '6');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('23', '7');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('24', '7');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('25', '8');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('26', '8');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('27', '8');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('28', '9');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('28', '10');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('29', '9');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('29', '10');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('30', '9');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('31', '9');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('32', '9');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('33', '10');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('34', '9');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('34', '10');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('35', '10');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('36', '11');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('37', '11');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('38', '11');
+INSERT INTO movie_character_relationship (`character_id`, `movie_id`) VALUES ('39', '11');

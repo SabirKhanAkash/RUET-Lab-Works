@@ -1,0 +1,83 @@
+.MODEL SMALL
+.STACK 100H
+.CODE    
+.DATA
+    PROMPT DB 'Type a String: $' 
+    ARR DB 60 DUB (?)
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    XOR CX,CX
+    XOR BX,BX    
+    MOV AH,9
+    LEA DX,PROMPT
+    INT 21H 
+
+C:    
+    MOV AH,1
+    INT 21H   
+
+WHILE_:    
+    CMP AL,0DH
+    JE END_WHILE 
+    
+    CMP AL,20H
+    JE TOP
+    
+    
+    PUSH AX
+    INC CX
+    
+    INT 21H
+    JMP WHILE_ 
+    
+    
+
+
+    
+    TOP:
+        POP DX
+        MOV ARR[BX],DL
+        INC BX
+        
+        LOOP TOP 
+        JMP C   
+        
+END_WHILE: 
+    MOV ARR[BX],20H 
+    INC BX
+    
+O:   
+    POP DX
+    MOV ARR[BX],DL
+    INC BX
+    
+    LOOP O 
+    
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H  
+    XOR BX,BX
+    PRINT:       
+        INC BX
+        MOV CL,ARR[BX]
+        CMP CL,00H
+        JE EXIT
+        
+        MOV AH,2
+        MOV DL,CL
+        INT 21H 
+        LOOP PRINT
+     
+        
+        
+
+    
+EXIT:
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN

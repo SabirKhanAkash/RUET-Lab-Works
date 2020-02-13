@@ -1,0 +1,115 @@
+ .MODEL SMALL
+ .STACK 100H
+
+ .DATA
+    PROMPT_1  DB  'Enter single digit numbers: $'
+    PROMPT_2  DB  0DH,0AH,'After BUBBLE sorting : $'
+
+    ARRAY DB 100 DUB (0)   
+
+ .CODE
+   MAIN PROC
+     MOV AX, @DATA                
+     MOV DS, AX                   
+
+     LEA DX, PROMPT_1             
+     MOV AH, 9
+     INT 21H
+     
+     XOR CX,CX
+     MOV AH,1
+     INT 21H
+     XOR SI,SI
+     
+       
+     
+     C:        
+        CMP AL,0DH
+        JE END_WHILE  
+        
+        MOV ARRAY[SI],AL
+        INC SI
+        INC CX
+        
+        MOV AH,2
+        MOV DL,' '
+        INT 21H
+        
+        MOV AH,1
+        INT 21H
+        JMP C
+        
+     END_WHILE:
+        MOV AH,2
+        MOV DL,0DH
+        INT 21H
+        MOV DL,0AH
+        INT 21H
+        
+     JCXZ EXIT
+        LEA SI,ARRAY
+        MOV BX,CX
+     CALL BUBBLE_SORT
+     MOV AH,9
+     LEA DX,PROMPT_2
+     INT 21H
+     XOR SI,SI
+     TOP:
+        MOV AH,2
+        MOV DL,ARRAY[SI]
+        INT 21H
+        MOV DL,' '
+        INT 21H
+        INC SI
+        LOOP TOP
+     EXIT:
+        MOV AH,4CH
+        INT 21H
+        MAIN ENDP
+
+
+ BUBBLE_SORT PROC
+
+   PUSH AX                          
+   PUSH BX                       
+   PUSH CX                        
+   PUSH DX                        
+   PUSH DI                        
+
+   MOV AX, SI                     
+   MOV CX, BX                     
+   DEC CX                         
+
+   @OUTER_LOOP:                   
+     MOV BX, CX                   
+
+     MOV SI, AX                   
+     MOV DI, AX                   
+     INC DI                       
+
+     @INNER_LOOP:                  
+       MOV DL, [SI]               
+
+       CMP DL, [DI]               
+       JNG @SKIP_EXCHANGE         
+
+       XCHG DL, [DI]              
+       MOV [SI], DL               
+
+       @SKIP_EXCHANGE:            
+       INC SI                     
+       INC DI                     
+
+       DEC BX                     
+     JNZ @INNER_LOOP              
+   LOOP @OUTER_LOOP               
+
+   POP DI                         
+   POP DX                         
+   POP CX                         
+   POP BX                         
+   POP AX                         
+
+   RET                            
+ BUBBLE_SORT ENDP
+ END MAIN

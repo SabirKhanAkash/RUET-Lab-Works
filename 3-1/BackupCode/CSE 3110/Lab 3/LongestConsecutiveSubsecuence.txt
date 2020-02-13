@@ -1,0 +1,85 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+    A DB 0
+    C DB 0
+    MSG1 DB 'Enter a string : $'
+    MSG2 DB 0DH,0AH, 'longest consecutive sequence : $'
+    MSG3 DB 0DH,0AH, 'Maximum length is : $'
+.CODE
+
+    MAIN PROC
+        MOV AX,@DATA
+        MOV DS,AX
+        MOV AH,9
+        LEA DX,MSG1
+        INT 21H
+
+        START:
+            MOV AH,1
+            INT 21H
+            INC A
+            JE LEVEL_1
+            MOV CL,1
+            MOV BL,AL
+            MOV DH,AL
+
+            INPUTS:
+                INT 21H
+                INC A
+                CMP AL,0DH
+   JE LEVEL_1
+                INC BL
+                CMP BL,AL
+                JNE INI
+                INC CL
+                JMP INPUTS
+
+            INI:
+                CMP CH,CL
+                JL UPDATE
+                MOV CL,1
+                MOV BL,AL
+                MOV DH,AL
+                JMP INPUTS
+
+                UPDATE:
+                    MOV CH,CL
+                    MOV BH,DH
+                    MOV CL,1
+                    MOV BL,AL
+                    MOV DH,AL
+                    JMP INPUTS
+
+            LEVEL_1:
+                CMP CH,CL
+                JL UPDATE2
+                JMP LEVEL_2
+
+                UPDATE2:
+                    MOV CH,CL
+                    MOV BH,DH
+                    JMP LEVEL_2
+
+            LEVEL_2:
+                    MOV AH,9
+                    LEA DX,MSG2
+                    INT 21H
+                    MOV AH,2
+                    MOV DL,BH
+                    MOV CL,CH
+
+            OUTPUT:
+                CMP CH,0
+                JE FINISH
+                ADD C,1
+                DEC CH
+                INT 21H
+                INC DL
+                JMP OUTPUT
+
+            FINISH:
+
+        MOV AH,4CH
+        INT 21H

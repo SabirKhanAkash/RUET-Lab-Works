@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{gan2013using}
+H.~Gan, N.~Sang, R.~Huang, X.~Tong, and Z.~Dan, ``Using clustering analysis to
+  improve semi-supervised classification,'' {\em Neurocomputing}, vol.~101,
+  pp.~290--298, 2013.
+
+\bibitem{chapelle2009semi}
+O.~Chapelle, B.~Scholkopf, and A.~Zien, ``Semi-supervised learning (chapelle,
+  o. et al., eds.; 2006)[book reviews],'' {\em IEEE Transactions on Neural
+  Networks}, vol.~20, no.~3, pp.~542--542, 2009.
+
+\bibitem{bilmes1998gentle}
+J.~A. Bilmes {\em et~al.}, ``A gentle tutorial of the em algorithm and its
+  application to parameter estimation for gaussian mixture and hidden markov
+  models,'' {\em International Computer Science Institute}, vol.~4, no.~510,
+  p.~126, 1998.
+
+\bibitem{bishop2006pattern}
+C.~M. Bishop, ``Pattern recognition,'' {\em Machine Learning}, vol.~128, 2006.
+
+\bibitem{tang2008boosting}
+H.~Tang and T.~S. Huang, ``Boosting gaussian mixture models via discriminant
+  analysis,'' in {\em Pattern Recognition, 2008. ICPR 2008. 19th International
+  Conference on}, pp.~1--4, IEEE, 2008.
+
+\bibitem{reynolds2000speaker}
+D.~A. Reynolds, T.~F. Quatieri, and R.~B. Dunn, ``Speaker verification using
+  adapted gaussian mixture models,'' {\em Digital signal processing}, vol.~10,
+  no.~1, pp.~19--41, 2000.
+
+\bibitem{breiman1996bias}
+L.~Breiman, ``Bias, variance, and arcing classifiers,'' 1996.
+
+\bibitem{joshi2002predicting}
+M.~V. Joshi, R.~C. Agarwal, and V.~Kumar, ``Predicting rare classes: Can
+  boosting make any weak learner strong?,'' in {\em Proceedings of the eighth
+  ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pp.~297--306, ACM, 2002.
+
+\bibitem{ratsch2001soft}
+G.~R{\"a}tsch, T.~Onoda, and K.-R. M{\"u}ller, ``Soft margins for adaboost,''
+  {\em Machine learning}, vol.~42, no.~3, pp.~287--320, 2001.
+
+\bibitem{reynolds2015gaussian}
+D.~Reynolds, ``Gaussian mixture models,'' {\em Encyclopedia of biometrics},
+  pp.~827--832, 2015.
+
+\bibitem{collins1997algorithm}
+M.~Collins, ``The em algorithm,'' {\em fulfillment of Written Preliminary Exam
+  II requirement}, 1997.
+
+\bibitem{he2009learning}
+H.~He and E.~A. Garcia, ``Learning from imbalanced data,'' {\em IEEE
+  Transactions on knowledge and data engineering}, vol.~21, no.~9,
+  pp.~1263--1284, 2009.
+
+\bibitem{alcala2009keel}
+J.~Alcal{\'a}-Fdez, L.~Sanchez, S.~Garcia, M.~J. del Jesus, S.~Ventura, J.~M.
+  Garrell, J.~Otero, C.~Romero, J.~Bacardit, V.~M. Rivas, {\em et~al.}, ``Keel:
+  a software tool to assess evolutionary algorithms for data mining problems,''
+  {\em Soft Computing}, vol.~13, no.~3, pp.~307--318, 2009.
+
+\bibitem{galar2012review}
+M.~Galar, A.~Fernandez, E.~Barrenechea, H.~Bustince, and F.~Herrera, ``A review
+  on ensembles for the class imbalance problem: bagging-, boosting-, and
+  hybrid-based approaches,'' {\em IEEE Transactions on Systems, Man, and
+  Cybernetics, Part C (Applications and Reviews)}, vol.~42, no.~4,
+  pp.~463--484, 2012.
+
+\bibitem{forman2003extensive}
+G.~Forman, ``An extensive empirical study of feature selection metrics for text
+  classification,'' {\em Journal of machine learning research}, vol.~3,
+  no.~Mar, pp.~1289--1305, 2003.
+
+\end{thebibliography}

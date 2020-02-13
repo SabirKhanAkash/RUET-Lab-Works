@@ -1,0 +1,36 @@
+1st Section:
+
+1.
+(i).
+SELECT character_name,age FROM movie_characters 
+WHERE character_id IN (SELECT character_id FROM movie_character_relationship 
+WHERE movie_id IN (SELECT Movie_ID FROM movie 
+WHERE Person_ID = (SELECT Person_ID FROM director WHERE Director_Name = "Satyajit Ray") ) )
+
+(ii).
+
+SELECT character_name,age FROM (SELECT * FROM 
+(SELECT * FROM 
+movie_characters JOIN movie_character_relationship 
+USING(character_id)) as temp JOIN movie USING(Movie_ID)) AS temp2 JOIN director USING(Person_ID) 
+WHERE director.Director_Name = "Satyajit Ray"
+
+2.
+SELECT Movie_Name,Genre,IMDB_Rating FROM movie 
+WHERE (Genre,IMDB_Rating) IN (SELECT Genre,MAX(IMDB_Rating) FROM movie GROUP BY Genre)
+
+
+Experimental Section: 
+
+1.
+CREATE VIEW MovieView AS (SELECT Movie_ID,Movie_Name,Genre,IMDB_Rating FROM movie);
+
+2.
+CREATE VIEW MovieDirectorView AS 
+(SELECT Movie_ID,Movie_Name,Genre,IMDB_Rating,Director_Name FROM movie JOIN director USING(Person_ID));
+
+3.
+CREATE VIEW MovieCharView AS 
+(SELECT movie_id,character_id,character_name,age 
+FROM movie_characters JOIN movie_character_relationship USING(character_id));
+

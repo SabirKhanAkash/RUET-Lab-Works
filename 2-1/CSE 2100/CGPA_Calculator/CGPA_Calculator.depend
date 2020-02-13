@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1519320341 source:e:\study\my c\lab\2-1\cse 2100\cgpa_calculator\main.cpp
+	<tchar.h>
+	<windows.h>
+

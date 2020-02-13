@@ -1,0 +1,61 @@
+CREATE TABLE Director 
+(
+Director_ID int, 
+Name varchar(100), 
+Flims int, 
+Awards int , 
+);
+
+
+CREATE TABLE Movie 
+( 
+ Movie_ID int, 
+ Name varchar(100), 
+ Genre varchar(100), 
+ IMDb_Rating numeric(3,1), 
+ Director_ID int,
+ );
+
+ALTER TABLE movie
+	ADD PRIMARY KEY(Movie_ID);
+
+
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (1,'Hirak Rajar Deshe','Drama',8.8,1);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (2,'Jibon Theke Deya','History',9.3,2);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (3,'Baishe Srabon','Thriller',8.3,4);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (5,'3 Idiots','Drama',8.3,3);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (4,'Chotushkon','Thriller',8.4,4);
+
+ALTER TABLE movie 
+	ADD FOREIGN KEY (Director_ID) REFERENCES director(Director_ID);
+
+SELECT NAME,Genre,IMDb_rating
+	FROM movie;
+
+(1)
+SELECT *
+	FROM movie,director;
+
+(2)
+SELECT movie.NAME,director.Name,movie.Genre,movie.IMDb_rating
+	FROM movie,director;
+
+(3)
+SELECT movie.NAME,director.Name AS Director_NAME,movie.Genre,movie.IMDb_rating
+	FROM movie,director;
+
+(4)
+SELECT movie.NAME,director.Name AS Director_NAME,movie.Genre,movie.IMDb_rating
+	FROM movie,director WHERE movie.Director_ID = director.Director_ID;
+
+(5)
+SELECT DISTINCT Genre 
+FROM movie;
+
+(6)
+SELECT movie.NAME AS Movie_Name,director.Name AS Director_Name, movie.IMDb_rating
+	FROM movie,director WHERE Genre='Thriller' AND movie.Movie_ID = director.Director_ID;
+
+(7)
+SELECT movie.NAME,movie.Genre,IMDb_rating*10 AS IMDb_Rating
+	FROM movie,director WHERE movie.Movie_ID = director.Director_ID;

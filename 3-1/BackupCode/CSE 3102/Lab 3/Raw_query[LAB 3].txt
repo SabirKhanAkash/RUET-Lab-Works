@@ -1,0 +1,61 @@
+INSERT INTO director ( Director_ID, Name) VALUES (5, 'Jack Snyder') ;
+INSERT INTO director ( Director_ID, Name) VALUES (6, 'Martin') ;
+INSERT INTO director ( Director_ID, Name, Flims, Awards) VALUES (7, 'Sandip Roy',10,4) ;
+INSERT INTO director ( Director_ID, Name, Flims, Awards) VALUES (8, 'Anik Datta',4,2) ;
+
+
+INSERT INTO movie (Movie_ID, Name, Genre, IMDb_Rating, Director_ID) VALUES (6,'PK','Fiction',8.3,3);
+INSERT INTO movie (Movie_ID, Name, Genre, IMDb_Rating, Director_ID) VALUES (7,'300','Action',7.7,5);
+INSERT INTO movie (Movie_ID, Name, Genre, IMDb_Rating, Director_ID) VALUES (8,'Hugo','Drama',7.5,6);
+INSERT INTO movie (Movie_ID, Name, Genre, IMDb_Rating) VALUES (9,'IT','Horror',7.3);
+INSERT INTO movie (Movie_ID, Name, Genre, IMDb_Rating, Director_ID) VALUES (10,'Jekhane Bhooter Bhoy','Horror',6.9,7);
+INSERT INTO movie (Movie_ID, Name, Genre, IMDb_Rating, Director_ID) VALUES (11,'Bhooter Bhobishyat','Fiction',8.1,8);
+
+1)
+SELECT Name,Awards,Flims FROM director WHERE Name LIKE 'S%';
+
+2)
+SELECT Name,Awards,Flims FROM director WHERE Name LIKE '%S%';
+
+3)
+SELECT Name,Awards,Flims FROM director WHERE Name LIKE '%a_' OR Name LIKE '%e_';
+
+4)
+SELECT NAME, Genre, IMDb_rating FROM movie WHERE NAME LIKE '%Bhoot%';
+
+5)
+SELECT NAME, Genre, IMDb_rating FROM movie WHERE NAME LIKE '__';
+
+6)
+SELECT NAME, Genre, IMDb_rating FROM movie WHERE NAME LIKE '_____' OR NAME LIKE '%_____%';
+
+7)
+SELECT NAME, Genre, IMDb_rating FROM movie WHERE NAME LIKE '____' OR NAME LIKE '___' OR NAME LIKE '__' OR NAME LIKE '_' ; 
+ 
+Alternate way:
+
+SELECT NAME, Genre, IMDb_rating FROM movie WHERE NAME NOT LIKE '_____' AND NAME NOT LIKE '%_____%';
+
+
+NEW
+1)
+SELECT MAX(IMDb_rating) FROM movie;
+
+2)
+SELECT MAX(IMDb_rating) FROM movie WHERE Genre='Thriller';
+
+3)
+SELECT MAX(IMDb_rating) FROM movie GROUP BY Genre;
+
+4)
+SELECT NAME,Genre,MIN(IMDb_rating) FROM movie;       // this was wrong 
+
+
+SELECT NAME,Genre,IMDb_rating FROM movie WHERE IMDb_rating = (SELECT MIN(IMDb_rating) FROM movie);           // this is Fixed
+
+5)
+SELECT NAME,Genre,IMDb_rating FROM movie WHERE Genre IN ('Drama','Horror','Thriller');
+
+6)
+SELECT movie.NAME,Genre,IMDb_rating FROM movie WHERE director_ID IN(
+    SELECT Director_ID FROM director WHERE director.Name IN ('Satyajit Ray', 'Rajkumar Hirani'));

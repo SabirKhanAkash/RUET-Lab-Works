@@ -1,0 +1,54 @@
+`MaYa`
+
+create table Book_Publisher_Relationship
+{
+Book_No int,
+Publisher_ID int,
+Price int,
+No_of_Pages int
+};
+
+ALTER TABLE book_publisher_relationship ADD PRIMARY KEY(Book_No,Publisher_ID);
+
+INSERT INTO book_publisher_relationship VALUES(1,1,182,134);
+INSERT INTO book_publisher_relationship VALUES(1,2,90,78);
+INSERT INTO book_publisher_relationship VALUES(2,3,150,156);
+INSERT INTO book_publisher_relationship VALUES(2,4,200,193);
+INSERT INTO book_publisher_relationship VALUES(3,3,300,720);
+INSERT INTO book_publisher_relationship VALUES(3,2,245,704);
+INSERT INTO book_publisher_relationship VALUES(3,4,413,668);
+INSERT INTO book_publisher_relationship VALUES(4,3,165,156);
+INSERT INTO book_publisher_relationship VALUES(4,5,176,184);
+INSERT INTO book_publisher_relationship VALUES(5,6,360,264);
+INSERT INTO book_publisher_relationship VALUES(5,7,238,192);
+INSERT INTO book_publisher_relationship VALUES(5,4,132,95);
+INSERT INTO book_publisher_relationship VALUES(6,8,90,64);
+INSERT INTO book_publisher_relationship VALUES(7,8,140,110);
+INSERT INTO book_publisher_relationship VALUES(8,8,114,80);
+INSERT INTO book_publisher_relationship VALUES(9,9,855,645);
+INSERT INTO book_publisher_relationship VALUES(10,9,1133,768);
+INSERT INTO book_publisher_relationship VALUES(11,9,180,73);
+INSERT INTO book_publisher_relationship VALUES(11,10,123,79);
+INSERT INTO book_publisher_relationship VALUES(12,9,180,90);
+INSERT INTO book_publisher_relationship VALUES(12,10,90,80);
+INSERT INTO book_publisher_relationship VALUES(13,11,233,120);
+INSERT INTO book_publisher_relationship VALUES(14,12,270,217);
+INSERT INTO book_publisher_relationship VALUES(15,13,450,186);
+INSERT INTO book_publisher_relationship VALUES(16,14,298,312);
+INSERT INTO book_publisher_relationship VALUES(16,15,255,300);
+INSERT INTO book_publisher_relationship VALUES(17,16,225,208);
+INSERT INTO book_publisher_relationship VALUES(18,16,375,301);
+INSERT INTO book_publisher_relationship VALUES(19,17,390,null);
+
+Problem 2.0: Find the name and genre of all the books that are written in Bengali
+
+SELECT Book_Name,Genre FROM book WHERE Language = "Bangla"
+
+
+Problem 2.1: Find all the book genres and the price of the most expensive book in each genre.
+
+
+SELECT Genre,MAX(Price) FROM (SELECT temp.Genre,(Price) from (book_publisher_relationship JOIN 
+(SELECT Book_no,Genre FROM book) AS temp USING(Book_no))) AS temp2 GROUP BY Genre 
+
+

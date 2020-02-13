@@ -1,0 +1,13 @@
+likes(tanim,pizza).
+likes(tanim,cola).
+likes(raka,tea).
+likes(raka,coffee).
+likes(robin,raka).
+likes(robin,pizza).
+likes(karim,pizza).
+likes(karim,coffee).
+likes(tanim,tea).
+likes(tanim,coffee).
+likes(tanim,robin).
+likes(tanim,karim).
+likes(tanim,robin).

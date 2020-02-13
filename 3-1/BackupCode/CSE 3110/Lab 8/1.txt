@@ -1,0 +1,49 @@
+.MODEL SMALL
+.STACK 100H    
+.DATA
+    FOUR DW 4
+    SCORES DW 67,45,98,33   ;Mary Allen
+           DW 70,56,87,44   ;Scott Baylis
+           DW 82,72,89,40   ;George Frank
+           DW 78,76,92,60   ;Sam Wong
+    AVG DW 4 DUP (0)
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+              
+    MOV SI,6
+REPEAT:
+    MOV CX,4
+    XOR BX,BX
+    XOR AX,AX
+    
+FOR:
+    ADD AX,SCORES[BX+SI]
+    ADD BX,8
+    LOOP FOR
+    
+    XOR DX,DX
+    DIV FOUR
+    MOV AVG[SI],AX
+    SUB SI,2
+    JNL REPEAT  
+    XOR SI,SI
+    
+TOP:
+    MOV AH,2
+    MOV DX,AVG[SI]
+    INT 21H
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
+    INC SI    
+    LOOP TOP
+    
+    
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN

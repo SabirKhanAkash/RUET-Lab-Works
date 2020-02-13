@@ -1,0 +1,43 @@
+LEVEL-1
+
+1. 
+SELECT character_name,age FROM movie_characters WHERE age > 19 OR age <13 
+
+2.
+SELECT DISTINCT movie_id,COUNT(movie_id) AS No_Of_Characters
+	FROM movie_character_relationship 
+    GROUP BY movie_id
+
+3.
+
+SELECT movie.Movie_Name, TempTable.No_Of_Characters FROM movie JOIN 
+(SELECT DISTINCT movie_id,COUNT(movie_id) AS No_Of_Characters 
+FROM movie_character_relationship GROUP BY movie_id) AS TempTable 
+WHERE movie.Movie_ID = TempTable.movie_id
+
+
+LEVEL-2
+
+1.
+
+SELECT Movie_Name,IMDB_Rating,Year FROM movie JOIN
+(SELECT movie_id FROM movie_character_relationship WHERE 
+character_id = (SELECT character_id FROM movie_characters WHERE character_name = "Byomkesh Bakshi")) 
+AS temp USING(Movie_ID)
+
+2.
+SELECT movie.Movie_Name, movie.Year, movie.IMDB_Rating, director.Director_Name FROM movie 
+JOIN director USING(Person_ID) 
+WHERE Length(Movie_Name) >= 13
+
+3.
+SELECT movie.Movie_Name, movie.Year, movie.IMDB_Rating, director.Director_Name FROM movie 
+JOIN director USING(Person_ID) 
+WHERE Length(Movie_Name) <= 12
+
+4.
+SELECT DISTINCT character_name,age FROM movie_characters JOIN movie_character_relationship 
+USING(character_id) WHERE movie_character_relationship.movie_id IN 
+(SELECT movie_id FROM movie_character_relationship WHERE 
+movie_character_relationship.character_id = (SELECT character_id FROM movie_characters WHERE 
+character_name = "Byomkesh Bakshi"))

@@ -1,0 +1,28 @@
+CREATE TABLE Director 
+(
+Director_ID int, 
+Name varchar(100), 
+No_of_Flims int, 
+Awards int , 
+PRIMARY KEY(Director_ID)
+);
+
+INSERT INTO `director`(`Director_ID`, `Name`, `No_of_Flims`, `Awards`) VALUES (1,'Satyajit Roy',45,55);
+INSERT INTO `director`(`Director_ID`, `Name`, `No_of_Flims`, `Awards`) VALUES (2,'Zahir Raihan',5,10);
+INSERT INTO `director`(`Director_ID`, `Name`, `No_of_Flims`, `Awards`) VALUES (3,'Chashi Nazrul Islam',15,10);
+INSERT INTO `director`(`Director_ID`, `Name`, `No_of_Flims`, `Awards`) VALUES (4,'Rajkumar Hirani',5,9);
+
+CREATE TABLE Movie 
+( 
+ Movie_ID int PRIMARY KEY, 
+ Name varchar(100), 
+ Genre varchar(100), 
+ IMDb_Rating numeric(3,1), 
+ Director_ID int,
+ FOREIGN KEY Director_ID REFERENCES Director(Director_ID)
+ );
+
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (1,'Hirak Rajar Deshe','Drama',8.4,1);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (2,'3 Idiots','Drama',8.3,4);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (3,'Jibon Theke Deya','History',9.3,2);
+INSERT INTO `movie`(`Movie_ID`, `Name`, `Genre`, `IMDb_Rating`, `Director_ID`) VALUES (4,'Vinci Da',7.2,6);

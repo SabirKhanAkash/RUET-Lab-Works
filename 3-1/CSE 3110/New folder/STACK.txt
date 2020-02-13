@@ -1,0 +1,69 @@
+.MODEL SMALL
+.STACK 100H
+.DATA  
+    ARR DB 50 DUB (?)
+
+.CODE
+ MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX 
+
+    XOR BX, BX     ;RESETTING BX
+    XOR CX, CX     ;RESETTING CX  
+
+    INPUT: 
+      MOV AH, 1
+      INT 21H
+      CMP AL, 0DH  ;ENTER ENDS THE INPUT
+      JE SP_END
+      
+      PUSH AX
+      INC CX
+      CMP AL, 20H  ;IF IT'S SPACE
+      JE PROCESS
+      JMP INPUT
+    
+    
+    PROCESS:        ;STORING REVERSELY INTO ARRAY
+      POP DX
+      MOV ARR[BX], DL
+      INC BX
+    LOOP PROCESS
+    
+    JMP INPUT
+    
+    SP_END:         ;ADDING SPACE BEFORE LAST WORD
+        MOV ARR[BX], 20H
+        INC BX
+          
+    END_INPUT:       ;STROING LAST WORD
+      POP DX
+      MOV ARR[BX], DL
+      INC BX
+    LOOP END_INPUT 
+    
+    MOV AH,2        
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
+    
+    XOR BX,BX       ;SETTING INDEX TO ZERO
+
+    PRINT:          ;DISPLAY FUNCTION
+     INC BX
+     MOV CL, ARR[BX]   
+     CMP CL,00H     ;EXIT IF IT'S NULL (NULL CHECKING)
+     JE LAST
+     
+     MOV AH, 2
+     MOV DL, CL 
+     INT 21H                  
+    LOOP PRINT       
+
+    LAST:
+    MOV AH,4CH    
+    INT 21H       
+    
+    MAIN ENDP
+END MAIN

@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Data compression:}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Lossy and lossless data compression:}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Prefix rule:}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Background}{}% 5
+\BOOKMARK [1][-]{section.3}{Methodology}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Constructing a Huffman tree:}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Experiment}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Result analysis:}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 10

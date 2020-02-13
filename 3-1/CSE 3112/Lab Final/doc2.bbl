@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{Blum2005}
+A.~Blum and F.~Mcsherry, ``{Practical Privacy : The SuLQ Framework},'' in {\em
+  ACM SIGMOD-SIGACT-SIGART}, (Baltimore, Maryland), pp.~128--138, ACM, 2005.
+
+\bibitem{Samarati:2001:PRI:627337.628183}
+P.~Samarati, ``Protecting respondents' identities in microdata release,'' {\em
+  IEEE Trans. on Knowledge and Data Engineering}, vol.~13, pp.~1010--1027, Nov.
+  2001.
+
+\bibitem{Li2011}
+N.~Li, W.~Qardaji, and D.~Su, ``{Provably Private Data Anonymization : Or ,
+  k-Anonymity Meets Differential Privacy},'' tech. rep., Purdue University,
+  2011.
+
+\end{thebibliography}

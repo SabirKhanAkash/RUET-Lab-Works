@@ -1,0 +1,63 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    PROMPT DB 'Type a string: ','$'  
+    ARR DB 10 DUB (?)   
+    A DB ? 
+
+.CODE
+ MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX 
+    
+    MOV AH,9
+    LEA DX,PROMPT
+    INT 21H
+
+    XOR BX, BX
+    MOV CX, 6       
+
+    FOR: 
+      MOV AH, 1
+      INT 21H
+      MOV ARR[BX], AL
+      INC BX
+    LOOP FOR
+    
+    MOV AH,2         ;for new line after ther input
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
+    
+    XOR BX, BX
+    MOV CX, 6 
+    
+
+    PRINT:  
+     MOV CL, ARR[BX] ;point to the  current index  
+     
+     CMP CL,61h 
+     JL END_IF 
+     
+     CMP CL,00H
+     JE EXIT 
+     
+     CMP CL,7ah
+     JG END_IF 
+     
+     MOV AH, 2       ;output
+     MOV DL, CL 
+     INT 21H
+     
+     END_IF:
+     INC BX
+                     ;move pointer to the next element 
+    LOOP PRINT       ;loop until done
+
+    EXIT:
+    MOV AH,4CH    ;this is for DOS exiting
+    INT 21H       
+    
+    MAIN ENDP
+END MAIN

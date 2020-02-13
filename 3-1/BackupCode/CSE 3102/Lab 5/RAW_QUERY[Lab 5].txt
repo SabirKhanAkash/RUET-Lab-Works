@@ -1,0 +1,35 @@
+1
+SELECT Person_ID,director.Director_Name AS Name,2019-Director.Birth_Year AS Current_Age,
+actors.No_Of_Films AS Films_as_Actor, director.No_Of_Films AS Films_as_Director,actors.No_Of_Awards AS Awards_as_Actor,
+director.No_Of_Awards AS Awards_as_Director from director LEFT JOIN actors USING(Person_ID)
+
+UNION
+
+SELECT Person_ID,actors.Actor_Name AS Name,2019-actors.Birth_Year AS Current_Age,
+actors.No_Of_Films AS Films_as_Actor, director.No_Of_Films AS Films_as_Director,actors.No_Of_Awards AS Awards_as_Actor,
+director.No_Of_Awards AS Awards_as_Director from actors LEFT JOIN director USING(Person_ID)
+
+
+2
+SELECT Person_ID,Actor_Name AS Name,2019-actors.Birth_Year AS Current_Age,
+actors.No_Of_Films AS Films_as_Actor,actors.No_Of_Awards AS Awards_as_Actor FROM actors LEFT JOIN director USING(Person_ID) 
+WHERE director.Person_ID IS NULL
+
+
+3
+SELECT Person_ID,Director_Name AS Name,2019-Birth_Year AS Current_Age,No_Of_Films AS Films_as_Director,
+No_Of_Awards AS Awards_as_Director from director WHERE No_of_Films = (SELECT MAX(No_Of_Films) FROM director)
+
+
+4
+SELECT Person_ID,Actor_Name AS Name,2019-Birth_Year AS Current_Age,No_Of_Films AS Films_as_Actor,
+No_Of_Awards AS Awards_as_Actor from actors WHERE Birth_Year = (SELECT MAX(Birth_Year) FROM actors)
+
+
+5
+SELECT DISTINCT Genre,ROUND(AVG(IMDB_Rating),1) AS Avg_IMDb_Rating FROM movie GROUP BY Genre
+
+
+6
+SELECT Max(ROUND(AVG(IMDB_Rating),1)) AS Avg_IMDb_Rating 
+FROM (SELECT Genre,ROUND(AVG(IMDB_Rating),1) AS Avg_IMDb_Rating FROM movie AS Tem GROUP BY Genre)

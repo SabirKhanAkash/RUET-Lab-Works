@@ -1,0 +1,415 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{cms/global//global/global}
+  \entry{r1}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AL}{%
+         family={Atzori},
+         familyi={A\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+      {{hash=IA}{%
+         family={Iera},
+         familyi={I\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+      {{hash=MG}{%
+         family={Morabito},
+         familyi={M\bibinitperiod},
+         given={G},
+         giveni={G},
+      }}%
+    }
+    \strng{namehash}{ALIAMG1}
+    \strng{fullhash}{ALIAMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{pages}{2787\bibrangedash 2805}
+    \field{title}{The internet of things: A survey}
+    \field{volume}{54}
+    \field{journaltitle}{Comput. Netw.}
+    \field{year}{2010}
+  \endentry
+
+  \entry{r2}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BP}{%
+         family={Bellavista},
+         familyi={B\bibinitperiod},
+         given={P},
+         giveni={P},
+      }}%
+      {{hash=CG}{%
+         family={Cardone},
+         familyi={C\bibinitperiod},
+         given={G},
+         giveni={G},
+      }}%
+      {{hash=CA}{%
+         family={Corradi},
+         familyi={C\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+      {{hash=FL}{%
+         family={Foschini},
+         familyi={F\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+    }
+    \strng{namehash}{BP+1}
+    \strng{fullhash}{BPCGCAFL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{3558\bibrangedash 3567}
+    \field{title}{Convergence of MANET and WSN in IoT urban scenarios}
+    \field{volume}{13}
+    \field{journaltitle}{IEEE Sens. J.}
+    \field{year}{2013}
+  \endentry
+
+  \entry{r5}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CD}{%
+         family={Cuff},
+         familyi={C\bibinitperiod},
+         given={D},
+         giveni={D},
+      }}%
+      {{hash=HM}{%
+         family={Hansen},
+         familyi={H\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=KJ}{%
+         family={Kang},
+         familyi={K\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+    }
+    \strng{namehash}{CDHMKJ1}
+    \strng{fullhash}{CDHMKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{24\bibrangedash 33}
+    \field{title}{Urban sensing: Out of the woods}
+    \field{volume}{51}
+    \field{journaltitle}{Commun. ACM}
+    \field{year}{2008}
+  \endentry
+
+  \entry{r6}{article}{}
+    \name{author}{4}{}{%
+      {{hash=DM}{%
+         family={Dohler},
+         familyi={D\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=VI}{%
+         family={Vilajosana},
+         familyi={V\bibinitperiod},
+         given={I},
+         giveni={I},
+      }}%
+      {{hash=VX}{%
+         family={Vilajosana},
+         familyi={V\bibinitperiod},
+         given={X},
+         giveni={X},
+      }}%
+      {{hash=LJ}{%
+         family={Llosa},
+         familyi={L\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+    }
+    \strng{namehash}{DM+1}
+    \strng{fullhash}{DMVIVXLJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{year}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Smart Cities: An action plan}
+    \field{journaltitle}{in Proc. Barcelona Smart Cities Congress}
+    \field{year}{2011}
+  \endentry
+
+  \entry{r8}{article}{}
+    \name{author}{8}{}{%
+      {{hash=HMJ}{%
+         family={Hernández-Muñoz},
+         familyi={H\bibinithyphendelim M\bibinitperiod},
+         given={JM},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={Vercher},
+         familyi={V\bibinitperiod},
+         given={JB},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={Muñoz},
+         familyi={M\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+      {{hash=GJ}{%
+         family={Galache},
+         familyi={G\bibinitperiod},
+         given={JA},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Presser},
+         familyi={P\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=HL}{%
+         family={Hernández},
+         familyi={H\bibinitperiod},
+         given={LA},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=G}{%
+         family={Gómez},
+         familyi={G\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pettersson},
+         familyi={P\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+    }
+    \strng{namehash}{HMJ+1}
+    \strng{fullhash}{HMJVJMLGJPMHLGPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{pages}{447\bibrangedash 462}
+    \field{title}{Smart Cities at the forefront of the future Internet}
+    \field{volume}{6656}
+    \field{journaltitle}{The Future Internet, Lect. Notes Comput. Sci.}
+    \field{year}{2011}
+  \endentry
+
+  \entry{r3}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LA}{%
+         family={Laya},
+         familyi={L\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+      {{hash=BV}{%
+         family={Bratu},
+         familyi={B\bibinitperiod},
+         given={VI},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Markendahl},
+         familyi={M\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+    }
+    \strng{namehash}{LABVMJ1}
+    \strng{fullhash}{LABVMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{pages}{20\bibrangedash 23}
+    \field{title}{Who is investing in machine-to-machine communications?}
+    \field{journaltitle}{in Proc. 24th Eur. Reg. ITS Conf.}
+    \field{year}{2013}
+  \endentry
+
+  \entry{r9}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MC}{%
+         family={Mulligan},
+         familyi={M\bibinitperiod},
+         given={CEA},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=OM}{%
+         family={Olsson},
+         familyi={O\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+    }
+    \strng{namehash}{MCOM1}
+    \strng{fullhash}{MCOM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{80\bibrangedash 85}
+    \field{title}{Architectural implications of smart city business models: An
+  evolutionary perspective}
+    \field{volume}{51}
+    \field{journaltitle}{IEEE Commun. Mag.}
+    \field{year}{2013}
+  \endentry
+
+  \entry{r4}{article}{}
+    \name{author}{6}{}{%
+      {{hash=SH}{%
+         family={Schaffers},
+         familyi={S\bibinitperiod},
+         given={H},
+         giveni={H},
+      }}%
+      {{hash=KN}{%
+         family={Komninos},
+         familyi={K\bibinitperiod},
+         given={N},
+         giveni={N},
+      }}%
+      {{hash=PM}{%
+         family={Pallot},
+         familyi={P\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=TB}{%
+         family={Trousse},
+         familyi={T\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+      {{hash=NM}{%
+         family={Nilsson},
+         familyi={N\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=OA}{%
+         family={Oliveira},
+         familyi={O\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+    }
+    \strng{namehash}{SH+1}
+    \strng{fullhash}{SHKNPMTBNMOA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{year}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{431\bibrangedash 446}
+    \field{title}{Smart cities and the future internet: Towards cooperation
+  frameworks for open innovation}
+    \field{volume}{6656}
+    \field{journaltitle}{The Future Internet, Lect. Notes Comput. Sci.}
+    \field{year}{2011}
+  \endentry
+
+  \entry{r7}{article}{}
+    \name{author}{6}{}{%
+      {{hash=VI}{%
+         family={Vilajosana},
+         familyi={V\bibinitperiod},
+         given={I},
+         giveni={I},
+      }}%
+      {{hash=LJ}{%
+         family={Llosa},
+         familyi={L\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+      {{hash=MB}{%
+         family={Martinez},
+         familyi={M\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+      {{hash=DPM}{%
+         family={Domingo-Prieto},
+         familyi={D\bibinithyphendelim P\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=AA}{%
+         family={Angles},
+         familyi={A\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+      {{hash=VX}{%
+         family={Vilajosana},
+         familyi={V\bibinitperiod},
+         given={X},
+         giveni={X},
+      }}%
+    }
+    \strng{namehash}{VI+1}
+    \strng{fullhash}{VILJMBDPMAAVX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{pages}{128\bibrangedash 134}
+    \field{title}{Bootstrapping smart cities through a self-sustainable model
+  based on big data flows}
+    \field{volume}{51}
+    \field{journaltitle}{IEEE Commun. Mag.}
+    \field{year}{2013}
+  \endentry
+\enddatalist
+\endinput

@@ -1,0 +1,971 @@
+%%
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%%
+%%
+%% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%%
+%%
+\documentclass[preprint,11pt]{elsarticle}
+\usepackage{amssymb}
+\usepackage{times,amsmath,epsfig}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{observation}{Observation}
+
+\journal{Data and Knowledge Engineering}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{A Probabilistic Approach to Mitigate Composition Privacy Attacks}
+
+%
+%\author[add]{A.H.M. Sarowar Sattar\corref{cor1}}
+%\ead{sarowar@gmail.com}
+%\author[add]{Jiuyong Li\corref{cor1}}
+%\ead{Jiuyong.Li@unisa.edu.au}
+%\author[add]{Jixue Liu}
+%\ead{Jixue.Liu@unisa.edu.au}
+%\author[add2]{Raymond Heatherly}
+%\ead{r.heatherly@vanderbilt.edu}
+%\author[add2]{Bradley Malin}
+%\ead{b.malin@vanderbilt.edu}
+%
+%\cortext[cor1]{Corresponding author}
+%%\cortext[cor2]{Principal corresponding author}
+%
+%\fntext[fn1]{Data Analytic Group, D3-08, School of Information Technology and Mathematical Science, Mawson Lakes, SA-5095. Mob. +61420863356}
+%\fntext[fn2]{D3-07, School of Information Technology and Mathematical Science, Mawson Lakes, SA-5095.}
+
+%%
+%%\author[rvt]{A.H.M. Sarowar Sattar\corref{cor1}\fnref{fn1}}
+%%\ead{sarowar@gmail.com}
+%%\author[rvt]{Jiuyong Li\corref{cor1}\fnref{fn2}}
+%%\ead{Jiuyong.Li@unisa.edu.au}
+%%\fntext[fn1]{This is the specimen author footnote.}
+%%\fntext[fn2]{Another author footnote, but a little more longer.}
+%%\fntext[fn3]{Another author footnote, but a little more longer.}
+%%\fntext[fn4]{Another author footnote, but a little more longer.}
+%%\fntext[fn5]{Another author footnote, but a little more longer.}
+%
+%\address[add]{School of Information Technology and Mathematical Science, University of South Australia, Mawson Lakes, SA-5095, Australia}
+%\address[add2]{Department of Biomedical Informatics, Vanderbilt University, Nashville, Tennessee, USA}
+%%\address[focal]{River Valley Technologies, 9, Browns Court,
+%%Kennford, Exeter, United Kingdom}
+%%\address[els]{Central Application Management,
+%%Elsevier, Radarweg 29, 1043 NX\\
+%%Amsterdam, Netherlands}
+
+\begin{abstract}
+Over the past two decades, a variety of algorithms have been developed to anonymize data sets before publishing.  These algorithms are designed to limit the likelihood that the privacy of individuals whose data is made public is protected from disclosure. However, in many anonymization approaches (approaches based on syntactic models of privacy), it is likely that one can locate the group where a targeted individual's record resides. Moreover, when an individual is detected across multiple disparate providers' publications, the individual's privacy may be compromised at a rate that is significantly higher than any single publication.
+
+This type of privacy breach is known as composition attack and can be mitigated if there are a certain number of sensitive values which are shared in two groups across multiple publications. Over the past several years, there have been several approaches proposed to thwart this attack, but they are insufficient and have their own limitations. To overcome those limitations, we introduce a probabilistic model to bound the risks associated with a composition attack. We also design a method to achieve that privacy model to mitigate risks of composition attack. To demonstrate the feasibility of our approach, we perform an empirical analysis with data, published from the U.S. Census Bureau and show that our strategy significantly reduces the likelihood of a successful composition attack.
+\end{abstract}
+
+%\begin{abstract}
+%Privacy in multiple independent data publishing has attracted considerable research interest in recent years. Although each published data set poses a small privacy risk to individuals, recent studies shows that more sophisticated model is necessary for multiple independent publications. In most data publication approaches it is possible to locate the group of records where a targeted individual's record resides. If an individual can be detected from disparate providers, the individual's privacy is compromised. This type of privacy breach is called composition attack and can be mitigated if there are a certain number of sensitive values are shared in two groups. Motivated by the insufficient works on composition attack, this paper presents a probabilistic model that ensures composition privacy risks are prevented to a certain degree. We also design a post-processing method to make an anonymized data set to resist the composition attack. Our empirical results show that with the post-processing the success rate of composition attack is reduced significantly than that without post-processing.
+%\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Privacy, Composition attack, Anonymization
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+
+\section{Introduction}
+\label{sec:introduction}
+Data anonymization is an important technique in privacy preserving data publishing. This technique can be broadly classified into two categories, \emph{perturbation} based and \emph{partition} based. In the \emph{perturbation} based technique, original values are noised, and hence it is difficult to pinpoint an individual in a published data set based on non-sensitive information such as age, sex and address. With \emph{partition} based technique, where data values of non-sensitive attributes are generalized into more general values to form small groups with the same values in non-sensitive attributes, so that an individual can not be identified and his/her sensitive value(s) can not be inferred with a high confidence. A number of methods have already been developed by following both techniques. Many of them have been proposed to anonymize single~\cite{Li2007,Machanavajjhala2007,Sweeney2002,Wong_alpha} data set and a series~\cite{Fung2008,Wang2006a,Wong2010,Xiao2007} of data sets from the same  data owner. But, only a few works~\cite{Baig2011,Ganta2008} have considered multiple independent data publications from different data owners.
+
+Data sets published by multiple organizations may contain the data derived from same entity. For example, a patient might have visited two hospitals for the same disease (which is a common phenomenon, for instance, when patients are referred to a specialist), where, in the absence of health information coordination, his records are independently anonymized and published and such anonymization does not consider how other organizations have data that overlaps with theirs. Yet, an adversary may collect multiple data sets and integrate them to compromise the intended privacy protections. The utilization of more than one independently anonymized data sets to infer the privacy of an overlapping individual(s) is called a $composition$ $attack$~\cite{Ganta2008}.
+
+%Most literature on privacy preserving data publishing considers two types of privacy disclosure $attribute$ $disclosure$ and $identity$ $disclosure$. In the attack of $attribute$ $disclosure$, the attacker may not preciously identify the record of an individual (the victim), but could infer his/her sensitive values from the published data sets, based on sensitive values associated to the group of records that the victim belongs to. Here the assumptions are, the attacker knows the non-sensitive attributes of the victim, as well as the published data sets contains the victim's information. However, in some cases the presence or the absence of an individual in the published data sets already reveals the victim's sensitive information. For example, a hospital release a table with particular types of disease (say diabetes). Therefore, identifying the presence of an individual is already damaging. This type of privacy disclosure is called $identity$ $disclosure$. For this work, we only consider the $attribute$ $disclosure$ as our assumptions follow this line.
+
+\subsection{Composition attack is a challenging problem}
+\label{subsec:chellenging_problem}
+
+Basically, the \emph{partition} based techniques are vulnerable to composition attack. Because, it publishes the original value of the sensitive attributes and it is possible to locate the small group where an individual's record resides. For example, let us assume that Hospital-A and Hospital-B manage health information as documented in Tables~\ref{original_table_H1_H2}(a) and ~\ref{original_table_H1_H2}(b), respectively. The hospitals then anonymize their records according to one of the \emph{partition} based techniques (say $k$-anonymity) and publish these tables in the form of Tables~\ref{anonymous_table_H1_H2}(a) and ~\ref{anonymous_table_H1_H2}(b).  The sensitive value here is patients' medical condition, which is kept unchanged in the anonymous version. Alice, 22 years old female living in zip code 5095, has the sensitive value AIDS that is common in both publications. If an adversary knew the non-sensitive information of Alice and that she has visited two hospitals, then he/she could derive her sensitive value from both published tables. %Both anonymous data sets individually  pose low privacy risk but collectively compromise the privacy of overlapping patients due to the composition attack. Therefore, under the composition attack the independent anonymous releases cannot retain privacy.
+
+An adversary can follow the sensitive attribute to link sensitive information to an individual's record. In the literature, the word \emph{linking} is used to mean the process of identification of an individual's record in the published data sets by linking his/her non-sensitive attributes with published information and then revelation of sensitive information from that record. This definition is for single publications where it is hardly possible to follow the sensitive attribute to infer sensitive information of an individual. However, from the above example we see that in case of multiple publications, it is possible to link the sensitive information with an individual's (victim's) record by following the sensitive attributes. In this work, we call this property $linkability$ by which it is possible to infer individual's sensitive information by linking sensitive attributes from multiple independent publications.
+
+It is not possible to avoid such linking. Based on the properties of \emph{partition} based techniques, an attacker can narrow down the set of possible sensitive attributes by intersecting the set of sensitive values (common sensitive values) present in his/her equivalence groups (Definition~\ref{def:equivalent_group}) from different published data sets. Actually, the linkability may always exists and there is no way to confirm the number of common sensitive values of an individual's equivalence groups across multiple publications. However, if we do not consider the equivalence group carefully before publishing the data set then there may be a complete privacy breach as we have seen from the first example. Therefore, to cope with this attack we need to make the publication in such a way that individual's sensitive attribute can be mapped with different possible values after combining different anonymous releases (published data sets). Hence, individual's privacy is preserved.
+
+\subsection{Existing solutions are not suitable for composition attack}
+\label{subsec:existing_solution}
+Existing anonymization techniques are not flawless to handle this problem. Next we go through some of the existing anonymization techniques and analyze why they are not suitable to cope with composition attack and after that a top level discussion of a possible solution.
+
+There are a number of methods for serial publication~\cite{Fung2008,Wang2006a,Wong2010,Xiao2007} (multiple publications from same data owners using their dynamic data sets). However, these methods are unsuitable for preventing the composition attack. All data sets published in a serial publication are controlled by a owner who knows all versions of previously published data, and the data owner can modify the current version to make the intersection satisfying a privacy condition. In multiple independent publications, a data owner does not know any others data sets that are potentially used for composition attack. Therefore, the intersection set is unknown and existing serial publication principle is inapplicable.
+
+It has been shown that $\epsilon$-differential privacy~\cite{Dwork2006} can protect data from the composition attack. Differential privacy requires that the absence or presence of an individual does not significantly affect the data analysis. Moreover, the majority of the techniques designed to support $\epsilon$-differential privacy on interactive\footnote{In an interactive framework, a data miner/recepient can pose aggregate queries through an anonymization technique, and a data set owner answers these queries in response.~\cite{Mohammed2011}} data access as data publication is for non-interactive\footnote{In a non-interactive framework, the data set owner first anonymizes the raw data and then releases the anonymized version.~\cite{Mohammed2011}} data access. Although differential privacy has been extended to data publication~\cite{Hay2010,Mohammed2011,Xiao2011}, the utility is low. Because the main idea of non-interactive (data publication) settings of differential privacy is to publish the noisy count of all sensitive values for different groups of people. But, not all the equivalence groups have records with all sensitive values. When the count is small (say zero), in original data set the count could be anything and this will happen in each group. We will show (Section~\ref{sec:sComp_Evaluation_diff_privacy}) that the data utility may be low when differential privacy is used for data publication.
+
+The composition attack can be resolved when organizations collaborate. For example, after anonymization the organizations can check the common diseases between different groups of anonymized data sets and enforce the anonymous version to satisfy a certain privacy requirement. Some methods~\cite{Jiang2006,Malin2008,Malin2010} solve this problem by suppressing the overlapped records in distributed data sets. However, coordination is not always possible because a publisher may be limited in their communication or computation ability or simply may be unaware of what other publishers exist. Moreover, the protections do not explicitly address the linkability of the sensitive values.
+
+%Ganta et. al.~\cite{Ganta2008} first define the composition attack where two independent data publications are available to the adversary. They show how the composition attack can be performed and existing well-accepted partitioning based privacy models~\cite{Sweeney2002,Machanavajjhala2007,Li2007} are vulnerable to the attack.
+
+\subsection{Fundamental cause and possible solution}
+\label{subsec:fundamental_cause}
+
+Linkability helps the attackers to narrow down the search domain for sensitive information of the victim. The number of common sensitive values across multiple publications in individual's equivalence group determines the measure of linkability. For example, if $d$ represents the value of such common sensitive values, then the linkability of those releases is $d$ or one anonymous release is $d$-linkable with another release. In other words, $d$-linkable means an individual's sensitive attribute can be mapped with $d$ possible sensitive information when combining different independent releases. Therefore, when the value of $d$ increases, the risk of individual's privacy decreases and the other way around. In our first example, when common sensitive value is only one, Alice's privacy is completely compromised. However, in the second example when there are multiple common sensitive values, the attacker can not have the exact sensitive information of Clark. Therefore, to cope with composition attack we need to have control on the linkability.
+
+For independent publication, it is hardly possible to have control on the linkability directly. In this case, we can look for a probabilistic solution where the data publisher can predict to what extent the linkability may exist in the published data sets. Therefore, before publishing a data set, a publisher can measure that probability, and then take actions (Section~\ref{sec:algorithm}) accordingly. When an anonymous release has the expected linkability (say $d$) with expected confidence (say $\alpha$) then that anomymous release is $(d,\alpha)$-linkable with other releases. Therefore, in this paper, we propose a solution based on a probabilistic model to bound the confidence of composition attack. Specifically, the contributions of the paper are as follows.
+
+
+%and linkability exists when there are common sensitive attributes in any indiviudal's equivalence groups across multiple organizations. Furthermore, there is no way to confirm that linkability is no longer exists after data publication, because it is naturally true that same group of people from a location must have some common sensitive values. But, when we do not consider the equivalence group carefully before publishing the data set then there may be a privacy breach as we have seen from our previous example. Therefore, to cope with this attack we need to make the publication in such a way that the data publisher can say with a confidence that at least a number of sensitive attributes will be common in equivalence group for any individual across multiple publications. Linkibility still exists in this scenario, however we can control the confidence of an attacker regarding the sensitive information of the victim. For example, if in our last example Alice equivalence group has multiple common sensitive values say AIDS, Cancer and Hepatitis, then that attacker can not reveal the exact sensitive information of Alice. Hence, Alice's privacy is preserved. When a data publication can have a number of sensitive information common with each of its equivalence class with other publication, we say that publication unlikable.
+%
+%
+%Therefore, to prevent the composition attack, we need to publish an unlinkable data set. However, to make an anonymous data set unlinkable is barely possible when organizations are going to publish their data independently. In this case, we can look for a probabilistic solution where the data publisher can say to what extent his published data sets can be unlinkable. Therefore, in this paper we propose a solution based a probabilistic model to bound the confidence of linkability. Specifically, the contributions of the paper are as follows.
+
+\begin{itemize}
+  \item First,  we propose a new model to reduce the risk of the composition attack. Our model is applicable to each publisher's data set independently and without coordination. While prior method, such as $m$-invariance~\cite{Xiao2007} have been proposed to anonymize  multiple data publications, it does not address the composition attack since data owners do not have knowledge about the overlapping records in others' data sets. We recognize that ~\cite{Baig2011} extended the $m$-invariance principle for the composition attack by making $m$-number of (or nearly) sensitive values, but this model is only applicable to data sets with small number of sensitive values. Furthermore, the coordination models such as~\cite{Jiang2006,Malin2008,Malin2010} require suppression of the overlapped records in distributed data sets. By contrast, our model can be applied to each data set individually without suppressing any record and without restricting the number of sensitive values.
+
+  \item Second, we design an efficient post-processing algorithm to implement our model. Moreover, the post-processing method can run on existing partitioning-based anonymization approaches. The designed algorithm is very efficient with respect to time and has a negligible effect on data quality while performing data analysis on the anonymous version.
+\end{itemize}
+
+The rest of the paper is organized as follows. Section 2 formalizes the underlying concepts and composition problem. Section 3 provides the theoretical foundation for privacy preservation. Section 4 introduces our method for achieving the principle described in Section 3. Section 5 uses a series of empirical investigations demonstrating the privacy improvement after applying the post processing, as well as the tradeoff in composition attack mitigation and data utility through our approach and a differentially private publication strategy. Section 6 presents an extension of our model to a more general case. Section 7 discusses some of the related works. Finally, Section 8 and Section 9 conclude the paper with mentioning the limitations of our model and concluding remarks respectively.
+
+%
+%
+\begin{table}[t]
+\centering
+%%
+\begin{tabular}{c c}
+%
+\begin{minipage}[htbp]{0.45\textwidth}
+\includegraphics[scale=.45]{figures/H1_original_dataSet}
+\end{minipage}
+%
+&
+%
+\begin{minipage}[htbp]{0.45\textwidth}
+\includegraphics[scale=.45]{figures/H2_original_dataSet}
+\end{minipage}
+%
+\end{tabular}
+\caption{Original data of (a) Hospital-A (b) Hospital-B .}
+\label{original_table_H1_H2}
+%%
+%\vspace{-6mm}
+\end{table}
+%
+
+\section{Preliminaries}
+\label{sec:preliminary}
+Let $D=\{t_1,t_2,\dots,t_n\}$ be a multi-set of records, where each record $t_i$ represents the information of an individual $i$. Each record $t_i = \{id_i, q_i, s_i\}$, where $id_i \in ID$, $q_i \in QID$, and $s_i \in S$. $ID$ represents unique identifiers, which is used to uniquely identify a record such as name or medicare card number. $QID$ is a set of other attributes that can potentially identify a person, such as age, zip code and sex, and $S$ is a set of sensitive values such as disease.  The quasi-identifiers $QID=\{q_1,q_2,\dots,q_m\}$ consist of $m$ attributes, each of which is associated with an attribute taxonomy.
+
+In a published data set, the attribute ID has been removed, $QID$ attributes and sensitive attributes are published (maybe with modification) in the released data sets. If the $QID$ and the sensitive values are not modified, an adversary may use record linkage~\cite{recordLinkage} between $QID$ attributes and external information to link an individual's identity to their sensitive information. To avoid this disclosure, one frequently used solution is to replace the $QID$ values with more general values from its taxonomy, so that the individuals in an equivalence group (Definition~\ref{def:equivalent_group}) are indistinguishable and their sensitive values can not be inferred with a high confidence. Some well known principles are $k$-anonymity\cite{Sweeney2002}, $l$-diversity~\cite{Machanavajjhala2007}, ($\alpha, k$)-anonymity~\cite{Wong_alpha} and $t$-closeness~\cite{Li2007}. Therefore, consider $D^{*}=\{\hat{t_1},\hat{t_2},\dots,\hat{t_n}\}$ be a published data set, where $\hat{t}=\{\hat{q_1},\hat{q_2},\dots,\hat{q_m},s\}$ and $\hat{q_i}$ is any value from the taxonomy of $q_i$.
+%
+\begin{definition}[Equivalence Group]
+\label{def:equivalent_group}
+For an anonymous data set, an equivalence group is a set of records/tuples in that data set having identical values in QID attributes.
+\end{definition}
+%
+For example, tuples 1 to 4 in Table~\ref{anonymous_table_H1_H2}(a) form an equivalence group with respect to \{age, sex, zip code\}, because their corresponding values are identical.
+
+Let $D_1^{*},D_2^{*}, \dots D_N^{*}$ be the $N$ independent anonymized releases with minimum equivalence group size $k$. We use the notation $E_{i}^{j}$ to represent the equivalence group of an individual $i$ in a published data set $D_j^{*}$ and use the notation $S(E_{i}^{j})$ to represent the set of (distinct) sensitive values corresponding to that equivalence group. Table~\ref{tab:notations} summarizes some common notations used in our paper.
+%
+%%
+\begin{table}[t]
+\centering
+    \caption{Notations}
+    \label{tab:notations}
+    \begin{tabular}{|p{18mm}|p{80mm}|} \hline
+    {\bfseries Notation} & {\bfseries Description} \\ \hline
+    $\Omega$ & large population from where the records are collected \\ \hline
+    $D,D_1,D_2$ & the original data sets \\ \hline
+    $D^{*},D_1^{*},D_2^{*}$ & published data sets of $D,D_1$ and $D_2$ respectively \\ \hline
+    $D_{0}$ & the hypothesized data set, $|D_0| = |D_{2}^{*}|$ \\ \hline
+    $P(X)$ & the probability of event $X$ happens \\ \hline
+    $t_i$ & a record $t$ of an individual $i$ \\ \hline
+    $\hat{t_i}$ & generalized record of a record $t$ \\ \hline
+    $ID$ & the identifier attributes \\ \hline
+    $QID$ & the quasi-identifier attributes \\ \hline
+    $S$ & set of all sensitive values \\ \hline
+    $q_i$ & i'th QID attribute \\ \hline
+    $\hat{q_i}$ & generalized value of $q_i$ \\ \hline
+    $s$ & the sensitive attribute \\ \hline
+    $s^d$ & the set of $d$ different sensitive values \\ \hline
+    $E_{i}^{j}$ & the equivalence group of an individual $i$ in a published data set $D_j^{*}$ \\ \hline
+    $S(E_{i}^{j})$ & the set of (distinct) sensitive values corresponding to $E_{i}^{j}$ \\ \hline
+    $\Re_{i}$ & effective anonymity of an individual $i$ \\ \hline
+    \end{tabular}
+    %\vspace{-12pt}
+\end{table}
+%%
+%
+
+In a published data set, the anonymity factor of an individual is equal to the number of distinct sensitive values of the equivalence group where that individual's record resides~\cite{Machanavajjhala2007}. This is called effective anonymity of that individual. However, when there are multiple releases available (same individual is present in all those releases) then his/her effective anonymity may change~\cite{Ganta2008}. The effective anonymity of an individual is defined by the definition~\ref{def:effective_anonymity}
+%
+\begin{definition}[Effective anonymity]
+\label{def:effective_anonymity}
+For an individual $i$, the effective anonymity offered by $N$ independent releases is equal to the number of distinct common sensitive values of those equivalence groups into which the individual's record resides. The effective anonymity for $i$ with respect to those releases is
+\begin{eqnarray*}
+ \Re_{i} = |\cap S(E_{i}^{j})|, j= 1, \dots ,N
+\end{eqnarray*}
+\end{definition}
+
+%In a published data set, the equivalence group size represents the anonymity guarantee (factor) to an individual $i$. However, as pointed in~\cite{Machanavajjhala2007} the anonymity factor is less than the group size and is equal to the distinct sensitive values in that group. This is called effective anonymity~\cite{Ganta2008}.
+%%
+%\begin{definition}[Effective anonymity]
+%\label{def:effective_anonymity}
+%For an individual $i$, the effective anonymity offered by a release $D_j^{*}$ is equal to the number of distinct sensitive values of the equivalence group into which the individual's record resides. The effective anonymity for $i$ with respect to the release $D_j^{*}$ is, $\Re_{i}^{D_j^{*}} = |S(E_{i}^{D_j^{*}})|$.
+%\end{definition}
+%%
+%For each targeted individual $i$, $\Re_{i}^{D_j^{*}}$ is the effective anonymity with respect to a single publication $D_j^{*}$ and this anonymity may change with the availability of other releases. Therefore, the effective anonymity with respect to $N$ independent releases is,
+%\begin{eqnarray*}
+%\Re_i^{D_j^{*} , j=1,\dots,N} = |\cap S(E_{i}^{D_j^{*}})|, j= 1, \dots ,N
+%%\vspace{-8mm}
+%\end{eqnarray*}
+%
+%%
+%
+\textbf{Knowledge of an adversary} A victim $v$ is an individual in $D$ with $t=\{ID = v,QID,s\}$. The adversary knows the $QID$ values of $v$ and the fact that the victim has visited multiple hospitals.
+
+%\begin{definition}[Knowledge of an adversary]
+%\label{def:adversary_knowledge}
+%A victim $v$ is an individual in $D$ with $t=\{ID = v,QID,s\}$. The adversary knows the $QID$ values of $v$ and the fact that the victim has visited multiple hospitals.
+%\end{definition}
+%
+%%
+%
+\textbf{Knowledge of a data publisher} A publisher has no knowledge of other data sets that may contain overlapping records with its published data set. However, a publisher understands that the values of $QID$ and $S$ of other data sets follow the same distributions, and that other data sets have been anonymized by the same anonymization procedure.
+
+
+%\begin{definition}[Knowledge of data publisher]
+%\label{def:publisher_knowledge}
+%A publisher has no knowledge of other data sets that may contain overlapping records with its published data set. However, a publisher understands that the values of $QID$ and $S$ of other data sets follow the same distributions, and that other data sets have been anonymized by the same anonymization procedure.
+%\end{definition}
+%
+%In this setting, we assume that the two independent data publishers (e.g., hospitals) have the original data sets, such as $D_1$ and $D_2$, and their published data sets are $D_1^{*}$ and $D_2^{*}$, respectively. For simplicity, we consider two independent locations. We further assume that some of the records in both data sets ($D_1$ and  $D_2$) correspond to the same individuals. This is a realistic assumption because patients visit multiple healthcare organizations, for various purposes \cite{Malin2004} and there is no guarantee that these organizations coordinate their data publications. Moreover, the adversary has knowledge about the QID of victim and that the victim has visited both hospitals.
+For simplicity of discussion, we first consider two independent publications. Later on we will present (Section~\ref{sec:n_independent}) the scenario of $N$ independent publications. Therefore, considering two independent publications, the privacy breach is formally defined by Definition~\ref{def:privacy_breach}.
+
+\begin{definition}[Privacy Breach]
+\label{def:privacy_breach}
+Given published data sets $D_1^{*}$ and $D_2^{*}$ and the knowledge that a victim $v$ has records in both published data sets. A privacy breach occurs if the effective anonymity of an individual $i=v$ is less than the value (say $d$) defined by the publishers. Therefore, the privacy breach occurs when, $\Re_i = |S(E_{i}^{1}) \cap S(E_{i}^{2})| < d$, where $d$ represents a publisher's predefined protection parameter.
+%$\exists_{i=v}\{ S\{T_{i}(D^{*})\} \cap S\{T_{i}(B^{*})\} \} = 1$
+\end{definition}
+
+For instance, let us consider $d=2$, then Alice's privacy is breached in anonymous releases of Tables 2(a) and (b), where $\Re_{Alice} < 2$. An adversary can identify that Alice is suffering from AIDS. Therefore, the objective of this work is to minimize the privacy breach transpired by overlapping records.
+
+It is observed that the main property of a published data set that makes the composition attack possible is $linkability$, which can be formally defined as follows.
+
+\begin{definition}[Linkability]
+The identification of an individual's sensitive information by linking sensitive values in equivalence group from multiple publications without precisely identifying his/her record.
+\end{definition}
+
+In Tables~\ref{anonymous_table_H1_H2}(a) and (b), the \emph{linkability} reveals the sensitive value that belongs to Alice without preciously identifying her record in those data sets.
+
+%
+\begin{table}[t]
+\centering
+%%
+\begin{tabular}{c c}
+%
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.45]{figures/H1_anonymous_dataSet}
+%\center\\$(OCC)$
+%\end{center}
+
+\end{minipage}
+%
+&
+%
+\begin{minipage}[htbp]{0.45\textwidth}
+\includegraphics[scale=.45]{figures/H2_anonymous_dataSet}
+%\center\\$(SAL)$
+\end{minipage}
+%
+\end{tabular}
+\caption{(a) Anonymous table from Hospital-A (b) Anonymous table from Hospital-B.}
+\label{anonymous_table_H1_H2}
+%%
+%\vspace{-10mm}
+\end{table}
+%
+
+In the generalization scheme, since the generalized values are faithful to their original values, it is possible to locate the group of a record. Hence, the $linkability$ exists. In perturbation (randomization) scheme, the $linkability$ may be prevented since randomized values are not faithful to the original values. However, if the noise is not big, the adversary has a high confidence to estimate the original values in some intervals and $linkability$ still exists. If the noise is large, the $linkability$ is prevented, but the utility of published data set is low. Therefore, it is difficult to control $linkability$ in both schemes.
+
+However, we can control the confidence of an adversary to link an individual's sensitive information by increasing the number of distinct shared sensitive values in that individual's equivalence group when combining different anonymous releases. Hence, reduce the probability of success of a composition attack. When a data set is anonymized in such a way that effective anonymity of an individual $i$ can have a pre-defined threshold (say $d$), we call that anonymous data set $d$-linkable. $d$-linkable property means that individual's sensitive attribute can be mapped with $d$ possible sensitive values when combining multiple anonymous releases, thus can mitigate the risk of composition attack. Therefore, $d$-linkable property can be defined by the following definition.
+%
+%\vspace{-3mm}
+%\begin{definition}[null-linkable]
+%\label{def:null_linkable}
+%Two anonymous data sets $D_1^{*}$ and $D_2^{*}$ are called null-linkable if for any victim individual $v$ : $|S\{T_{v}(D_1^{*})\} \cap S\{T_{v}(D_2^{*})\} |= \emptyset$
+%%\vspace{-2mm}
+%\end{definition}
+%
+\begin{definition}[$d$-linkable]
+\label{def:unlinkable}
+Two anonymous data sets $D_1^{*}$ and $D_2^{*}$ are called $d$-linkable if for any individual $i=v$ :  $\Re_i \geq d $, where $d \geq 2$.
+%\vspace{-2mm}
+\end{definition}
+%
+%If different published data sets are null-linkable, then the composition attack can not be successful. This can only happen when an individual diagnosis different diseases at different locations. However, the chance of $null-linkable$ is very low, as some other person can have the same diagnosis result as the targeted individual has. Therefore, no way to ensure this property in independent data publication.
+
+If the data sets are $d$-linkable, then an individual's sensitive information can be mapped with $d$ possible sensitive values. Therefore, an adversary can not identify the exact sensitive information of an individual correctly. The diversity of values in the shared sensitive attributes can protect the individual's privacy. Unlike $l$-diversity, $d$-likable property measures the diversity in shared sensitive values by an individual's equivalence groups, when combining different anonymous data sets from same overlapping population. Therefore, we aim to achieve $d$-linkable property to reduce the probability of composition attack in anonymous releases. Furthermore, if a patient has been diagnosed with two different diseases in two hospitals, there will be no risk for composition attack, but this is, not of our concern in this paper.
+
+%\vspace{-2mm}
+\begin{definition}[$d$-secure for the composition attack]
+\label{def:composed_securely}
+Two anonymous data sets $D_1^{*}$ and $D_2^{*}$ are secure for the composition attack if for any victim individual $i=v$ the following conditions is satisfied: $\Re_i \geq d $, \text {where, the value $d \geq 2$.}
+\end{definition}
+%
+%
+%\begin{proof}
+%Consider two anonymous data sets, $D^{*}$ and $B^{*}$. $T_{i}(D^{*})$ and $T_{i}(B^{*})$ represents the equivalence groups of $QID's$  for an individual $i$. Let $S\{T_{i}(D^{*})\}$ and $S\{T_{i}(B^{*})\}$ represent multi-sets of sensitive information in those equivalence groups and $|S|$ represents total number of sensitive values in the data set. So, for any victim individual $v$ it satisfies the following equation,
+%\begin{eqnarray*}
+% \exists_{i=v}\{ S\{T_{i}(D^{*})\} \cap S\{T_{i}(B^{*})\} \} \geq l
+%\end{eqnarray*}
+%where, $l = \emptyset$ or $\{1,2,...|S|\}$. Now, if the two data sets are \emph{null-linkable} then,
+%\begin{eqnarray*}
+%\exists_{i=v}\{ S\{T_{i}(D^{*})\} \cap S\{T_{i}(B^{*})\} \} = \emptyset  \ \ \ \ \ \ (a)
+%\end{eqnarray*}
+%Again, if two data sets are \emph{unlinkable} then,
+%\begin{eqnarray*}
+%\exists_{i=v}\{ S\{T_{i}(D^{*})\} \cap S\{T_{i}(B^{*})\} \} \geq 2 \ \ \ \ \ \ (b)
+%\end{eqnarray*}
+%So, from equation (a) and (b), it is clear that in any case (either \emph{null-linkable} or \emph{unlinkable}) privacy breach can not occur as it does not hold the following situation,
+%\begin{eqnarray*}
+%\exists_{i=v}\{ S\{T_{i}(D^{*})\} \cap S\{T_{i}(B^{*})\} \} = 1.
+%\end{eqnarray*}
+%
+%Therefore, the two anonymous data sets are securely composed.
+%
+%\end{proof}
+
+\section{Privacy Model (d,$\alpha$)-linkability}
+
+To mitigate the composition attack, our goal is to publish a data set that is $d$-linkable with another data set. In this section, we provide a high-level characterization of our model along with formal objective to achieve (d,$\alpha$)-linkability.
+
+Let us consider that the original data sets $D_1$ and $D_2$ are samples from the large population $\Omega$ and the intersection of $D_1$ and $D_2$ are not empty. $D_1^{*}$ and $D_2^{*}$ are the anonymous version of them respectively. Another data set $D_0^{*}$ of the size of $D_2^{*}$ is a hypothesized data set of $D_2^{*}$. Later on we explain how to generate $D_0^{*}$ from $\Omega$. All the data sets have same attribute domain. For simplicity of discussion, we further assume that the size of $D_1^{*}$ and $D_2^{*}$ are same. Therefore, the privacy model is defined as follows.
+%
+\begin{definition}[($d,\alpha$)-linkable]
+\label{def:privacy_model}
+An anonymous release $D_1^{*}$ is $(d,\alpha)$-linkable with another anonymous release $D_2^{*}$, if with $\alpha$ confidence $d$ distinct common sensitive values appear in any individual's equivalence groups of those releases.
+\end{definition}
+%
+If in each equivalence group of $D_1^{*}$ there are $d$ sensitive values that are common with another release, we call the $D_1^{*}$ is $d$-linkable (see Definition~\ref{def:unlinkable}) or the linkability of $D_1^{*}$ is $d$. Hence, it can reduce the chance of composition attack with expected confidence. An observation follows.
+\begin{observation}
+If two data releases satisfy $(d,\alpha)$-linkable, they are $d$-secure for the composition attack with $\alpha$ confidence.
+\end{observation}
+
+We now model how to estimate the linkability of $D_1^{*}$ with $D_2^{*}$, which may be published after $D_1^{*}$. It is assumed that publisher of $D_1^{*}$ does not have knowledge of original $D_2$ and/or its anonymous version $D_2^{*}$. Therefore, there is no way to estimate linkability of $D_1^{*}$ accurately. However, we can use the hypothesized data set $D_0^{*}$ to estimate the linkability of $D_1^{*}$ with $D_2^{*}$. Consider, the hypothesized data set $D_0^{*}$ is a random sample of $\Omega$ with record probability (Definition~\ref{def:record_probability}) $P(\hat{t})$, where $\hat{t}$ is a record with sensitive value $s$.
+
+\begin{definition}[Record probability]
+\label{def:record_probability}
+We assume that attribute values and the sensitive value in a record are independent. $P(q_i)$ and $P(s)$ are the frequencies of value $q_i$ and sensitive value $s$ in the population. The probability of a record $\hat{t} = \{\hat{q}_1,\hat{q}_2 \dots, \hat{q}_m, s \}$, denoted as $P(\hat{t})$, is assigned as the following.
+\begin{eqnarray}
+\label{equ:record_probability}
+P(\hat{t}) & = & P(\hat{q}_{1})\times P(\hat{q}_{2})\times\dots \times P(\hat{q}_{m}) \times P(s) \nonumber \\
+& = & (\prod_{i=1}^{m} P(\hat{q}_{i}))\times P(s)
+\end{eqnarray}
+\end{definition}
+%
+For example, let us assume that $P(20-30) = 0.15$, $P(\text{female}) = 0.5$, and  $P(\text{diabetes}) = 0.05$ are obtained from the patient population. Let $\hat{t} = \{ 20-30, \text{female}, \text{diabetes}\}$. $P(\hat{t}) = 0.00375$. Note that the publisher's knowledge may include that a 40-60 female has higher probability of diabetes, say 0.02. Such knowledge can also be modeled. The independency assumption is used when we do not have other knowledge.
+%
+In the above estimation, the independency between $QID$ and sensitive value is assumed. When they are not, their relationship can be modeled by other data mining models. For example, the confidence of an association rule $(Age[40-60],M)$ $\rightarrow$ $Prostate$ $Cancer$, can be used to model the probability of a group of people to a disease.
+
+Linkability of $D_1^{*}$ exists when $D_0^{*}$ contains a record from same individual or a similar record from other individual with same sensitive value. Therefore, to check the linkability of $D_1^{*}$ with $D_0^{*}$, we need to determine whether a record $\hat{t}$ is in the hypothesized data set $D_0^{*}$ just by chance. Note that, $\hat{t}$ could be any record including the record already in $D_1^{*}$.
+
+From record probability (Definition~\ref{def:record_probability}), we have $P(\hat{t})$ and $1-P(\hat{t})$ that represent the probability of success and failure respectively of selecting a record $\hat{t}$ by a random draw. Therefore, we can consider each draw is a Buernoulli trail and the process of generation of the data set $D_0^{*}$ as $n$ such random draws that follow the binomial distribution: $f(\sigma,n,\rho)$, where $\sigma$ is the exact number of successes for selecting a record $\hat{t}$ from a total $n$ random draws and $\rho$ is the probability of a success of that event. Therefore,
+\begin{eqnarray}
+\rho = P(\hat{t}) = (\prod_{i=1}^{m} P(q_{i}))\times P(s)
+\end{eqnarray}
+The random draws should be without replacement. However, we know when the population is large~\footnote{ When all the attributes are considered as independent, the population becomes $Domain(q_1) \times Domain(q_2) \times \dots \times Domain(q_m) \times Domain(S)$, which is large compared to the published data set or the sample size.} enough compared to the number of draws or sample size then it seems reasonable that sampling without replacement is not too much different than sampling with replacement~\cite{math:online}.
+
+Therefore, if $P(\hat{t},s)$ represents the probability of having at least one $\hat{t}$ with sensitive value $s$ in $D_0^{*}$ then,
+\begin{eqnarray}
+P(\hat{t},s) & = & 1-f(0,n,\rho) \nonumber \\
+& = & 1-(1-\rho)^{n}
+\end{eqnarray}
+
+In the above equation, since $\hat{t}=\{\hat{q_1},\hat{q_2},\dots \hat{q_m},s\}$ is a generalized version of $t$, this generalized $QID$ can be mapped with an equivalence group $E_i^{1} = \{\hat{q_1},\hat{q_2},\dots \hat{q_m}\}$ in $D_1^{*}$. Therefore, the probability $P(\hat{t},s)$ also represents the probability of appearing a sensitive value $s$ in an equivalence group $E_i^{0}$ in $D_0^{*}$. Then,
+\begin{eqnarray}
+ P(\hat{t},s) = P(E_i^{0},s) =  1-(1-\rho)^{n}
+\end{eqnarray}
+
+Moreover, if $P(E_i^{0},s^d)$ representing the probability of $d$ different sensitive values will be appeared together in the equivalence group $E_i^{0}$ in $D_0^{*}$ just by chance. Then,
+\begin{eqnarray}
+\label{equ:privacy_guarantee}
+P(E_i^{0},s^d) & = & P(E_i^{0},s_1) \times P(E_i^{0},s_2) \times \dots \times P(E_i^{0},s_d) \nonumber \\
+& = & \prod_{r=1}^{d} P(E_i^{0},s_r)
+\end{eqnarray}
+
+Since we have assumed that the equivalence group $E_i^{0}$ is already in $D_1^{*}$, here we only consider those $s$ in $s^d$ that are already in $E_i^{1}$. Therefore,
+\begin{eqnarray*}
+s^d=\{s_1, s_2, \dots , s_d\} \subset  S(E_{i}^{1})
+\end{eqnarray*}
+
+If $P(E_i^{0},s^d)$ represents the probability of appearing $d$ different sensitive values in $E_i^{0}$ that are already in $E_i^{1}$, it also represents the probability that $d$ different sensitive values will be common in equivalence groups $E_i^{0}$ and $E_i^{1}$ with confidence $P(E_i^{0},s^d)$. Therefore, after publishing the data set $D_0^{*}$, the effective anonymity of an individual $i$ will be $d$ with confidence $P(E_i^{0},s^d)$. In other words, $D_1^{*}$ is $d$-linkable with $D_0^{*}$ with confidence $P(E_i^{0},s^d)$. Hence, $D_1^{*}$ is $d$-linkable with $D_2^{*}$ with same confidence. Thus,
+\begin{eqnarray}
+\label{equ:effective_anonymity}
+\Re_i = |S(E_{i}^{1}) \cap S(E_{i}^{0})| = |S(E_{i}^{1}) \cap S(E_{i}^{2})| \geq d
+\end{eqnarray}
+
+Based on this framework, we can define the objective of our protection model. Given a data set $D_1^{*}$ which has already been anonymized and the expected number of shared sensitive value $d$, our objective is to generate a data set $\widehat{D_1^*}$ such that, for each individual $i$ in $\widehat{D_1^*}$, the effective anonymity is $d$ with hypothesized data set $D_0^{*}$  for which the publisher's confidence $\alpha = P(E_i^{0},s^d)$.
+
+
+\section{An Algorithm to Achieve $(d, \alpha)$-linkable}
+\label{sec:algorithm}
+This section explains the method to achieve our objective. This method first checks whether the anonymous data set can provide the privacy guarantee, if not, the anonymous data set could be subject to a composition attack. Doing few modifications over an anonymized data set can make it safe against composition attack. Therefore, we design our method as a post-processing step after anonymization. Our method achieves the objective by applying more generalization on the already anonymized data set. It is also possible that we suppress records in the equivalence groups that does not satisfy the condition, but it may lead to suppress the whole data set (i.e., in worst case, when none of the equivalence group provides the privacy guarantee). Question arises, why should we apply more generalization as we already know that more generalization means less data utility? The answer of this question is that, this method applies a minimum generalization that is required to satisfy the privacy guarantee. Moreover, at Section~\ref{Experiments}, we show that our designed post-processing method have a very negligible effect on data utility but at the same time it can reduce a significant amount of privacy risk. Therefore, we believe this little compromise with data utility should be acceptable where we can get more privacy guarantee.
+
+There are two ways to apply generalization on the data set that has already been anonymized. The first one is to increase the equivalence group size and re-anonymize the original data set, and the second one is to merge the equivalence group that does not satisfy the criterion with another group that already meets the privacy condition.
+
+The simplest way to apply more generalization is to increase the equivalence group size until the anonymous release satisfies the criterion. Rare sensitive values could lead to very large group size. To overcome this difficulty, we can apply generalization on the sensitive value itself. For example, consider that in the whole data set 5\% of patients have type-I diabetes and 7\% of patients have type-II diabetes. If we generalize both of the diseases to their parent value diabetes, then 12\% of patients are listed in this group. This process converts the lower frequency sensitive values into higher frequency group. However, the demerits of this technique is that it applies generalization to all equivalence groups including those already have satisfied the criterion. For example, consider that in an anonymous data set there are 100 equivalence groups. Among them there is only one equivalence group that does not meet the requirement. In such worst case, if we start increasing the equivalence group size, the generalization will be applied to all equivalence groups. Hence, the data utility will be low. As we know, more generalization means less data utility.
+
+Another way to achieve the objective is to merge two equivalence groups where one of them already satisfies the criterion. The merging can be achieved by applying more generalization on some of the QID values in both equivalence groups. Therefore, they can have same QID values and can form one equivalence group. In worst case (example from above paragraph), where only one equivalence group among 100 equivalence groups does not satisfy the criterion, we need to apply more generalization to only one equivalence group and remaining equivalence groups can be kept unchanged. For example, consider the equivalence group (age:20-30, sex:any, zip-code:50**) satisfies the privacy criterion but the equivalence group (age:20-30, sex:female, zip-code:50**) does not. To merge these equivalence groups we can replace the `sex' attribute with the value (sex:any). Therefore, the new equivalence group becomes (age:20-30, sex:any, zip-code:50**).
+
+When an equivalence group does not meet the requirement of privacy, an important decision is to choose another equivalence group for merging. For example, any equivalence group can be merged with an equivalence group (age:any, sex:any, zip-code:any) and is easy to achieve objective. However, the published data sets will be useless. Note that, the equivalence groups for merging are chosen from those that already have met the privacy requirement. Therefore, to retain more information, for merging our method chooses the nearest equivalence group (Definition ~\ref{def_nearest}) of that equivalence group that does not meet the privacy condition.
+
+\begin{definition}[Nearest Equivalence Group]
+\label{def_nearest}
+Given a measure of distance between two equivalence groups (e.g., the number of moves required to convert one equivalence group into another). The equivalence group that has the shortest distance to the target equivalence group is the nearest equivalence group of the target group.
+%\vspace{-2mm}
+\end{definition}
+
+%For example, consider $E_i = \{Age(20-40), Sex(M), ZipCode (50**)$, $E_j = \{Age(20-40), Sex(*), ZipCode (50**)$ and $E_k = \{Age(20-40), Sex(F), ZipCode (50**)$. If we want to convert $E_i$ to $E_j$, we need to replace the sex attribute $M$ by the top generalized value $'*'$ from sex taxonomy tree, which requires only one move. So, $n_{ij}=1$.  Now, if we want to convert $E_i$ as $E_k$, at first we have to move at the top level of taxonomy tree sex and then move back to the level $F$ which requires 2 moves. So, $n_{ik} = 2$, which means equivalence group $E_j$ is nearer than the equivalence group $E_k$ to $E_i$. It is also possible that more than one equivalence group can require the same number of moves to convert it into another, which can have same distance from a particular equivalence group. In that case, the equivalence group requires moves in the attributes have less domain size is considered as nearest equivalence group. For example, consider another equivalence group $E_u = \{Age(20-40), Sex(M), ZipCode (505*)$. This equivalence group also requires 1 move to convert as $E_i$. But, as $E_u$ requires move in $ZipCode$ attribute, which has larger domain size than $Sex$ attribute, we consider $E_j$ is nearer than $E_u$ to $E_i$.
+
+When an equivalence group does not satisfy $(d,\alpha)$-linkability, we merge the group with its nearest equivalence group. This process repeats until $(d,\alpha)$-linkability is satisfied. The complete post-processing algorithm is summarized in Algorithm~\ref{alg:sComp}.
+%
+%
+\begin{algorithm}
+\caption{Secure Composing $(sComp)$ Algorithm} \label{alg:sComp}
+\small
+\textbf{Input:} Data set $D_1^{*}$ (already subject to a $k$-anonymity algorithm) with $m$ attributes. Attribute generalization taxonomies $T$ for each attribute. Linkable parameters $\alpha$ and $d$.\\
+\textbf{Output:} $\widehat{D_1^{*}}$
+\begin{algorithmic}[1]
+\STATE Compute the equivalence groups $E_i^{1}$ and the set of sensitive values $S(E_i^{1})$ for each equivalence group. Consider $|E_i^{1}|$ represents the number of equivalence groups.
+\STATE Set a flag set $F[|E_i^{1}|] = FALSE $
+\STATE Completion flag $F_c = TRUE$
+\FOR {$i$ =1 to $|E_i^{1}|$}
+\STATE Calculate $P(E_i^{0},s^d)$ for each observed combination of $d$.
+\IF {$P(E_i^{0},s^d) \geq \alpha$}
+\STATE Set $F[i] = TRUE$
+\ENDIF
+\ENDFOR
+\FOR {$i$=0 to $|E_i^{1}|$}
+\IF {F[i] = $FALSE$}
+\STATE Merge the equivalence group $i$ with its nearest equivalence group
+\STATE Set Complete flag $F_c = FALSE$.
+\ENDIF
+\ENDFOR
+\IF {$F_c = FALSE$ }
+\STATE go to step 3
+\ELSE
+\STATE output $\widehat{D_1^{*}}$
+\ENDIF
+\normalsize
+\end{algorithmic}
+\end{algorithm}
+%
+%
+%\subsection{Implementation}
+
+We now briefly elaborate on the key steps of our algorithm, called $sComp$ (shown in Algorithm 1) followed by experimental analysis.
+%In this section, we first present an overview of our algorithm to achieve our desired goal for preventing composition attack when releasing an anonymous version for public use with implementation details. Next we explain the complexity of our algorithm followed by experimental result.
+
+\emph{\textbf{Initialization (Step 1-3)}} In steps 1 to 3, we count the number of equivalence groups. We also store the equivalence group value $E_i^{1}$ and the distinct sensitive values for each group $S(E_i^{1})$. We create one flag for each equivalence group to check at the end of our algorithm along with a completion flag $F_c$, which reports if each group has satisfied the privacy conditions. When all equivalence groups satisfy the requirement of privacy, the completion flag $F_c$ remains $TRUE$.
+
+\emph{\textbf{Checking the criteria (Step 4-7)}} These steps are used to calculate the probability that a group of sensitive values ($s^{d}$) appearing together in an equivalence group of the hypothesized data set $D_0^{*}$, where $s^{d} \subset S(E_i^{1})$. Note that, $s^d$ can be any combination of $d$ different sensitive values from $S(E_i^{1})$. For example, if $S(E_i^{1})=\{s_1,s_2,s_3,s_4\}$ and $d=3$, then there can be, ${4 \choose 3}=4$ possible groups, where each group has three distinct sensitive values. Thus, $s^{d}=\{(s_1,s_2,s_3),(s_1,s_2,s_4),$ $(s_1,s_3,s_4),(s_2,s_3,s_4)\}$. If any of the groups can satisfy the privacy requirement, the flag for the corresponding equivalence group is set to $TRUE$ and the loop terminates. Same check will continue for each equivalence groups. Generally speaking, those groups that do not have $d$ distinct sensitive values are also subject to merge.
+
+\emph{\textbf{Treating the equivalence group not satisfying requirement (Step 8-11)}} At this point, the flag for each equivalence group is checked. A false value implies that the corresponding equivalence group does not satisfy the privacy conditions. It means that the equivalence group is potentially subjected to a composition attack. Next, if any of the equivalence groups need to be merged with another equivalence group, the completion flag $F_c$ is set to $FALSE$.
+
+\emph{\textbf{Output generalized table (Step 12-15)}} If the completion flag $F_c$ is found \emph{FALSE}, the algorithm repeats from Step 3, otherwise it outputs the generalized data set $\widehat{D_1^{*}}$.
+%
+%
+\begin{table}[t]
+\centering
+\caption{Attribute domain size}
+\label{table:experiments}
+\includegraphics[scale = 1.0   ]{figures/Table-attribute-domain}
+\end{table}
+%%
+\section{Experiments}
+\label{Experiments}
+%
+We implemented the algorithm \emph{sComp} as a post-processing method on the top of a generalization-based method. This algorithm can be plugged in any generalization based anonymization algorithm. We conduct these experiments in two stages. At first stage, we compare the releases (using generalization-based approach) with and without post-processing with respect to their strength against composition attack and classification accuracy. At the second stage, we only compare the utility of differentially private releases and the releases with our post-processing method, as it is claimed that differential privacy based approach can prevent composition attack~\cite{Ganta2008}.
+
+In this work, we have used Mondrian~\cite{LeFevre2006}, a benchmark workload aware anonymization method, to $k$-anonymize data. We compare the data before (i.e., Mondrian) and after post-processing (i.e., sComp) with respect to the privacy risk against composition attack and the utility of that anonymous release. Here utility of a anonymous release is considered with respect to classification accuracy.
+
+We performed experiments with real world data sets from the U.S. census Bureau~\footnote{ http://ipums.org}. We split the data set into two independent data sets 1) Occupation and 2) Salary. Each data set consists of 600k tuples. The Occupation data set includes five quasi-identifer attributes: age, sex, education, race, birth-place and one sensitive attribute: occupation. The Salary data set contains the same QI attributes, and its sensitive attribute is salary. All QI attributes are discrete except age and education. The sizes of their domains are reported in Table~\ref{table:experiments}.
+
+\begin{figure}[t]
+\center
+%
+\begin{tabular}{c c}
+%
+\multicolumn{2}{c}{\includegraphics[scale=.4]{figures/fig_border_risk.pdf}}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/privacyRisk_dataSize_OCC}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/privacyRisk_dataSize_SAL}
+\end{minipage} \\
+%\tiny{(\textbf{\emph{Occupation}})} & \hspace{8mm}\tiny{(\emph{\textbf{Salary}})} \\
+\end{tabular}
+%\vspace{-2mm}
+\caption{The average accuracy of the composition attack of Mondrian with and without sComp process $(k = 10)$ with increasing overlapping records}
+\label{fig:privacy_risk_dataset}
+%
+%\vspace{-2mm}
+\end{figure}
+%
+%%
+%%
+\begin{figure}[t]
+\center
+%
+\begin{tabular}{c c}
+%
+\multicolumn{2}{c}{\includegraphics[scale=.4]{figures/fig_border_risk.pdf}}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/privacyRisk_eGroup_OCC}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/privacyRisk_eGroup_SAL}
+\end{minipage} \\
+%\tiny{(\emph{\textbf{Occupation}})} & \hspace{8mm} \tiny{(\emph{\textbf{Salary}})} \\
+\end{tabular}
+%\vspace{-2mm}
+\caption{The average accuracy of the composition attack of Mondrian with and without sComp process $(data set size = 101k)$ with increasing equivalence group size}
+\label{fig:privacy_risk_eGroup}
+%
+%\vspace{-2mm}
+\end{figure}
+%
+We composed five disjoint data sets from each of Salary and Occupation data set via random draws of 100,000 tuples. The remaining 100k tuples are used as an overlapping pool. We made five copies of each data set in each group, and randomly inserted 1k, 2k, 3k, 4k and 5k tuples from the overlapping pool to the copies respectively yielding 5 sets of data of size 101k, 102k, 103k, 104k and 105k. Each set of data sets share overlapping tuples of 1k, 2k, 3k, 4k and 5k respectively.
+
+%%
+\begin{figure}[t]
+\center
+%
+\begin{tabular}{c c}
+%
+\multicolumn{2}{c}{\includegraphics[scale=.4]{figures/fig_border_classification.pdf}}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_dataSize_SAL_J48}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_dataSize_SAL_Logistic}
+\end{minipage} \\
+%\footnotesize{(J48)} & \footnotesize{(Logistic Regression)}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_dataSize_SAL_NaiveBayes}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_dataSize_SAL_SVM}
+\end{minipage} \\
+%\footnotesize{(NaiveBayes)} & \footnotesize{(SVM)} \\
+\end{tabular}
+%\vspace{-2mm}
+\caption{The average classification accuracy of Salary data (k=10) set with increasing data set size}
+\label{fig:classification_accuracy_datasetSize}
+%
+%\vspace{-4mm}
+\end{figure}
+%
+%%
+
+
+%%
+\begin{figure}[t]
+\center
+%
+\begin{tabular}{c c}
+%
+\multicolumn{2}{c}{\includegraphics[scale=.4]{figures/fig_border_classification.pdf}}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_eGroup_SAL_J48}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_eGroup_SAL_Logistic}
+\end{minipage} \\
+%\footnotesize{(J48)} & \footnotesize{(Logistic Regression)}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_eGroup_SAL_NaiveBayes}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/classification_eGroup_SAL_SVM}
+\end{minipage} \\
+%\footnotesize{(NaiveBayes)} & \footnotesize{(SVM)} \\
+\end{tabular}
+%\vspace{-2mm}
+\caption{The average classification accuracy of Salary data (101k records) set with increasing equivalence group size}
+\label{fig:classification_accuracy_eGroupSize}
+%
+%\vspace{-4mm}
+\end{figure}
+%
+%%
+
+We apply Mondrian and Mondrian + sComp to these data sets to assess their risk and utility. The privacy risk is measured by the accuracy of composition attack, which is defined as $\frac{\text{number of privacy breach occur according to Definition~\ref{def:privacy_breach}}}{\text{Total number of records}} \times 100$. Composition attacks are conducted between all pairs of data sets with the same overlapping tuples. Unless noted otherwise, the parameters for generalization with and without post-processing are, $d = 4$, $\alpha = 0.8$ and $k=10$.
+%
+%%
+\begin{figure}[t]
+\centering
+\includegraphics[scale = 0.35]{figures/Unchanged_Responses}
+\caption{Unchanged responses through differentially private mechanism}
+\label{fig:Uncahnged_responses}
+\end{figure}
+%
+%%
+%
+%%
+\begin{figure}[t]
+\center
+\begin{tabular}{c c}
+\multicolumn{2}{c}{\includegraphics[scale=.4]{figures/fig_border_distance.pdf}}\\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/distance_KL-SAL}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/distance_CITY-SAL}
+\end{minipage} \\
+%\footnotesize{Kullback-Leibler (Salary)} & \footnotesize{City Block (Salary)} \\
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/distance_KL-OCC}
+\end{minipage}
+&
+\begin{minipage}[htbp]{0.4\textwidth}
+\includegraphics[scale=.4]{figures/distance_CITY-OCC}
+\end{minipage} \\
+%\footnotesize{Kullback-Leibler (Occupation)} & \footnotesize{City Block (Occupation)} \\
+\end{tabular}
+%\vspace{-2mm}
+\caption{Distances between the original data set and the result of sComp and several privacy levels of differential privacy ($\epsilon = {0.01, 0.05, 0.1}$)}
+\label{fig:distance_measures}
+%
+%\vspace{-2mm}
+\end{figure}
+%
+%\vspace{-4mm}
+\subsection{Comparison with a generalization method}
+\label{sec:sComp_Evaluation_generalization}
+%\vspace{-2mm}
+We first assess the effectiveness of \emph{sComp} in the reduction of privacy risk of the composition attack.
+
+Figure~\ref{fig:privacy_risk_dataset} and Figure~\ref{fig:privacy_risk_eGroup} show that \emph{sComp} reduces the success rate of the composition attack greatly. The reduction increases with the tuple overlap ratio, as well as the size of equivalence group. In some cases, the accuracy is lower than one tenth of the accuracy without \emph{sComp} processing.
+
+We assess the utility of published data sets by the precision of classification accuracy of the anonymous data sets.
+
+To evaluate the impact on classification accuracy, we divide the data into training and testing sets. The accuracy is obtained from 10 cross-validation based on stratified sampling. A test data set is independent from its corresponding training data set. After applying the anonymization algorithm, the generalization level is determined by the training data set solely and then applied to the test data set. For classification models, we use four classifiers $J48$ (an implementation of $C4.5$~\cite{C4.5} classifier in weka~\cite{weka}), $Naive$ $Bayes$, $Logistic$ $Regression$ and $SVM$. To provide better visualization of data utility, we provide an additional measure : \textit{Baseline Accuracy (BA)}, the measure of the classification accuracy of the raw data without implementing anonymization.
+
+Figure~\ref{fig:classification_accuracy_datasetSize} and Figure~\ref{fig:classification_accuracy_eGroupSize} compare the classification accuracy of anonymized data with and without \emph{sComp} with increasing data set size and equivalence group size, respectively. The results show that with post-processing the anonymous versions have more or less similar accuracy as without post-processing. These results imply that the post-processing method has negligible effect on data quality with respect to classification accuracy.
+
+\subsection{Comparison with differential privacy}
+\label{sec:sComp_Evaluation_diff_privacy}
+%\vspace{-2mm}
+As discussed in the introduction, the $\epsilon$-differential privacy is capable for protecting data from the composition attack, but the data utility may be low. We use the following experiments to demonstrate this point.
+
+It is crucial to choose a right $\epsilon$ (privacy budget) for the differential privacy. We run 100k random queries on our data sets, and accumulate the number of unchanged responses. We see that when $\epsilon > 0.1$, more than 30\% of the query results remain unchanged. Figure~\ref{fig:Uncahnged_responses} shows the result. We set the upper bound of $\epsilon$ as 0.1.
+
+To give concrete evidence, we used Kullback-Leibler distance~\cite{kullbackleibler} and city block distance to measure the differences between two histograms of sensitive values in the original counts and the count through differential private mechanism. The smaller the distance, the better the preservation of the original distribution.
+
+From Figure~\ref{fig:distance_measures}, we see that the preservation of the original distribution of \emph{sComp} processed data sets are significantly better than differentially private data sets.
+%\vspace{-4mm}
+\section{N-independent releases}
+\label{sec:n_independent}
+In this section, we further extend the $(d,\alpha)$-linkable model to a more general case, i.e., $N$ independent releases.
+
+Similar to the two independent releases, here we need to consider $(N-1)$ other releases. Furthermore, as we do not have the original or anonymous data sets from other publishers, we calculate the linkability with $(N-1)$ independent hypothesized data sets which are generated from the population $\Omega$. Note that, each hypothesized data set is a collection of random draws and each of this data set is considered independently. Therefore, we should anonymize the data set in such a way that the anonymous data set is $d$-linkable with $(N-1)$ independent hypothesized data sets with confidence $\alpha$. Note that, the common sensitive values $s^d$ are assumed same for an individual's equivalence group of all data sets. As $(N-1)$ hypothesized data sets are independent, the privacy condition becomes
+
+\begin{eqnarray}
+\alpha = P^{(N-1)}(E_i^{0},s^d) & = & \prod_{y=1}^{N-1} P^{y}(E_i^{0},s^d)
+\end{eqnarray}
+
+The magnitude of required generalization increases, as independent release $N$ increases. Now the question arises, how many such independent releases should be considered to cope with composition attack? The answer of this question can be better estimated by the publishers. Because, they may know the number of similar organizations working with same population. However, if they don't they can choose any value of $N$. Therefore, they can say how many independent releases they have considered at the time of data anonymization.
+
+\section{Related works}
+\label{sec:related_works}
+Most of the works in privacy preserving data publishing have been conducted on single data publication where independent releases of overlapping population have rarely been studied.  Anonymizing independent releases is a challenging problem because the publishers do not have knowledge about what other organizations are going to do with the overlapped records. Composition attack~\cite{Ganta2008} directs the research communities' attention to an important direction.  In this regard, some studies~\cite{Baig2009,Ganta2008} have shown that partitioning based privacy models for single data release like k-anonymity, l-diversity and t-closeness do not protect data from composition attack. Substantial progress has also been made in privacy preserving data publishing for multiple data release called serial or sequential releases~\cite{Fung2008,Wang2006a,Wong2010,Xiao2007}. Some other methods~\cite{Fung2008,Yao2005} also consider multiple views of same data sets. Another study~\cite{Nergiz2007a} tried to hide the presence of individuals in shared data sets. Most of these techniques have the implicit assumption that the publishers have knowledge of the previous releases from the same data records so the adversaries have. But in real world scenario an adversary can gain knowledge from other independent releases.
+
+Other works~\cite{Chen2007,Chen2009background,Martin2007} sought to model the background knowledge of the adversaries from different sources. (c,k)-safely~\cite{Martin2007} represents background knowledge in some form of boolean logic sentences and so as the 3D-privacy~\cite{Chen2007,Chen2009background}. The main requirement of these privacy models is to provide protection against those attackers who know a certain number of such sentences. But calculation of such knowledge is NP-hard~\cite{Martin2007}. Recently differential privacy~\cite{Dwork2006} considers a reasonable attention as a substitute for partitioning based privacy. Some studies~\cite{Ganta2008,Kifer:2012} have shown that differential privacy has the composible property; hence can prevent composition attack. However, in Section~\ref{sec:sComp_Evaluation_diff_privacy} we have shown that in non-interactive frameworks differential privacy retains less utility.
+
+In addition, a number of studies~\cite{Jiang2006,Malin2008,Malin2010} have also considered the privacy risk due to multiple releases from overlapping records but their solutions incorporate the coordinated model; where different independent locations communicate with each other for calculating the privacy risk of anonymous releases. This frame work can also be called as distributed framework for privacy preserving data publication. However, in this work we are not considering the coordinated model.
+
+The most relevant work to this paper is $\epsilon$-clone~\cite{Baig2011}, a non-interactive setting for data publishing. $\epsilon$-clone releases the micro-statistics of the original data sets, which may reduce some level of flexibility to the data recipients. However, this model is restricted and is only applicable to data sets with small number of sensitive values. In this work, we overcome this problem and provide more flexible environment for data publications.
+
+\section{Limitation}
+\label{sec:limitation}
+In this work, we consider that all attributes of a record are independent. However, the sensitive attribute $s$ is not independent from the non-sensitive $q$ attributes. For example, female patients have higher chance to have breast cancer than male patients, again people after 40 have higher chance of suffering from diabetes and so on. Considering the correlation is a complex problem and our model does not consider this. Furthermore, independence assumption of this work makes the solution restricted. However, this assumption is a good starting point for a new approach to combat composition attack in multiple independent data publications.
+
+\section{Conclusion}
+\label{Conclusion}
+This paper presents an anonymization model to prevent an adversary from successfully conducting a composition attack. We have provided a theoretical foundation for reducing the risk of the composition attack. Furthermore, we have provided an effective method to achieve the privacy principle. We have experimentally showed that the anonymized data adequately protects privacy and yet supports effective data analysis.
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}         ==>>  [#]
+%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+%% References with bibTeX database:
+
+\bibliographystyle{elsarticle-num}
+\bibliography{sarowar_ab}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use elsarticle-num.bst.
+
+%% References without bibTeX database:
+\begin{thebibliography}{10}
+
+\bibitem{Baig2011}
+Muzammil~M Baig, Jiuyong Li, Jixue Liu, and Hua Wang.
+\newblock {Cloning for Privacy Protection in Multiple Independent Data
+  Publications}.
+\newblock In {\em CIKM}, pages 885--894, 2011.
+
+\bibitem{Baig2009}
+Muzammil~M. Baig, Jiuyong Li, Hua Wang, and Jixue Liu.
+\newblock {Studying genotype-phenotype attack on k-anonymised medical and
+  genomic data}.
+\newblock In {\em CRPIT}, pages 159--166, 2009.
+
+\bibitem{Chen2007}
+Bee-chung Chen, Kristen Lefevre, and Raghu Ramakrishnan.
+\newblock {Privacy Skyline : Privacy with Multidimensional Adversarial
+  Knowledge}.
+\newblock In {\em VLDB}, pages 770--781, Vienna, Austria, 2007. ACM.
+
+\bibitem{Chen2009background}
+Bee-Chung Chen, Kristen Lefevre, and Raghu Ramakrishnan.
+\newblock Adversarial-knowledge dimensions in data privacy.
+\newblock {\em The VLDB Journal}, 18(2):429--467, April 2009.
+
+\bibitem{Dwork2006}
+Cynthia Dwork.
+\newblock {Differential Privacy}.
+\newblock In {\em ICALP}, pages 1--12. Springer, bugliesi, edition, 2006.
+
+\bibitem{Fung2008}
+Benjamin C.~M. Fung, Ke~Wang, Ada Wai-Chee Fu, and Jian Pei.
+\newblock {Anonymity for continuous data publishing}.
+\newblock In {\em EDBT '08}, pages 264--275, New York, New York, USA, 2008. ACM
+  Press.
+
+\bibitem{Ganta2008}
+Srivatsava~Ranjit Ganta, Shiva Prasad, and Adam Smith.
+\newblock {Composition Attacks and Auxiliary Information in Data}.
+\newblock In {\em SIGKDD}, pages 265--273, 2008.
+
+\bibitem{weka}
+Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
+  and Ian~H. Witten.
+\newblock The weka data mining software: an update.
+\newblock {\em SIGKDD Explor. Newsl.}, 11(1):10--18, November 2009.
+
+\bibitem{Hay2010}
+Michael Hay, Vibhor Rastogi, Gerome Miklau, and Dan Suciu.
+\newblock {Boosting the Accuracy of Differentially Private Histograms Through
+  Consistency}.
+\newblock {\em Proceedings of the VLDB Endowment}, 3(1):1021--1032, 2010.
+
+\bibitem{Jiang2006}
+Wei Jiang and Chris Clifton.
+\newblock {A secure distributed framework for achieving k-anonymity}.
+\newblock {\em The VLDB Journal}, 15(4):316--333, August 2006.
+
+\bibitem{Kifer:2012}
+Daniel Kifer and Ashwin Machanavajjhala.
+\newblock A rigorous and customizable framework for privacy.
+\newblock In {\em PODS '12}, pages 77--88, New York, NY, USA, 2012. ACM.
+
+\bibitem{kullbackleibler}
+S.~Kullback and R.~A. Leibler.
+\newblock {On information and sufficiency}.
+\newblock {\em Annals of Mathematical Statistics}, 22:49--86, 1951.
+
+\bibitem{LeFevre2006}
+K.~LeFevre, D.J. DeWitt, and R.~Ramakrishnan.
+\newblock {Mondrian Multidimensional K-Anonymity}.
+\newblock In {\em ICDE}, pages 25--25, 2006.
+
+\bibitem{Li2007}
+Ninghui Li, Tiancheng Li, and Suresh Venkatasubramanian.
+\newblock {t-Closeness : Privacy Beyond k-Anonymity and l-Diversity}.
+\newblock In {\em ICDE}, number~3, pages 106--115, 2007.
+
+\bibitem{Machanavajjhala2007}
+Ashwin Machanavajjhala, Daniel Kifer, Johannes Gehrke, and Muthuramakrishnan
+  Venkitasubramaniam.
+\newblock {l-Diversity: Privacy Beyond k-Anonymity}.
+\newblock {\em ACM Trans. on Knowledge Discovery from Data}, 1(1):3--es, March
+  2007.
+
+\bibitem{Malin2008}
+B~Malin.
+\newblock {k-Unlinkability: A privacy protection model for distributed data}.
+\newblock {\em Data \& Knowledge Engineering}, 64(1):294--311, January 2008.
+
+\bibitem{Malin2010}
+Bradley Malin.
+\newblock Secure construction of k-unlinkable patient records from distributed
+  providers.
+\newblock {\em Artif. Intell. Med.}, 48(1):29--41, January 2010.
+
+\bibitem{Malin2004}
+Bradley Malin, Edoardo Airoldi, Samuel Edoho-eket, and Yiheng Li.
+\newblock {Configurable Security Protocols for Multi-party Data Analysis with
+  Malicious Participants}.
+\newblock In {\em ICDE}, number September, pages 533--544, 2004.
+
+\bibitem{Martin2007}
+David~J Martin, Daniel Kifer, Ashwin Machanavajjhala, Johannes Gehrke, and
+  Joseph~Y Halpern.
+\newblock {Worst-Case Background Knowledge for Privacy-Preserving Data
+  Publishing}.
+\newblock In {\em ICDE}, pages 126 -- 135, 2007.
+
+\bibitem{Mohammed2011}
+Noman Mohammed, Rui Chen, Benjamin C~M Fung, and Philip~S Yu.
+\newblock {Differentially Private Data Release for Data Mining}.
+\newblock In {\em SIGKDD}, pages 493--501, 2011.
+
+\bibitem{Nergiz2007a}
+M.~Ercan Nergiz, Maurizio Atzori, and Christopher~W. Clifton.
+\newblock {Hiding the presence of individuals from shared databases}.
+\newblock In {\em SIGMOD}, pages 665--676, New York, New York, USA, 2007. ACM
+  Press.
+
+\bibitem{C4.5}
+J.~Ross Quinlan.
+\newblock {\em C4.5: programs for machine learning}.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1993.
+
+\bibitem{Sweeney2002}
+Latanya Sweeney.
+\newblock {k-anonymity: A model for protecting privacy}.
+\newblock {\em Int'l Journal on Uncertainty, Fuzziness and Knowledge-based
+  Systems}, 10(5):1--14, 2002.
+
+\bibitem{Wang2006a}
+Ke~Wang and C.M.~Benjamin Fung.
+\newblock {Anonymizing Sequential Releases ∗}.
+\newblock In {\em ACM SIGKDD}, pages 414--423, 2006.
+
+\bibitem{recordLinkage}
+W.~Winkler.
+\newblock Advanced methods for record linkage.
+\newblock In {\em Proceedings of the Selection on Survey Research Methods,
+  Americal Statistical Society}, pages 467--472, 1994.
+
+\bibitem{Wong_alpha}
+Raymond Chi-wing Wong, Jiuyong Li, Ada Wai-chee Fu, and Ke~Wang.
+\newblock {(Alpha,k) -Anonymity : An Enhanced k-Anonymity Model for
+  Privacy-Preserving Data Publishing}.
+\newblock In {\em ACM SIGKDD}, pages 754--759, 2006.
+
+\bibitem{Wong2010}
+R.C.-W. Wong, A.W.-C. Fu, Jia Liu, Ke~Wang, and Yabo Xu.
+\newblock Global privacy guarantee in serial data publishing.
+\newblock In {\em ICDE}, pages 956 --959, march 2010.
+
+\bibitem{Xiao2007}
+Xiaokui Xiao and Yufei Tao.
+\newblock {m-Invariance : Towards Privacy Preserving Re-publication of Dynamic
+  Datasets}.
+\newblock In {\em SIGMOD}, pages 689--700, 2007.
+
+\bibitem{Xiao2011}
+Xiaokui Xiao, Guozhang Wang, Johannes Gehrke, and Thomas Jefferson.
+\newblock {Differential Privacy via Wavelet Transforms}.
+\newblock {\em IEEE Trans. on Knowledge and Data Engineering},
+  23(8):1200--1214, 2011.
+
+\bibitem{Yao2005}
+Chao Yao, X.~Sean Wang, and Sushil Jajodia.
+\newblock Checking for k-anonymity violation by views.
+\newblock In {\em VLDB '05}, pages 910--921. VLDB Endowment, 2005.
+
+\bibitem{re:2010}
+K.~Benitez, B.~Malin, {Evaluating re-identification risks with respect to the
+  HIPAA privacy rule}, Journal of the American Medical Informatics Association
+  17~(2) (2010) 169--177.
+
+\bibitem{math:online}
+Kyle Siegrist.
+\newblock Virtual laboratories in probability and statistics {@ONLINE},
+  Accessed: 2013-06-20.
+
+
+\end{thebibliography}
+
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-num.tex'.

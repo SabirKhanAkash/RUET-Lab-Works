@@ -1,0 +1,144 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[a4paper,left=2.54 cm,right=2.54 cm,top=2.54 cm,bottom=2.54 cm]{geometry}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\epstopdfDeclareGraphicsRule{.pdf}{.png}
+\DeclareGraphicsExtensions{.png,.pdf}
+%\usepackage[backend=bibtex,style=ieee]{biblatex}
+\usepackage[authordate,strict,backend=bibtex,babel=other,bibencoding=inputenc]{biblatex-chicago}
+\bibliography{referen}
+
+\begin{document}
+	
+	\title{Internet of Things for Smart Cities}
+	\author{\IEEEauthorblockN{	Md Abdur Rouf  \\Roll: 1603119 \\Computer Science \& Engineering\\RUET\\ \and  Tasin Haiwan Hridya\\Roll: 1603120\\Computer Science \& Engineering\\RUET}}
+	
+	\maketitle
+	
+	\begin{abstract}
+		The Internet of Things (IoT) shall be able to incorporate transparently and seamlessly a large number
+		of different and heterogeneous end systems, while providing open access to selected subsets of data for the
+		development of a plethora of digital services. Building a general architecture for the IoT is hence a very complex
+		task, mainly because of the extremely large variety of devices, link layer technologies, and services that may
+		be involved in such a system. In this paper, we focus specifically to an urban IoT system that, while still being quite a broad category, are characterized by their specific application domain. Urban IoTs, in fact, are designed to support the Smart City vision, which aims at exploiting the most advanced communication technologies to support added-value services for the administration of the city and for the citizens. This paper hence provide   comprehensive survey of the enabling technologies, protocols and architecture for an urban IoT. Furthermore, the paper will present and discuss the technical solutions.
+		
+		
+	\end{abstract}
+
+	\begin{IEEEkeywords}
+		IoT,{Web Service Approach,Data Format, Application, Transport Layers,URI mapping,Devices 
+	\end{IEEEkeywords}
+	
+	\section{INTRODUCTION}
+	The Internet of Things (IoT) is a recent communication paradigm that envisions a near future, in which the objects of everyday life will be equipped with micro controllers, transceivers for digital communication,
+	and suitable protocol stacks that will make them able to communicate with one another and with the users ,becoming an integral part of the Internet ~\autocite{r1}. This paradigm indeed finds application in many different domains, such as home automation, industrial automation, medical aids, mobile healthcare, elderly assistance, intelligent
+	energy management and smart grids, automotive, traffic management, and many others ~\autocite{r2}. However, such a
+	heterogeneous field of application makes the identification of solutions capable of satisfying the requirements of all possible application scenarios a formidable challenge. This difficulty has led to the proliferation of different and, sometimes, incompatible proposals for the practical realization of IoT systems. Therefore, from a system perspective, the realization of an IoT network, together with the required backend network services and devices, still lacks an established best practice because of its novelty and complexity. In addition to the technical difficulties, the adoption of the IoT paradigm is also hindered by the lack of a clear and widely accepted business model that can attract investments to promote the deployment of these technologies ~\autocite{r3}. In this complex scenario, the application of the IoT paradigm to an urban context is of particular interest, as it responds to the strong push of many national governments to adopt ICT solutions in the management of public affairs, thus realizing the so-called Smart City concept ~\autocite{r4}. An urban IoT, indeed, may bring a number of benefits in the management and optimization of traditional public services, such as transport and parking, lighting, surveillance and maintenance of public areas, preservation of cultural heritage, garbage collection, salubrity of hospitals, and school.1 Furthermore, the availability of different types of data, collected by a pervasive urban IoT, may also be exploited to increase the transparency and promote the actions of the local government toward the citizens, enhance the awareness of people about the status of their city, stimulate the active participation of the citizens in the management of public administration, and also stimulate the creation of new services
+	upon those provided by the IoT ~\autocite{r5}.
+	
+	
+	
+	
+	\section{METHODOLOGY}
+	
+	\subsection{Web Service Approach for IoT Service Architecture}
+	From the analysis of the services described in Section II, it clearly emerges that most Smart City services are based on a centralized architecture, where a dense and heterogeneous set of peripheral devices deployed over the urban area generate different types of data that are then delivered through suitable communication
+	technologies to a control center, where data storage
+	and processing are performed.
+	
+	\subsubsection{Data Format}  As mentioned, the urban IoT paradigm sets specific requirements in terms of data accessibility. In architectures based on web services, data exchange is typically accompanied by a description of the transferred content by means of semantic representation languages, of which the eXtensible Markup Language (XML) is probably the most common. Nevertheless, the size of XML messages is often
+	too large for the limited capacity of typical devices for the IoT. Furthermore, the text nature of XML representation makes the parsing of messages by CPU-limited devices more complex compared to the binary formats.
+	
+	\subsubsection{ Application and Transport Layers} Most of the traffic that crosses the Internet nowadays is carried at the application layer by HTTP over TCP. However, the verbosity and complexity of native HTTP make it unsuitable for a straight deployment on constrained IoT devices. For such an environment, in fact, the
+	human-readable format of HTTP, which has been one of the reasons of its success in traditional networks, turns out to be a limiting factor due to the large amount of heavily correlated (and, hence, redundant) data. Moreover, HTTP typically relies upon the TCP transport protocol that, however, does not scale well on constrained devices, yielding poor performance for small data flows in lossy environments.
+	
+	
+	\subsubsection{Network Layer}  IPv4 is the leading addressing technology supported by Internet hosts. However, IANA, the international organization that assigns IP addresses at a global level, has recently announced the exhaustion of IPv4 address blocks. IoT networks, in turn, are expected to include billions of nodes, each of which shall be (in principle) uniquely addressable. A solution to this problem is offered by the IPv6 standard ~\autocite{r6}, which provides a 128-bit address field, thus making it possible to assign a unique IPv6 address to any possible node in the IoT network.
+	
+	\subsubsection{URI mapping}  The Universal Resource Identifier (URI) mapping technique is also described in. This technique involves a particular type of HTTP-CoAP cross proxy, the reverse cross proxy. This proxy behaves as being the final web server to the HTTP/IPv4 client and as the original client to the CoAP/IPv6 web server. Since this machine needs to be placed in a part of the
+	network where IPv6 connectivity is present to allowdirect access to the final IoT nodes, IPv4/IPv6 conversion is internally resolved by the applied URI mapping function.
+	
+	\subsection{Link Layer Technologies}An urban IoT system, due to its inherently large deployment area, requires a set of link layer technologies that can easily cover a wide geographical area and, at the same time, support a possibly
+	large amount of traffic resulting from the aggregation of an extremely high number of smaller data flows. For these reasons, link layer technologies enabling the realization of an urban IoT system are classified into unconstrained and constrained technologies. The first group includes all the traditional LAN, MAN, and WAN communication technologies, such as Ethernet, WiFi,
+	fiber optic, broadband Power Line Communication (PLC), and cellular technologies. They are generally characterized by high reliability, low latency, and high transfer rates and due to their inherent complexity and energy consumption are generally not suitable for peripheral IoT nodes.
+	
+	\subsection{Devices}We finally describe the devices that are essential to realize an urban IoT, classified based on the position they occupy in the communication flow.
+	
+	1) Backend Servers: At the root of the system, we find the backend servers, located in the control center, where data are collected, stored, and processed to produce added-value services. In principle, backend servers are not mandatory for an IoT system to properly operate, though they become a fundamental component of an urban IoT where they can facilitate the access to
+	the smart city services and open data through the legacy network infrastructure. Backend systems commonly considered for interfacing with the IoT data feeders include the following.
+	
+	Database management systems: These systems are in
+	charge of storing the large amount of information produced by IoT peripheral nodes, such as sensors. Depending on the particular usage scenario, the load on these systems can be quite large, so that proper dimensioning of the backend system is required.
+	Web sites: The widespread acquaintance of people with web interfaces makes them the first option to enable interoperation between the IoT system and the “data consumers,” e.g., public authorities, service operators, utility providers, and common
+	citizens.
+	
+	2) Gateways: Moving toward the “edge” of the IoT, we find the gateways, whose role is to interconnect the end devices to the main communication infrastructure of the system. Note that while all these translations may be required in order to enable interoperability with IoT peripheral devices and control stations, it is not necessary to concentrate all of them in a single
+	gateway. Rather, it is possible, and sometimes convenient, to distribute the translation tasks over different devices in the network. For example, a single HTTP-CoAP proxy can be deployed to support multiple 6LoWPAN border routers.
+	
+	3) IoT Peripheral Nodes: Finally, at the periphery of the IoT system, we find the devices in charge of producing the data to be delivered to the control center, which are usually called IoT peripheral nodes or, more simply, IoT nodes. Generally speaking, the cost of these devices is very low, starting from
+	10 USD or even less, depending on the kind and number of sensors/actuators mounted on the board. IoT nodes may be classified based on a wide number of characteristics, such as powering mode, networking role (relay or leaf), sensor/actuator equipment, and supported link layer technologies.
+	
+	
+	
+	
+	
+	
+	\section{MAIN BODY}
+	It clearly emerges that, in general, the practical realization of most of such services is not hindered by technical issues, but rather by the lack of a widely accepted communication and service
+	architecture that can abstract from the specific features of the single technologies and provide harmonized access to the services.
+	
+	
+	
+	
+	\section{Structural Health of Buildings}
+	Proper maintenance of the historical buildings of a city requires the continuous monitoring of the actual conditions of each building and identification of
+	the areas that are most subject to the impact of external agents.The urban IoT may provide a distributed database of building structural integrity measurements, collected by suitable sensorsn located in the buildings, such as vibration and deformation  sensors to monitor the temperature and humidity sensors to have a complete characterization of the environmental conditions.
+	
+	
+	
+	
+	\section{Waste Management}
+	Waste management is a primary issue in many modern cities, due to both the cost of the service and theproblem of the storage of garbage in landfills. A deeper penetration of ICT solutions in this domain, however, may result in significant savings and economical and ecological advantages.
+	
+	Noise Monitoring: 
+	Noise can be seen as a form of acoustic pollution as much as carbon oxide (CO) is for air. An urban IoT can offer a noise monitoring service to measure the amount of noise produced at any given hour in the places that adopt the service.
+	
+	
+	
+	
+	\vfill\null
+	
+	
+	\section{Traffic Congestion}
+	On the same line of air quality and noise monitoring, a possible Smart City service that can be enabled by urban IoT consists in monitoring the traffic congestion in the city.Even though camera-based traffic monitoring systems are already available and deployed in many cities.
+	
+	
+	
+	\section{AN EXPERIMENTAL STUDY: PADOVA SMART CITY}
+	The framework discussed in this paper has already been
+	successfully applied to a number of different use cases in the context of IoT systems. For instance, the experimental wireless sensor network testbed, with more than 300 nodes, deployed at the University of Padova ~\autocite{r7},has been designed according to these guidelines, and successfully used to realize proof-ofconcept demonstrations of smart grid and health care services.~\autocite{r8}
+	In this section, we describe a practical implementation of an urban IoT, named “Padova Smart City,” that has been realized in the city of Padova; thanks to the collaboration between public and private parties, such as the municipality of Padova, which has sponsored the project, the Department of Information Engineering
+	of the University of Padova, which has provided the
+	theoretical background and the feasibility analysis of the project, and Patavina Technologies s.r.l.,9 a spin-off of the University of Padova specialized in the development of innovative IoT solutions, which has developed the IoT nodes and the control software.~\autocite{r9}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{CONCLUSION}
+	In this paper, we analyzed the solutions currently available for the implementation of urban IoTs. The discussed technologies are close to being standardized, and industry players are already active in the production of devices that take advantage of these technologies to enable the applications of interest, such as those described in Section II. In fact, while the range of design options for IoT systems is rather wide, the set of open and standardized protocols is significantly smaller. A concrete proof-of-concept implementation, deployed in collaboration with the city of Padova, Italy, has also been described as a relevant example of application of the IoT paradigm to smart cities.
+
+\printbibliography
+\end{document}

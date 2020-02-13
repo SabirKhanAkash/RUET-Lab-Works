@@ -1,0 +1,391 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{cms/global//global/global}
+  \entry{r9}{article}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={ANI},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{year}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Internet grows, 330.6 mil domain name registrations in Q1:
+  VeriSign}
+    \field{journaltitle}{Business Standard India}
+    \field{year}{2017}
+  \endentry
+
+  \entry{r13}{article}{}
+    \name{author}{5}{}{%
+      {{hash=GM}{%
+         family={Garnaeva},
+         familyi={G\bibinitperiod},
+         given={Maria},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Sinitsyn},
+         familyi={S\bibinitperiod},
+         given={Fedor},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=NY}{%
+         family={Namestnikov},
+         familyi={N\bibinitperiod},
+         given={Yury},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Makrushin},
+         familyi={M\bibinitperiod},
+         given={Denis},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Liskin},
+         familyi={L\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GM+1}
+    \strng{fullhash}{GMSFNYMDLA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{pages}{12\bibrangedash 13}
+    \field{title}{Kaspersky Security Bulletin OVERALL STATISTICS FOR 2016}
+    \field{journaltitle}{Kaspersky Security Bulletin}
+    \field{year}{2016}
+  \endentry
+
+  \entry{r6}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GS}{%
+         family={Goodman},
+         familyi={G\bibinitperiod},
+         given={SE},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={HS},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GSLH1}
+    \strng{fullhash}{GSLH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{The Philosophy of Anonymous}
+    \field{journaltitle}{Radicalphilosophy}
+    \field{year}{2010}
+  \endentry
+
+  \entry{r4}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GS}{%
+         family={Gordon},
+         familyi={G\bibinitperiod},
+         given={Sarah},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GS1}
+    \strng{fullhash}{GS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{On the definition and classification of cybercrime}
+    \field{year}{2006}
+  \endentry
+
+  \entry{r10}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GA}{%
+         family={Greg},
+         familyi={G\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Rod},
+         familyi={R\bibinitperiod},
+         given={Rasmussen},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GARR1}
+    \strng{fullhash}{GARR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{pages}{6\bibrangedash 17}
+    \field{title}{Global Phishing Survey: Trends and Domain Name Use in 2016}
+    \field{journaltitle}{APWG Unifying the Global Response To Cybercrime}
+    \field{year}{2017}
+  \endentry
+
+  \entry{r12}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JJJ}{%
+         family={Jang-Jaccard},
+         familyi={J\bibinithyphendelim J\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+      {{hash=NS}{%
+         family={Nepal},
+         familyi={N\bibinitperiod},
+         given={S},
+         giveni={S},
+      }}%
+    }
+    \strng{namehash}{JJJNS1}
+    \strng{fullhash}{JJJNS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{pages}{973\bibrangedash 993}
+    \field{title}{A Survey of Emerging Threats in Cybersecurity}
+    \field{journaltitle}{Journal of Computer and System Sciences}
+    \field{year}{2014}
+  \endentry
+
+  \entry{r8}{article}{}
+    \name{author}{3}{}{%
+      {{hash=VdMAJ}{%
+         prefix={Van\bibnamedelima der},
+         prefixi={V\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Merwe},
+         familyi={M\bibinitperiod},
+         given={A\bibnamedelima J},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Loock},
+         familyi={L\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+      {{hash=DM}{%
+         family={Dabrowski},
+         familyi={D\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+    }
+    \strng{namehash}{MAJVdLMDM1}
+    \strng{fullhash}{MAJVdLMDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Characteristics and Responsibilities involved in a Phishing
+  Attack}
+    \field{journaltitle}{Winter International Symposium on Information and
+  Communication Technologies}
+    \field{year}{2005}
+  \endentry
+
+  \entry{r11}{book}{}
+    \name{author}{1}{}{%
+      {{hash=NRC}{%
+         family={Newman},
+         familyi={N\bibinitperiod},
+         given={Robert\bibnamedelima C},
+         giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Jones \& Bartlett Publishers}%
+    }
+    \strng{namehash}{NRC1}
+    \strng{fullhash}{NRC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Computer security: Protecting digital resources}
+    \field{year}{2009}
+  \endentry
+
+  \entry{r14}{article}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={OPSWAT},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{year}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Statista 2019}
+    \field{year}{2019}
+  \endentry
+
+  \entry{r5}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PM}{%
+         family={Prince},
+         familyi={P\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PM1}
+    \strng{fullhash}{PM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Empty DDoS Threats: Meet the Armada Collective}
+    \field{journaltitle}{Cloudflare}
+    \field{year}{2016}
+  \endentry
+
+  \entry{r7}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RZ}{%
+         family={Ramzan},
+         familyi={R\bibinitperiod},
+         given={Zulfikar},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RZ1}
+    \strng{fullhash}{RZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Phishing attacks and countermeasures}
+    \field{journaltitle}{Handbook of Information and Communication Security}
+    \field{year}{2010}
+  \endentry
+
+  \entry{r2}{article}{}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Reliance spells end of road for ICT amateurs}
+    \field{journaltitle}{The Australian}
+    \field{year}{2013}
+  \endentry
+
+  \entry{r1}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SD}{%
+         family={Schatz},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BR}{%
+         family={Bashroush},
+         familyi={B\bibinitperiod},
+         given={Rabih},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wall},
+         familyi={W\bibinitperiod},
+         given={Julie},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SDBRWJ1}
+    \strng{fullhash}{SDBRWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{year}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{2}
+    \field{title}{Towards a More Representative Definition of Cyber Security}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of Digital Forensics, Security and Law}
+    \field{year}{2017}
+  \endentry
+
+  \entry{r3}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ST}{%
+         family={Stevens},
+         familyi={S\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST1}
+    \strng{fullhash}{ST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{year}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{1\bibrangedash 4}
+    \field{title}{Global Cybersecurity: New Directions in Theory and Methods}
+    \field{volume}{6}
+    \field{journaltitle}{Politics and Governance}
+    \field{year}{2018}
+  \endentry
+\enddatalist
+\endinput

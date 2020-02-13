@@ -1,0 +1,169 @@
+\documentclass[conference]{sig-alternate}
+
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+
+\usepackage{booktabs,subcaption,amsfonts,dcolumn}
+\usepackage{caption}
+\begin{document}
+
+\title{General Drafts}
+
+\author{Faiza Mushtari\textsuperscript{*}\\Roll : 1603069\\Department of Computer Science and Engineering\\Email : faiza.mushtari@gmail.com
+}
+
+
+\maketitle
+
+
+\begin{abstract}
+A good abstract should answer the following few
+questions. Question-1 what is the general topic of the article,
+Question-2 what is the specific topic, Question-3 what is the
+research problem, Question-4 what is the current status of the
+problem and finally Question-5 what is the contribution(s) of the
+article and/or work.
+\end{abstract}
+
+\section{INTRODUCTION}
+This section is used to give little background and motivation
+why to write this paper/article. More specifically a detail
+answer of the questions from the abstract section
+
+
+
+\section{METHODOLOGY}
+To provide a framework/taxonomy to define the scope and
+methodology, technical notations that you are going to use.
+
+\section{MAIN BODY}
+To list, describe and compare the leading work in the areas
+using the uniform survey method/style that your have defined
+in the above section. This section may contain some definition
+like as follows:\\
+\textsc{Definition 1 (Composition anonymity):}\textit{For an individual i,
+the composition anonymity offered by n independent k-
+anonymized data sets is equal to the number of distinct
+common sensitive values of the equivalence classes in which
+the individual’s record resides.}\\
+\noindent\rule{4cm}{0.4pt}\\
+$\ast$Dr. Trovato insisted his name be rst.\\
+$\dagger$The secretary disavows any knowledge of this author's ac-
+tions.\\
+$\ddagger$This author is the one who did all the really hard work.
+
+\subsection{Part-1}
+The numbers of sections and subsections are subject to your topic. This section may contain some equations like follows:
+
+\begin{align}
+	P(\hat{t}) &= P(\hat{q_1})\times P(\hat{q_{2}})\times ...\times P(\hat{q_{m}})\times P(s) \nonumber \\
+&= (\prod_{i=1}^{m} P(\hat{q_{i}}))\times P(s)
+\end{align}
+
+\subsection{Part-2}
+In end of each section and end of this paper, it is always a
+good ideas to summarize your work by listing the technologies/
+methods that you have discussed and compare them using
+a table or figure.
+
+\begin{table}[h]
+\begin{center}
+	\caption{COMMON NOTATION USED HERE}
+	\label{notation}
+	\begin{tabular}{ |l|l| } 
+		\hline
+		\textbf{Notation} & \textbf{Description}  \\ 
+		\hline
+		$\Omega$ & large population \\
+		\hline 
+		$D1, D_{1}, D_{2}$ & the original data sets\\
+		\hline
+		$ S^{d} $ & the set of \textit{d} different sensitive values\\
+		\hline
+		
+	\end{tabular}
+\end{center}
+\end{table}
+
+\vfill\null
+
+
+\subsubsection{Table}
+Draw a table as follows:
+\begin{table}[h]
+	\begin{subtable}{0.55\textwidth}
+		\centering
+		\begin{tabular}[h!]{|c|c|c|c|}
+			\hline
+			x & Method 1 & Method 2 & Method 3 \\
+			\hline
+			5 & 100 & 103 & 98  \\
+			\hline
+			10 & 102 & 50 & 80  \\
+			\hline
+			15 & 103 & 70 & 10  \\
+			\hline
+			20 & 20 & 50 & 50  \\
+			\hline
+		\end{tabular}
+	\captionsetup{justification=centering}
+		\caption{}
+		\label{tab:table1_a}
+	\end{subtable}%
+\hspace{\fill}
+\begin{subtable}{0.55\textwidth}
+	\centering
+	\begin{tabular}[h!]{|c|c|c|c|}
+		\hline
+		x & Method 1 & Method 2 & Method 3 \\
+		\hline
+		5 & 100 & 103 & 98  \\
+		\hline
+		10 & 102 & 50 & 80  \\
+		\hline
+		15 & 103 & 70 & 10  \\
+		\hline
+		20 & 20 & 50 & 50  \\
+		\hline
+	\end{tabular}
+
+	\caption{}
+	\label{tab:table1_a}
+\end{subtable}%
+\caption{}
+\end{table}
+
+\subsubsection{Graph}
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{.25\textwidth}
+		\includegraphics[width=.9\linewidth]{boat.jpg}
+		\caption{A subfigure}
+		\label{fig:sub1}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\includegraphics[width=.9\textwidth]{boat.jpg}
+		\caption{A subfigure}
+		\label{fig:sub2}
+	\end{subfigure}
+	\caption{Graphs}
+	\label{fig:test}
+\end{figure}
+\subsection{Figure}
+What a nice boat it is in Figure \ref{fig:boat}
+
+
+\section{REFERENCE TEST}
+Referencing is one of the important parts of article writ-
+ing. Let's list some reference articles. This is\cite{Blum2005} a good
+conference paper. But, I like to read journal like\cite{Samarati:2001:PRI:627337.628183}. It is
+not a bad idea to read technical report like \cite{Li2011}.
+\section{CONCLUSION}
+Again summarize you work to show that you have suc-
+cessfully achieved your objectives.
+
+\bibliography{sarowar_ab}
+\bibliographystyle{ieeetr}
+
+\end{document}

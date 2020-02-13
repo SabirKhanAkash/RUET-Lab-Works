@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Blum2005}
+A.~Blum, F.~Mcsherry, {Practical Privacy : The SuLQ Framework}, in: ACM
+  SIGMOD-SIGACT-SIGART, ACM, Baltimore, Maryland, 2005, pp. 128--138.
+
+\bibitem{Samarati:2001:PRI:627337.628183}
+P.~Samarati, Protecting respondents' identities in microdata release, IEEE
+  Trans. on Knowledge and Data Engineering 13~(6) (2001) 1010--1027.
+\newblock \href {https://doi.org/10.1109/69.971193}
+  {\path{doi:10.1109/69.971193}}.
+
+\bibitem{Li2011}
+N.~Li, W.~Qardaji, D.~Su, {Provably Private Data Anonymization : Or ,
+  k-Anonymity Meets Differential Privacy}, Tech. rep., Purdue University
+  (2011).
+
+\end{thebibliography}

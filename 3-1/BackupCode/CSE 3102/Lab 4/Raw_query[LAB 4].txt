@@ -1,0 +1,76 @@
+CREATE TABLE Director 
+(
+    Person_ID int, 
+    Director_Name varchar(100), 
+    Birth_Year int, 
+    Films int , 
+    Awards int,
+    PRIMARY KEY(Person_ID)
+);
+
+
+
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (2,'Zahir Raihan',1935,5,5);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (2,'Rajkmar Hirani',1962,5,9);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (3,'Satyajit Ray',1921,45,55);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (4,'Anjan Datta',1953,23,17);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (5,'Rituporno Ghosh',1963,20,15);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (6,'Goutom Ghose',1950,12,8);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (7,'Aparna Sen',1945,12,7);
+INSERT INTO director(Person_ID,Director_Name,Birth_Year,Films,Awards) VALUES (8,'Kaushik Ganguly',1968,23,30);
+
+
+CREATE TABLE Actor 
+(
+    Person_ID int, 
+    Actor_Name varchar(100), 
+    Birth_Year int, 
+    Films int , 
+    Awards int,
+    PRIMARY KEY(Person_ID)
+);
+
+
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (11,'Uttam Kumar',1926,190,150);
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (12,'Razzak',1942,120,100);
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (7,'Aparna Sen',1945,73,43);
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (6,'Goutam Ghose',1950,3,1);
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (8,'Kaushik Ganguly',1968,22,7);
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (10,'Soumitra Chatterjee',1935,250,220);
+INSERT INTO actor(Person_ID,Actor_Name,Birth_Year,Films,Awards) VALUES (4,'Anjan Datta',1953,39,10);
+
+
+ALTER TABLE director
+	ADD PRIMARY KEY(Person_ID);
+
+ALTER TABLE actor
+	ADD PRIMARY KEY(Person_ID);
+
+(1)
+SELECT Director_Name,Films,Awards FROM director ORDER BY Director_Name ASC;
+
+(2)
+SELECT Director_Name,Films,Awards FROM director ORDER BY Films DESC, Awards DESC;
+
+(3)
+SELECT Person_ID AS ID ,Director_Name AS Name, 2019-Birth_Year AS Current_Age
+	FROM director;
+    UNION
+SELECT Person_ID AS ID ,Actor_Name AS Name, 2019-Birth_Year AS Current_Age
+	FROM actor;
+
+(4)
+SELECT director.Person_ID,director.Director_Name AS Name,2019-Director.Birth_Year AS Current_Age,actor.Films AS Films_as_Actor, director.Films AS Films_as_Director
+from director JOIN actor
+USING(Person_ID);
+
+(5)
+SELECT director.Person_ID,director.Director_Name AS Name,2019-Director.Birth_Year AS Current_Age,actor.Films AS Films_as_Actor, director.Films AS Films_as_Director
+from director LEFT OUTER JOIN actor
+USING(Person_ID);
+
+(6)
+SELECT director.Director_Name AS Name,actor.Films AS Films_as_Actor,actor.Awards AS Awards_as_Actor, director.Films AS Films_as_Director,director.Awards AS Awards_as_Actor
+from director LEFT OUTER JOIN actor
+USING(Person_ID);
+

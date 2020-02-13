@@ -1,0 +1,144 @@
+%%
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%%
+%%
+%% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%%
+%%
+\documentclass[preprint,11pt]{elsarticle}
+\usepackage{amssymb}
+\usepackage{times,amsmath,epsfig}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{observation}{Observation}
+
+\journal{Submitted for the Journal}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Title is here ..............}
+
+%
+%\author[add]{A.H.M. Sarowar Sattar\corref{cor1}}
+%\ead{sarowar@gmail.com}
+%\author[add]{Jiuyong Li\corref{cor1}}
+%\ead{Jiuyong.Li@unisa.edu.au}
+%\author[add]{Jixue Liu}
+%\ead{Jixue.Liu@unisa.edu.au}
+%\author[add2]{Raymond Heatherly}
+%\ead{r.heatherly@vanderbilt.edu}
+%\author[add2]{Bradley Malin}
+%\ead{b.malin@vanderbilt.edu}
+%
+%\cortext[cor1]{Corresponding author}
+%%\cortext[cor2]{Principal corresponding author}
+%
+%\fntext[fn1]{Data Analytic Group, D3-08, School of Information Technology and Mathematical Science, Mawson Lakes, SA-5095. Mob. +61420863356}
+%\fntext[fn2]{D3-07, School of Information Technology and Mathematical Science, Mawson Lakes, SA-5095.}
+
+%%
+%%\author[rvt]{A.H.M. Sarowar Sattar\corref{cor1}\fnref{fn1}}
+%%\ead{sarowar@gmail.com}
+%%\author[rvt]{Jiuyong Li\corref{cor1}\fnref{fn2}}
+%%\ead{Jiuyong.Li@unisa.edu.au}
+%%\fntext[fn1]{This is the specimen author footnote.}
+%%\fntext[fn2]{Another author footnote, but a little more longer.}
+%%\fntext[fn3]{Another author footnote, but a little more longer.}
+%%\fntext[fn4]{Another author footnote, but a little more longer.}
+%%\fntext[fn5]{Another author footnote, but a little more longer.}
+%
+%\address[add]{School of Information Technology and Mathematical Science, University of South Australia, Mawson Lakes, SA-5095, Australia}
+%\address[add2]{Department of Biomedical Informatics, Vanderbilt University, Nashville, Tennessee, USA}
+%%\address[focal]{River Valley Technologies, 9, Browns Court,
+%%Kennford, Exeter, United Kingdom}
+%%\address[els]{Central Application Management,
+%%Elsevier, Radarweg 29, 1043 NX\\
+%%Amsterdam, Netherlands}
+
+\begin{abstract}
+Abstract is here
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Keep your keywords here
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+
+%% main text
+
+\section{Introduction}
+\label{sec:introduction}
+
+
+\section{Conclusion}
+\label{Conclusion}
+
+
+\bibliographystyle{elsarticle-num}
+\bibliography{sarowar_ab}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use elsarticle-num.bst.
+
+%% References without bibTeX database:
+
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-num.tex'.
