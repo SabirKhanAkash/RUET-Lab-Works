@@ -1,25 +1,40 @@
+/* 
+
+Sample Testcase
+5
+0 4
+3 5
+2 2
+1 3
+4 1
+15
+
+*/
+
 #include<stdio.h> 
 int main() 
 { 
     int i,process,completionTime,rem,flag=0,timeQuantum; 
     int waitTime=0,turnaroundTime=0,at[10],bt[10],rt[10]; 
 
-    printf("Enter the number of processes : "); 
+    printf("**** Round Robin ****\n\nEnter the number of processes : "); 
     scanf("%d",&process); 
+    printf("\n");
 
     rem = process; 
 
     for(i=0; i<process; i++) 
     { 
         printf("Enter arival time and Burst time for Process %d (in ms):",i+1); 
-        scanf("%d",&at[i]); 
-        scanf("%d",&bt[i]); 
+        scanf("%d%d",&at[i],&bt[i]); 
         rt[i] = bt[i]; 
     } 
 
-    printf("Enter Time Quantum: "); 
+    printf("\nEnter Time Quantum: "); 
     scanf("%d",&timeQuantum); 
-    printf("\n\nProcess\t|  Turnaround Time  |  Waiting Time\n"); 
+
+    printf("\n--------------------------------------------");
+    printf("\nProcess\t|  Turnaround Time  |  Waiting Time\n"); 
     printf("--------------------------------------------\n");
 
     completionTime = 0,i = 0;
@@ -53,8 +68,8 @@ int main()
             i = 0; 
     }
 
-    printf("\nAverage Waiting Time= %f ms\n",waitTime*1.0/process); 
-    printf("Average Turnaround Time = %f ms\n",turnaroundTime*1.0/process); 
+    printf("\nAverage Waiting Time= %.3f ms\n",waitTime*1.0/process); 
+    printf("Average Turnaround Time = %.3f ms\n",turnaroundTime*1.0/process); 
 
     return 0; 
 }
