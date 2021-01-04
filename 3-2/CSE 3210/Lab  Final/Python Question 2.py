@@ -1,0 +1,20 @@
+N = 4
+def transpose(A): 
+
+	for i in range(N): 
+		for j in range(i+1, N): 
+			A[i][j], A[j][i] = A[j][i], A[i][j] 
+
+A = [ [1, 1, 1, 1], 
+	[2, 2, 2, 2], 
+	[3, 3, 3, 3], 
+	[4, 4, 4, 4]] 
+
+transpose(A) 
+
+print("Modified matrix is") 
+for i in range(N): 
+	for j in range(N): 
+		print(A[i][j], " ", end='') 
+	print() 
+	

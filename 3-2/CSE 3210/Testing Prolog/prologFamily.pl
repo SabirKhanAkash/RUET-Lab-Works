@@ -17,4 +17,5 @@ sibling(rafi,rumi,riya).
 sibling(najia,ridima).
 
 mother(riya,runa).
+mother(riya,raju).
 mother(orko,najia).
