@@ -10,11 +10,11 @@ sampling_step = 1/fs;
 StopTime = 1;
 
 c_t = (0:sampling_step:StopTime)';
-x1 = @(t)exp(j*2*pi*C_F1*t)+.5;
+x1 = @(t)exp(j*2*pi*C_F1*t)+ 0.5;
 y1 = x1(c_t);
 
 figure(1);
-plot(c_t,y1,'bo-','LineWidth',.5);
+plot(c_t,y1,'bo-','LineWidth', 0.5);
 pause(2);
 figure(2);
 
@@ -31,12 +31,12 @@ for D_F = 0:.1:C_F1+3
     
     p = get(ax1,'pos');
     p(3) = p(4)+.04;
-    plot(ax1,r,i,'b.-','LineWidth', .5);
+    plot(ax1,r,i,'b.-','LineWidth', 0.5);
     set(ax1,'pos',p);
     set(ax1, 'XLim', [-4 4]);
     set(ax1, 'YLim', [-4 4]);
     
-    x3 = @(t)exp(-j*2*pi*D_F*t)+.5;
+    x3 = @(t)exp(-j*2*pi*D_F*t)+ 0.5;
     y3 = x3(c_t);
     yy = y1.*y3;
     r = real(yy);
