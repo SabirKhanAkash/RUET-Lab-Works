@@ -21,6 +21,8 @@ def entropy(im):
     e = -(p[p>0]*np.log2(p[p>0])).sum()
     return e
 
+
+
 # For Original Image
 
 import cv2
@@ -43,6 +45,9 @@ cv2_imshow(OriginalImg)
 print()
 print("The Entropy of Original image is: ",entropy(OriginalImg))
 print("The bit rate of Original image is: ",bitrate(row,col,bit)," bits/pixel")
+
+
+
 
 #For A (Left) Prediction
 
@@ -70,6 +75,9 @@ print("For A Prediction -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg1))
 print("The bit rate of Resultant image is: ",bitrate(row1,col1,bit1)," bits/pixel")
 
+
+
+
 #For B (Upper) Prediction
 
 ResultantImg2 = np.zeros([row,col])
@@ -95,6 +103,9 @@ cv2_imshow(ResultantImg2)
 print("For B Prediction -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg2))
 print("The bit rate of Resultant image is: ",bitrate(row2,col2,bit2)," bits/pixel")
+
+
+
 
 #For C (Upper Left) Prediction
 
@@ -124,6 +135,9 @@ print("For C Prediction -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg3))
 print("The bit rate of Resultant image is: ",bitrate(row3,col3,bit3)," bits/pixel")
 
+
+
+
 #For A+B-C Prediction
 
 ResultantImg4 = np.zeros([row,col])
@@ -151,6 +165,9 @@ cv2_imshow(ResultantImg4)
 print("For A+B-C Prediction -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg4))
 print("The bit rate of Resultant image is: ",bitrate(row4,col4,bit4)," bits/pixel")
+
+
+
 
 #For A + (B – C)/2 Prediction
 
@@ -180,6 +197,9 @@ print("For A + (B – C) / 2 Prediction -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg5))
 print("The bit rate of Resultant image is: ",bitrate(row5,col5,bit5)," bits/pixel")
 
+
+
+
 #For B + (A – C)/2 Prediction
 
 ResultantImg6 = np.zeros([row,col])
@@ -207,6 +227,9 @@ cv2_imshow(ResultantImg6)
 print("For B + (A – C) / 2 Prediction -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg6))
 print("The bit rate of Resultant image is: ",bitrate(row6,col6,bit6)," bits/pixel")
+
+
+
 
 # For A+B/2 Prediction
 
@@ -236,6 +259,10 @@ print("For A+B / 2 -------------->")
 print("The Entropy of Resultant image: ",entropy(ResultantImg7))
 print("The bit rate of Resultant image is: ",bitrate(row7,col7,bit7)," bits/pixel")
 
+
+
+
+
 # For LOCO-I
 
 LocoI = np.zeros([row,col])
@@ -262,53 +289,4 @@ cv2_imshow(LocoI)
 print("For LOCO-I -------------->")
 print("The Entropy of Resultant image: ",entropy(LocoI))
 print("The bit rate of Resultant image is: ",bitrate(rowl,coll,bitl)," bits/pixel")
-
-# For Temporal 
-
-[row , col] = OriginalImg.shape
-rowT = row + 1
-colT = col + 1
-const = 5
-padded_img = np.full((rowT, colT), const, dtype=np.uint8)
-
-xx = (rowT - row) // 2
-yy = (colT - col) // 2
-
-padded_img[yy:yy+col, xx:xx+row] = OriginalImg
-
-cv2_imshow(padded_img)
-
-tempo1 = np.zeros([rowT, colT])
-tempo2 = np.zeros([rowT, colT])
-tempo3 = np.zeros([rowT, colT])
-tempo4 = np.zeros([rowT, colT])
-tempo5 = np.zeros([rowT, colT])
-tempo6 = np.zeros([rowT, colT])
-tempo7 = np.zeros([rowT, colT])
-tempo8 = np.zeros([rowT, colT])
-
-for i in range(2, rowT):
-  for j in range(2, colT):
-    A = padded_img[i-1,j]
-    B = padded_img[i,j-1]
-    C = padded_img [i-1,j-1]
-    tempo1[i, j] = A
-    tempo2[i, j] = C
-    tempo3[i, j] = B
-    tempo4[i, j] = (A+B)/2
-    tempo5[i, j] = A + B - C 
-    tempo6[i, j] = A+((B-C)/2)
-    tempo7[i, j] = B+(A-C)/2
-
-
-[rowt1,colt1] = tempo1.shape
-
-cv2.imwrite ('/content/drive/MyDrive/DIP Lab/Lab 2/ResultofTemporal1.png', tempo1)
-bitt1 = os.stat('/content/drive/MyDrive/DIP Lab/Lab 2/ResultofTemporal1.png').st_size
-
-cv2_imshow(LocoI)
-
-print("For Temporal 1 (A) -------------->")
-print("The Entropy of Resultant image: ",entropy(tempo1))
-print("The bit rate of Resultant image is: ",bitrate(rowt1,bitt1)," bits/pixel")
 
