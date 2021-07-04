@@ -1,0 +1,35 @@
+int => This is Typespecifer
+main => This is Keyword
+( = is first bracket open
+) = is second bracket close
+{ = is second bracket open
+float => This is Typespecifer
+z => This is Character
+= => This is Assignment Operator
+1.5 => This is Float Number
+; => This is Semicolon
+char => This is Typespecifer
+n => This is Character
+= => This is Assignment Operator
+' => This is Inverted Comma
+C => This is Character
+' => This is Inverted Comma
+while => This is Keyword
+( = is first bracket open
+1 => This is Interger Number
+) = is second bracket close
+{ = is second bracket open
+if => This is Keyword
+( = is first bracket open
+a => This is Character
+== => This is Equal Operator
+2 => This is Interger Number
+) = is second bracket close
+a => This is Character
+= => This is Assignment Operator
+b => This is Character
++ => This is the ADD Operator
+c => This is Character
+; => This is Semicolon
+} = is second bracket close
+} = is second bracket close
