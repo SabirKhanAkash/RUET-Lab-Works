@@ -1,0 +1,11 @@
+int main()
+{ 
+    float z = 1.5;
+    char n = 'C'
+
+    while(1) 
+    {
+        if(a==2)
+            a=b+c; 
+    } 
+}
