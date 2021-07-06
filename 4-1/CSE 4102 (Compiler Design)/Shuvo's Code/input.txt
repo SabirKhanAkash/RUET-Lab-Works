@@ -1,0 +1,10 @@
+int main()
+{
+    float c = 12; 
+    int b = 10.0;
+
+while(True)
+{
+    a = b+c;
+}
+}

@@ -1,0 +1,28 @@
+int = is a TypeSpecifier
+main = is a Keyword
+( = is first bracket open
+) = is second bracket close
+{ = is second bracket open
+float = is a TypeSpecifier
+c = is an SUB IDENTIFIER
+= = is an ASSIGN OPERATOR
+12 = is an integer number
+; = is a SEMICOLON
+int = is a TypeSpecifier
+b = is an SUB IDENTIFIER
+= = is an ASSIGN OPERATOR
+10.0 = is a floating point number
+; = is a SEMICOLON
+while = is a Keyword
+( = is first bracket open
+True = is an SUB IDENTIFIER
+) = is second bracket close
+{ = is second bracket open
+a = is an SUB IDENTIFIER
+= = is an ASSIGN OPERATOR
+b = is an SUB IDENTIFIER
++ = is an ADD OPERATOR
+c = is an SUB IDENTIFIER
+; = is a SEMICOLON
+} = is second bracket close
+} = is second bracket close
