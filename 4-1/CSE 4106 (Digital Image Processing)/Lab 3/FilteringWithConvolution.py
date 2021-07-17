@@ -11,6 +11,7 @@ Original file is located at
 
 pip install -U scikit-image
 
+#importing necessary packages
 import cv2
 from skimage.exposure import rescale_intensity
 import numpy as np
