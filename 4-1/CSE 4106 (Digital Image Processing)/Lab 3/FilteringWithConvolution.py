@@ -15,6 +15,8 @@ import cv2
 from skimage.exposure import rescale_intensity
 import numpy as np
 
+
+#Defining the Convolution Function here
 def convol(image, kernel):
 
 	(iH, iW) = image.shape[:2]
