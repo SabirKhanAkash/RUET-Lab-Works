@@ -18,8 +18,8 @@ main2: cal.l cal.y
 	a <$(input)> $(output)
 
 main3: lexer.l parser.y
-	bison -d parser.y 
-	flex lexer.l 
+	yacc -d parser.y 
+	lex lexer.l 
 	gcc parser.tab.c lex.yy.c
 	a <$(input)> $(output)
 	
