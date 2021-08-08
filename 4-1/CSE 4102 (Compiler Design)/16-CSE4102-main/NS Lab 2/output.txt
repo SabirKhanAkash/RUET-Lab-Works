@@ -1,6 +1,0 @@
-inserting var023 with type 1
-ID ASSIGN exp SEMI
-1 + 1
-812802422 + 1
-Types are incompatiable
-Syntax error at line 3
