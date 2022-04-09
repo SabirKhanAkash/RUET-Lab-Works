@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 // Roll: 1603108
-// Question 1: char a = 'a';
+// Question 1: char  a = 'a';
 
 %}
 

@@ -1,0 +1,11 @@
+FOR EXECUTING LEXICAL ANALYSIS (LEX/TOKENIZATION)
+````````````````````````````````````
+lex FileName.l
+gcc lex.yy.c
+a
+
+a <input.txt> output.txt
+
+
+FOR EXECUTING PARSING: 
+

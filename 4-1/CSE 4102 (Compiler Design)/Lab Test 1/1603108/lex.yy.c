@@ -376,7 +376,7 @@ char *yytext;
 #include <stdio.h>
 
 // Roll: 1603108
-// Question 1: char a = 'a';
+// Question 1: char  a = 'a';
 
 #line 382 "lex.yy.c"
 
