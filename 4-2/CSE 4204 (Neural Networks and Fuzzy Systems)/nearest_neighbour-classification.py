@@ -44,7 +44,7 @@ while(1):
     plt.scatter(wwe_height,wwe_weight,label="WWE Players",color="red",marker="*",s=100);
     plt.xlabel("Player's Height");
     plt.ylabel("Player's Weight");
-    plt.title('Nearest Neighbour Classification with Rogue Pattern');
+    plt.title('Nearest Neighbour Classification without Rogue Pattern');
     plt.legend();
 
     plt.show();
