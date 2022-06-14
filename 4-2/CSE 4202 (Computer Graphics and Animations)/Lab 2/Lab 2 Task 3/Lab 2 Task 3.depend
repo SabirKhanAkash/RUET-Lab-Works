@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1653753103 source:d:\study materials\study\lab\ruet-lab-works\4-2\cse 4202 (computer graphics and animations)\lab 2\lab 2 task 3\main.cpp
+1655212153 source:d:\study materials\study\lab\ruet-lab-works\4-2\cse 4202 (computer graphics and animations)\lab 2\lab 2 task 3\main.cpp
 	"windows.h"
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
+	<math.h>
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\windows.h
 	<winresrc.h>
@@ -219,4 +220,7 @@
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
 	<GL/gl.h>
+
+1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
+	<_mingw.h>
 
