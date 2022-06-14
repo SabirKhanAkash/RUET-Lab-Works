@@ -19,6 +19,7 @@
 #endif
 
 #include <stdlib.h>
+#include<math.h>
 
 static int slices = 16;
 static int stacks = 16;
@@ -36,7 +37,9 @@ static int stacks = 16;
 
 */
 
-// START OF 1
+
+// -----------------------------------------------------------------------
+// START of Figure 1
 
 void TopPentagon1()
 {
@@ -96,25 +99,26 @@ void Triangle1()
     glEnd();
 }
 
-// END OF 1
+// END of Figure 1
 
-// --------------------------------
+// -----------------------------------------------------------------------
 
-// START OF 2
+// START of Figure 2
 
 void TopPentagon2()
 {
+    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.87, 0.32);
+        glVertex2f(0.0, 0.90);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.72, 0.34);
+        glVertex2f(-0.10, 0.75);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.68, 0.28);
+        glVertex2f(-0.05, 0.65);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.70, 0.23);
+        glVertex2f(0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.77, 0.21);
+        glVertex2f(0.10, 0.75);
     glEnd();
 }
 
@@ -122,15 +126,15 @@ void MidPentagon2()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.68, 0.28);
+        glVertex2f(-0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.55,0.36);
+        glVertex2f(-0.20,0.55);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.50, 0.20);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.64,0.08);
+        glVertex2f(0.20,0.55);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.70, 0.23);
+        glVertex2f(0.05, 0.65);
     glEnd();
 }
 
@@ -138,13 +142,13 @@ void MidParallelogram2()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.50, 0.20);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.34, 0.25);
+        glVertex2f(-0.10, 0.32);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.22,0.10);
+        glVertex2f(0.0,0.19);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.41,0.07);
+        glVertex2f(0.10,0.32);
     glEnd();
 }
 
@@ -152,33 +156,34 @@ void Triangle2()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.20,0.15);
+        glVertex2f(-0.05,0.19);
         glColor3f(1.0, 0.0, 0.0);
         glVertex2f(0.00, 0.00);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.24,0.05);
+        glVertex2f(0.05,0.19);
     glEnd();
 }
 
-// END OF 2
+// END of Figure 2
 
-// --------------------------------
+// -----------------------------------------------------------------------
 
-// START OF 3
+// START of Figure 3
 
 void TopPentagon3()
 {
+    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.60, -0.87);
+        glVertex2f(0.0, 0.90);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.57, -0.68);
+        glVertex2f(-0.10, 0.75);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.48, -0.64);
+        glVertex2f(-0.05, 0.65);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.40, -0.70);
+        glVertex2f(0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.42, -0.78);
+        glVertex2f(0.10, 0.75);
     glEnd();
 }
 
@@ -186,15 +191,15 @@ void MidPentagon3()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.48, -0.64);
+        glVertex2f(-0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.55,-0.45);
+        glVertex2f(-0.20,0.55);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.28, -0.48);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.22, -0.73);
+        glVertex2f(0.20,0.55);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.40, -0.70);
+        glVertex2f(0.05, 0.65);
     glEnd();
 }
 
@@ -202,13 +207,13 @@ void MidParallelogram3()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.28, -0.48);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.29, -0.31);
+        glVertex2f(-0.10, 0.32);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.11,-0.20);
+        glVertex2f(0.0,0.19);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.11,-0.42);
+        glVertex2f(0.10,0.32);
     glEnd();
 }
 
@@ -216,33 +221,34 @@ void Triangle3()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.15,-0.17);
+        glVertex2f(-0.05,0.19);
         glColor3f(1.0, 0.0, 0.0);
         glVertex2f(0.00, 0.00);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(0.06,-0.22);
+        glVertex2f(0.05,0.19);
     glEnd();
 }
 
-// END OF 3
+// END of Figure 3
 
-// --------------------------------
+// -----------------------------------------------------------------------
 
-// START OF 4
+// START of Figure 4
 
 void TopPentagon4()
 {
+    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.60, -0.87);
+        glVertex2f(0.0, 0.90);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.57, -0.68);
+        glVertex2f(-0.10, 0.75);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.48, -0.64);
+        glVertex2f(-0.05, 0.65);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.40, -0.70);
+        glVertex2f(0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.42, -0.78);
+        glVertex2f(0.10, 0.75);
     glEnd();
 }
 
@@ -250,15 +256,15 @@ void MidPentagon4()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.48, -0.64);
+        glVertex2f(-0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.55,-0.45);
+        glVertex2f(-0.20,0.55);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.28, -0.48);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.22, -0.73);
+        glVertex2f(0.20,0.55);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.40, -0.70);
+        glVertex2f(0.05, 0.65);
     glEnd();
 }
 
@@ -266,13 +272,13 @@ void MidParallelogram4()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.28, -0.48);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.29, -0.31);
+        glVertex2f(-0.10, 0.32);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.11,-0.20);
+        glVertex2f(0.0,0.19);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.11,-0.42);
+        glVertex2f(0.10,0.32);
     glEnd();
 }
 
@@ -280,33 +286,35 @@ void Triangle4()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.15,-0.17);
+        glVertex2f(-0.05,0.19);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.00, 0.00);
+        glVertex2f(0.00, 0.00);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.06,-0.22);
+        glVertex2f(0.05,0.19);
     glEnd();
 }
 
-// END OF 4
 
-// ---------------------------------
+// END of Figure 4
 
-// START OF 5
+// -----------------------------------------------------------------------
+
+// START of Figure 5
 
 void TopPentagon5()
 {
+    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.87, 0.32);
+        glVertex2f(0.0, 0.90);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.72, 0.34);
+        glVertex2f(-0.10, 0.75);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.68, 0.28);
+        glVertex2f(-0.05, 0.65);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.70, 0.23);
+        glVertex2f(0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.77, 0.21);
+        glVertex2f(0.10, 0.75);
     glEnd();
 }
 
@@ -314,15 +322,15 @@ void MidPentagon5()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.68, 0.28);
+        glVertex2f(-0.05, 0.65);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.55,0.36);
+        glVertex2f(-0.20,0.55);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.50, 0.20);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.64,0.08);
+        glVertex2f(0.20,0.55);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.70, 0.23);
+        glVertex2f(0.05, 0.65);
     glEnd();
 }
 
@@ -330,13 +338,13 @@ void MidParallelogram5()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.50, 0.20);
+        glVertex2f(0.0, 0.45);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.34, 0.25);
+        glVertex2f(-0.10, 0.32);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.22,0.10);
+        glVertex2f(0.0,0.19);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.41,0.07);
+        glVertex2f(0.10,0.32);
     glEnd();
 }
 
@@ -344,26 +352,25 @@ void Triangle5()
 {
     glBegin(GL_POLYGON);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(-0.20,0.15);
+        glVertex2f(-0.05,0.19);
         glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(-0.00, 0.00);
+        glVertex2f(0.00, 0.00);
         glColor3f(0.0, 1.0, 0.0);
-        glVertex2f(-0.24,0.05);
+        glVertex2f(0.05,0.19);
     glEnd();
 }
 
-// END OF 5
+// End of Figure 5
 
-// ---------------------------------
+// -----------------------------------------------------------------------
 
-void display(){
-
+void display() {
     TopPentagon1();
     MidPentagon1();
     MidParallelogram1();
     Triangle1();
 
-    TopPentagon2();
+	TopPentagon2();
     MidPentagon2();
     MidParallelogram2();
     Triangle2();
@@ -383,12 +390,14 @@ void display(){
     MidParallelogram5();
     Triangle5();
 
-    glFlush();
+	glFlush(); // Render now
 }
 
-int main(int argc, char** argv)
-{
-    glutInit(&argc,argv);
+/* Main function: GLUT runs as a console application starting at main() */
+
+int main(int argc, char** argv) {
+
+	glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE);
     glutInitWindowSize(700,700);
     glutInitWindowPosition(0,0);
@@ -397,5 +406,6 @@ int main(int argc, char** argv)
     glLoadIdentity();
     glutDisplayFunc(display);
     glutMainLoop();
+
     return 0;
 }
