@@ -37,7 +37,6 @@ static int stacks = 16;
 
 */
 
-
 // -----------------------------------------------------------------------
 // START of Figure 1
 
@@ -107,7 +106,7 @@ void Triangle1()
 
 void TopPentagon2()
 {
-    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
+    glRotatef(72,0,0,1);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
         glVertex2f(0.0, 0.90);
@@ -172,7 +171,7 @@ void Triangle2()
 
 void TopPentagon3()
 {
-    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
+    glRotatef(72,0,0,1);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
         glVertex2f(0.0, 0.90);
@@ -237,7 +236,7 @@ void Triangle3()
 
 void TopPentagon4()
 {
-    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
+    glRotatef(72,0,0,1);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
         glVertex2f(0.0, 0.90);
@@ -303,7 +302,7 @@ void Triangle4()
 
 void TopPentagon5()
 {
-    glRotatef(72*1,0.9*cos(18.0),0.9*sin(18.0),15);
+    glRotatef(72,0,0,1);
     glBegin(GL_POLYGON);
         glColor3f(0.0, 1.0, 0.0);
         glVertex2f(0.0, 0.90);
@@ -364,6 +363,7 @@ void Triangle5()
 
 // -----------------------------------------------------------------------
 
+
 void display() {
     TopPentagon1();
     MidPentagon1();
@@ -409,3 +409,4 @@ int main(int argc, char** argv) {
 
     return 0;
 }
+
