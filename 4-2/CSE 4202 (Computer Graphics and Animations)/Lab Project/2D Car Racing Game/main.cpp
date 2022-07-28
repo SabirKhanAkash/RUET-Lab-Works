@@ -686,6 +686,79 @@ void opositCar(int i)
     glVertex2d(25,30);
     glVertex2d(25,-40);
     glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255, opositCars[i].g, 0);
+    glVertex2d(-15,-30);
+    glVertex2d(-15,10);
+    glVertex2d(15,10);
+    glVertex2d(15,-30);
+    glEnd();
+
+    ///BACK GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(0,50,0);
+    glVertex2d(-23,-38);
+    glVertex2d(-23,-7);
+    glVertex2d(23,-7);
+    glVertex2d(23,-38);
+    glEnd();
+
+    ///FRONT GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(-15,11);
+    glVertex2d(-23,24);
+    glVertex2d(23,24);
+    glVertex2d(15,11);
+    glEnd();
+
+    glBegin(GL_LINE_LOOP);
+    glColor3ub(0,0,0);
+    glVertex2d(-15,11);
+    glVertex2d(-23,24);
+    glVertex2d(23,24);
+    glVertex2d(15,11);
+    glEnd();
+
+    ///LEFT GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(-22,-5);
+    glVertex2d(-22,19);
+    glVertex2d(-17,9);
+    glVertex2d(-17,-5);
+    glEnd();
+    glBegin(GL_LINE_LOOP);
+    glColor3ub(0,0,0);
+    glVertex2d(-22,-5);
+    glVertex2d(-22,19);
+    glVertex2d(-17,9);
+    glVertex2d(-17,-5);
+    glEnd();
+
+
+    ///RIGHT GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(18,-5);
+    glVertex2d(18,10);
+    glVertex2d(23,20);
+    glVertex2d(23,-5);
+    glEnd();
+    glBegin(GL_LINE_LOOP);
+    glColor3ub(0,0,0);
+    glVertex2d(18,-5);
+    glVertex2d(18,10);
+    glVertex2d(23,20);
+    glVertex2d(23,-5);
+    glEnd();
+    glPopMatrix();
+}
+
+void road()
+{
+
 }
 
 int main(int argc, char *argv[])
