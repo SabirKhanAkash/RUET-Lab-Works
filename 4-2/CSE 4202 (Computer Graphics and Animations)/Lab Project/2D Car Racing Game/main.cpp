@@ -11,6 +11,7 @@
  * number of geometry stacks and slices can be adjusted
  * using the + and - keys.
  */
+#include"windows.h"
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
@@ -18,7 +19,6 @@
 #endif
 
 #include <stdlib.h>
-#include"windows.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<string>
@@ -822,13 +822,68 @@ static void idle(void)
     glutPostRedisplay();
 }
 
+static void display(void)
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glColor3d(1,0,0);
+    roadSide();
+    road();
+
+    laneDevider();
+    car();
+    for(int i=0; i<carNumber; i++)
+    {
+        opositCar(i);
+    }
+    ostringstream strg;
+    strg<<point;
+    string sl = strg.str();
+    stringWrite(440,680,11,"Score: "+sl,1,1,1);
+    ostringstream strgg;
+    strgg<<life;
+    sl = strgg.str();
+    stringWrite(30,680,11,"Life: "+sl,1,1,1);
+    if(life == 0)
+    {
+        glutIdleFunc(NULL);
+        stringWrite(260,330,11,"GAME OVER! BETTER LUCK NEXT TIME",1,0,0);
+    }
+    glutSwapBuffers();
+}
+
+void special(int key, int x, int y)
+{
+    switch(key)
+    {
+    case GLUT_KEY_LEFT:
+        if(carSide>0)
+            carSide--;
+        break;
+    case GLUT_KEY_RIGHT:
+        if(carSide<2)
+            carSide++;
+        break;
+    default:
+        break;
+    }
+}
+
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
+    carGenerate();
+    laneDividerGenerator();
+    glutInitWindowSize(600,700);
+    glutInitWindowPosition(400,0);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
-    glutCreateWindow("GLUT Shapes");
-
+    glutCreateWindow("2D CAR RACING GAME");
+    glutSpecialFunc(special);
+    glutDisplayFunc(display);
+    glutIdleFunc(idle);
+    point = 0;
+    glClearColor(1,1,1,1);
+    glOrtho(0,600,0,700,0,600);
+    glutMainLoop();
+    return EXIT_SUCCESS;
 }
