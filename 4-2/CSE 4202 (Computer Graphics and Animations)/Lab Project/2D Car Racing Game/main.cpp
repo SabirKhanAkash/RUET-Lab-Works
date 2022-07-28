@@ -758,7 +758,68 @@ void opositCar(int i)
 
 void road()
 {
+    glBegin(GL_QUADS);
+    glColor3ub(100,100,100);
+    glVertex2d(20,0);
+    glVertex2d(20,700);
+    glVertex2d(580,700);
+    glVertex2d(580,0);
+    glEnd();
+}
 
+void laneDevider()
+{
+    for(int i=0; i<lanePoints; i++)
+    {
+
+        glPushMatrix();
+        glTranslatef(200, laneDividers[i].y, 0);
+        glBegin(GL_QUADS);
+        glColor3ub(255,255,0);
+        glVertex2d(0,0);
+        glVertex2d(0,40);
+        glVertex2d(10,40);
+        glVertex2d(10,0);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslatef(400, laneDividers[i].y, 0);
+        glBegin(GL_QUADS);
+        glColor3ub(255,255,0);
+        glVertex2d(0,0);
+        glVertex2d(0,40);
+        glVertex2d(10,40);
+        glVertex2d(10,0);
+        glEnd();
+        glPopMatrix();
+        laneDividers[i].y -= speed;
+        if(laneDividers[i].y < -70)
+        {
+            laneDividers[i].y = 700;
+            point++;
+        }
+    }
+}
+
+static void idle(void)
+{
+    for(int i=0; i<carNumber; i++)
+    {
+        if(opositCars[i].opositCarY <= -200){
+            opositCars[i].opositCarSide = random(0,3);
+            opositCars[i].opositCarY = 800;
+        }
+        if(opositCars[i].opositCarSide == carSide)
+        {
+            if(opositCars[i].opositCarY<105 && opositCars[i].opositCarY>=30)
+            {
+                life--;
+                opositCars[i].opositCarY = 800+50;
+            }
+        }
+    }
+    glutPostRedisplay();
 }
 
 int main(int argc, char *argv[])
