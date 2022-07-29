@@ -625,6 +625,67 @@ void car()
     glVertex2d(88,41);
     glVertex2d(77,41);
     glEnd();
+
+    ///2ND LEFT CAR DOOR
+    glBegin(GL_POLYGON);
+    glColor3ub(0,51,0);
+    glVertex2d(77,43);
+    glVertex2d(88,43);
+    glVertex2d(88,53);
+    glVertex2d(77,70);
+    glEnd();
+
+    ///1ST RIGHT CAR DOOR
+    glBegin(GL_POLYGON);
+    glColor3ub(0,51,0);
+    glVertex2d(112,27);
+    glVertex2d(123,17);
+    glVertex2d(123,41);
+    glVertex2d(112,41);
+    glEnd();
+
+    ///2ND RIGHT CAR DOOR
+    glBegin(GL_POLYGON);
+    glColor3ub(0,51,0);
+    glVertex2d(112,43);
+    glVertex2d(123,43);
+    glVertex2d(123,70);
+    glVertex2d(112,53);
+    glEnd();
+
+    glPopMatrix();
+}
+
+void opositCar(int i)
+{
+    glPushMatrix();
+    glTranslatef(opositCars[i].opositCarSide*200+100, opositCars[i].opositCarY -= speed*1.5, 0.0);
+    glRotated(180,0,0,1);
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(-30,-35);
+    glVertex2d(-30,-20);
+    glVertex2d(30,-20);
+    glVertex2d(30,-35);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(-30,10);
+    glVertex2d(-30,25);
+    glVertex2d(30,25);
+    glVertex2d(30,10);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(opositCars[i].r, 255, opositCars[i].b);
+    glVertex2d(-25,-40);
+    glVertex2d(-25,30);
+    glVertex2d(-15,40);
+    glVertex2d(15,40);
+    glVertex2d(25,30);
+    glVertex2d(25,-40);
+    glEnd();
 }
 
 int main(int argc, char *argv[])
