@@ -446,6 +446,96 @@ void roadSide()
     glPopMatrix();
 }
 
+void car()
+{
+    ///NEW CAR START
+    glPushMatrix();
+    glTranslatef(200.0*carSide, 50.0, 0.0);
+    glBegin(GL_POLYGON);
+    glColor3ub(0,255,0);
+    glVertex2d(90,4);
+    glVertex2d(75,10);
+    glVertex2d(75,100);
+    glVertex2d(90,110);
+    glVertex2d(110,110);
+    glVertex2d(125,100);
+    glVertex2d(125,10);
+    glVertex2d(110,4);
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(0,153,0);
+    glVertex2d(90,25);
+    glVertex2d(90,55);
+    glVertex2d(110,55);
+    glVertex2d(110,25);
+    glEnd();
+
+
+    ///FRONT GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,153);
+    glVertex2d(90,55);
+    glVertex2d(85,77);
+    glVertex2d(114,77);
+    glVertex2d(110,55);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,153,0);
+    glVertex2d(85,77);
+    glVertex2d(75,100);
+    glVertex2d(90,110);
+    glVertex2d(110,110);
+    glVertex2d(125,100);
+    glVertex2d(114,77);
+    glEnd();
+
+    ///RIGHT LOOKING GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(255,0,0);
+    glVertex2d(116,80);
+    glVertex2d(122,78);
+    glVertex2d(123,84);
+    glVertex2d(117,82);
+    glEnd();
+
+    ///LEFT LOOKING GLASS
+    glBegin(GL_POLYGON);
+    glColor3ub(255,0,0);
+    glVertex2d(83,80);
+    glVertex2d(77,78);
+    glVertex2d(76,84);
+    glVertex2d(82,82);
+    glEnd();
+
+    ///LEFT FRONT LIGHT
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(75,100);
+    glVertex2d(85,100);
+    glVertex2d(92,105);
+    glVertex2d(90,110);
+    glEnd();
+
+    ///RIGHT FRONT LIGHT
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(125,100);
+    glVertex2d(115,100);
+    glVertex2d(108,105);
+    glVertex2d(110,110);
+    glEnd();
+
+    ///1ST RIGHT WHEEL
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(125,65);
+    glVertex2d(129,65);
+    glVertex2d(129,75);
+    glVertex2d(125,75);
+    glEnd();
+}
+
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
