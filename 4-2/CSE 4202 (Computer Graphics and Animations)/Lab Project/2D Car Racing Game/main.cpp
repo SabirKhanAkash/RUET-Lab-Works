@@ -395,6 +395,55 @@ void roadSide()
     glVertex2d(600,535);
     glVertex2d(580,525);
     glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,525);
+    glVertex2d(600,535);
+    glVertex2d(600,570);
+    glVertex2d(580,560);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(580,560);
+    glVertex2d(600,570);
+    glVertex2d(600,605);
+    glVertex2d(580,595);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,595);
+    glVertex2d(600,605);
+    glVertex2d(600,640);
+    glVertex2d(580,630);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(580,630);
+    glVertex2d(600,640);
+    glVertex2d(600,675);
+    glVertex2d(580,665);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,665);
+    glVertex2d(600,675);
+    glVertex2d(600,700);
+    glVertex2d(580,690);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(580,690);
+    glVertex2d(600,700);
+    glVertex2d(600,735);
+    glVertex2d(580,725);
+    glEnd();
+    glPopMatrix();
 }
 
 int main(int argc, char *argv[])
