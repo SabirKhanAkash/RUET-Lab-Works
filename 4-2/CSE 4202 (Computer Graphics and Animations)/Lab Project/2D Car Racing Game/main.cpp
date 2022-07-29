@@ -534,6 +534,62 @@ void car()
     glVertex2d(129,75);
     glVertex2d(125,75);
     glEnd();
+
+    ///2ND RIGHT WHEEL
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(125,28);
+    glVertex2d(129,28);
+    glVertex2d(129,38);
+    glVertex2d(125,38);
+    glEnd();
+
+    ///3RD RIGHT WHEEL
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(71,65);
+    glVertex2d(75,65);
+    glVertex2d(75,75);
+    glVertex2d(71,75);
+    glEnd();
+
+    ///4TH RIGHT WHEEL
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(71,28);
+    glVertex2d(75,28);
+    glVertex2d(75,38);
+    glVertex2d(71,38);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,153);
+    glVertex2d(90,25);
+    glVertex2d(75,10);
+    glVertex2d(90,4);
+    glVertex2d(110,4);
+    glVertex2d(125,10);
+    glVertex2d(110,25);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(64,64,64);
+    glVertex2d(90,4);
+    glVertex2d(85,11);
+    glVertex2d(115,11);
+    glVertex2d(110,4);
+    glEnd();
+
+    ///1ST BACK RED LIGHT
+    glBegin(GL_POLYGON);
+    glColor3ub(255,0,0);
+    glVertex2d(90,4);
+    glVertex2d(85,11);
+    glVertex2d(75,10);
+    glVertex2d(90,4);
+    glEnd();
+
+
 }
 
 int main(int argc, char *argv[])
