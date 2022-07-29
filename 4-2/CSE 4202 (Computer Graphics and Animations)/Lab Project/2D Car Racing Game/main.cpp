@@ -589,7 +589,42 @@ void car()
     glVertex2d(90,4);
     glEnd();
 
+    ///2ND BACK RED LIGHT
+    glBegin(GL_POLYGON);
+    glColor3ub(255,0,0);
+    glVertex2d(110,4);
+    glVertex2d(115,11);
+    glVertex2d(125,10);
+    glVertex2d(110,4);
+    glEnd();
 
+    ///1ST GREEN BACK LIGHT
+    glBegin(GL_POLYGON);
+    glColor3ub(0,153,0);
+    glVertex2d(75,10);
+    glVertex2d(85,11);
+    glVertex2d(82,16);
+    glVertex2d(75,10);
+    glEnd();
+
+    ///2ND GREEN BACK LIGHT
+    glBegin(GL_POLYGON);
+    glColor3ub(0,153,0);
+    glVertex2d(125,10);
+    glVertex2d(115,11);
+    glVertex2d(118,17);
+    glVertex2d(125,10);
+    glEnd();
+
+
+    ///1ST LEFT CAR DOOR
+    glBegin(GL_POLYGON);
+    glColor3ub(0,51,0);
+    glVertex2d(77,17);
+    glVertex2d(88,27);
+    glVertex2d(88,41);
+    glVertex2d(77,41);
+    glEnd();
 }
 
 int main(int argc, char *argv[])
