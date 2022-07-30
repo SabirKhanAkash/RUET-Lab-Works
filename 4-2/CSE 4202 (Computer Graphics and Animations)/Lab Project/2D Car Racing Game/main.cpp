@@ -145,6 +145,110 @@ void roadSide()
     glVertex2d(20,185);
     glVertex2d(0,175);
     glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,175);
+    glVertex2d(20,185);
+    glVertex2d(20,220);
+    glVertex2d(0,210);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,210);
+    glVertex2d(20,220);
+    glVertex2d(20,255);
+    glVertex2d(0,245);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,245);
+    glVertex2d(20,255);
+    glVertex2d(20,290);
+    glVertex2d(0,280);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,280);
+    glVertex2d(20,290);
+    glVertex2d(20,325);
+    glVertex2d(0,315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,315);
+    glVertex2d(20,325);
+    glVertex2d(20,360);
+    glVertex2d(0,350);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,350);
+    glVertex2d(20,360);
+    glVertex2d(20,395);
+    glVertex2d(0,385);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,385);
+    glVertex2d(20,395);
+    glVertex2d(20,430);
+    glVertex2d(0,420);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,420);
+    glVertex2d(20,430);
+    glVertex2d(20,465);
+    glVertex2d(0,455);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,455);
+    glVertex2d(20,465);
+    glVertex2d(20,500);
+    glVertex2d(0,490);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,490);
+    glVertex2d(20,500);
+    glVertex2d(20,535);
+    glVertex2d(0,525);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,525);
+    glVertex2d(20,535);
+    glVertex2d(20,570);
+    glVertex2d(0,560);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,560);
+    glVertex2d(20,570);
+    glVertex2d(20,605);
+    glVertex2d(0,595);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,595);
+    glVertex2d(20,605);
+    glVertex2d(20,640);
+    glVertex2d(0,630);
+    glEnd();
 }
 
 int main(int argc, char *argv[])
