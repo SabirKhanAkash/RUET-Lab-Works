@@ -93,6 +93,60 @@ void carGenerate()
     }
 }
 
+void roadSide()
+{
+    ///LEFT SIDE
+    glPushMatrix();
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,0);
+    glVertex2d(20,0);
+    glVertex2d(20,10);
+    glVertex2d(0,0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glPopMatrix();
+    glColor3ub(255,255,0);
+    glVertex2d(0,0);
+    glVertex2d(20,10);
+    glVertex2d(20,45);
+    glVertex2d(0,35);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,35);
+    glVertex2d(20,45);
+    glVertex2d(20,80);
+    glVertex2d(0,70);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,70);
+    glVertex2d(20,80);
+    glVertex2d(20,115);
+    glVertex2d(0,105);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,105);
+    glVertex2d(20,115);
+    glVertex2d(20,150);
+    glVertex2d(0,140);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,140);
+    glVertex2d(20,150);
+    glVertex2d(20,185);
+    glVertex2d(0,175);
+    glEnd();
+}
+
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
