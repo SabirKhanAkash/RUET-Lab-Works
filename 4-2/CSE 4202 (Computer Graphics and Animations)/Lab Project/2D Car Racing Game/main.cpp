@@ -249,6 +249,80 @@ void roadSide()
     glVertex2d(20,640);
     glVertex2d(0,630);
     glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(0,665);
+    glVertex2d(20,675);
+    glVertex2d(20,700);
+    glVertex2d(0,690);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(0,690);
+    glVertex2d(20,700);
+    glVertex2d(20,735);
+    glVertex2d(0,725);
+    glEnd();
+
+    ///RIGHT SIDE
+    glPushMatrix();
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,0);
+    glVertex2d(600,0);
+    glVertex2d(600,10);
+    glVertex2d(580,0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(580,0);
+    glVertex2d(600,10);
+    glVertex2d(600,45);
+    glVertex2d(580,35);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,35);
+    glVertex2d(600,45);
+    glVertex2d(600,80);
+    glVertex2d(580,70);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(580,70);
+    glVertex2d(600,80);
+    glVertex2d(600,115);
+    glVertex2d(580,105);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,105);
+    glVertex2d(600,115);
+    glVertex2d(600,150);
+    glVertex2d(580,140);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,0);
+    glVertex2d(580,140);
+    glVertex2d(600,150);
+    glVertex2d(600,185);
+    glVertex2d(580,175);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2d(580,175);
+    glVertex2d(600,105);
+    glVertex2d(600,220);
+    glVertex2d(580,210);
+    glEnd();
 }
 
 int main(int argc, char *argv[])
