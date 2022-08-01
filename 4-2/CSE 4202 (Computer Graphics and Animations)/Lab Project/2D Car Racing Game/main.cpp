@@ -52,8 +52,8 @@ int random(int minimum, int mximum)
 
 int carSide = 0;
 int point = 0;
-int life = 4;
-float speed = 3.5;
+int life = 3;
+float speed = 3.8;
 void stringWrite(int x, int y, int font, std::string s, float r, float g, float b)
 {
     glColor3f(r, g, b);
@@ -99,115 +99,115 @@ void roadSide()
     glPushMatrix();
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
-    glVertex2d(580,690);
-    glVertex2d(600,700);
-    glVertex2d(600,735);
-    glVertex2d(580,725);
+    glVertex2d(0,0);
+    glVertex2d(20,0);
+    glVertex2d(20,10);
+    glVertex2d(0,0);
     glEnd();
 
     glBegin(GL_POLYGON);
     glPopMatrix();
-    glColor3ub(83,132,63);
-    glVertex2d(0,35);
+    glColor3ub(255,255,255);
+    glVertex2d(0,0);
     glVertex2d(20,10);
-    glVertex2d(20,80);
-    glVertex2d(0,70);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(580,690);
-    glVertex2d(600,700);
-    glVertex2d(600,735);
-    glVertex2d(580,725);
+    glVertex2d(20,45);
+    glVertex2d(0,35);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
     glVertex2d(0,35);
-    glVertex2d(20,10);
+    glVertex2d(20,45);
     glVertex2d(20,80);
     glVertex2d(0,70);
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,35);
-    glVertex2d(20,10);
-    glVertex2d(20,80);
+    glColor3ub(255,255,255);
     glVertex2d(0,70);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(580,0);
-    glVertex2d(600,10);
-    glVertex2d(600,45);
-    glVertex2d(580,35);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,35);
-    glVertex2d(20,10);
     glVertex2d(20,80);
-    glVertex2d(0,70);
+    glVertex2d(20,115);
+    glVertex2d(0,105);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
+    glVertex2d(0,105);
+    glVertex2d(20,115);
+    glVertex2d(20,150);
+    glVertex2d(0,140);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(0,140);
+    glVertex2d(20,150);
+    glVertex2d(20,185);
+    glVertex2d(0,175);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
-    glVertex2d(580,0);
-    glVertex2d(600,10);
-    glVertex2d(600,45);
-    glVertex2d(580,35);
+    glVertex2d(0,175);
+    glVertex2d(20,185);
+    glVertex2d(20,220);
+    glVertex2d(0,210);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(0,210);
+    glVertex2d(20,220);
+    glVertex2d(20,255);
+    glVertex2d(0,245);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
+    glVertex2d(0,245);
+    glVertex2d(20,255);
+    glVertex2d(20,290);
+    glVertex2d(0,280);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(0,280);
+    glVertex2d(20,290);
+    glVertex2d(20,325);
+    glVertex2d(0,315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(83,132,63);
+    glVertex2d(0,315);
+    glVertex2d(20,325);
+    glVertex2d(20,360);
+    glVertex2d(0,350);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(0,350);
+    glVertex2d(20,360);
+    glVertex2d(20,395);
+    glVertex2d(0,385);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(83,132,63);
+    glVertex2d(0,385);
+    glVertex2d(20,395);
+    glVertex2d(20,430);
+    glVertex2d(0,420);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,255,255);
+    glVertex2d(0,420);
+    glVertex2d(20,430);
+    glVertex2d(20,465);
+    glVertex2d(0,455);
     glEnd();
 
     glBegin(GL_POLYGON);
@@ -219,27 +219,27 @@ void roadSide()
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
+    glColor3ub(255,255,255);
+    glVertex2d(0,490);
+    glVertex2d(20,500);
+    glVertex2d(20,535);
+    glVertex2d(0,525);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
-    glVertex2d(580,0);
-    glVertex2d(600,10);
-    glVertex2d(600,45);
-    glVertex2d(580,35);
+    glVertex2d(0,525);
+    glVertex2d(20,535);
+    glVertex2d(20,570);
+    glVertex2d(0,560);
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(580,0);
-    glVertex2d(600,10);
-    glVertex2d(600,45);
-    glVertex2d(580,35);
+    glColor3ub(255,255,255);
+    glVertex2d(0,560);
+    glVertex2d(20,570);
+    glVertex2d(20,605);
+    glVertex2d(0,595);
     glEnd();
 
     glBegin(GL_POLYGON);
@@ -251,20 +251,21 @@ void roadSide()
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(83,132,63);
-    glVertex2d(0,0);
-    glVertex2d(20,0);
-    glVertex2d(20,10);
-    glVertex2d(0,0);
+    glColor3ub(255,255,255);
+    glVertex2d(0,665);
+    glVertex2d(20,675);
+    glVertex2d(20,700);
+    glVertex2d(0,690);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(83,132,63);
-    glVertex2d(580,0);
-    glVertex2d(600,10);
-    glVertex2d(600,45);
-    glVertex2d(580,35);
+    glVertex2d(0,690);
+    glVertex2d(20,700);
+    glVertex2d(20,735);
+    glVertex2d(0,725);
     glEnd();
+
 
     ///RIGHT SIDE
     glPushMatrix();
@@ -309,7 +310,7 @@ void roadSide()
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(255,255,0);
+    glColor3ub(83,132,63);
     glVertex2d(580,140);
     glVertex2d(600,150);
     glVertex2d(600,185);
@@ -452,7 +453,7 @@ void car()
     glPushMatrix();
     glTranslatef(200.0*carSide, 50.0, 0.0);
     glBegin(GL_POLYGON);
-    glColor3ub(0,255,0);
+    glColor3ub(255,0,0);
     glVertex2d(90,4);
     glVertex2d(75,10);
     glVertex2d(75,100);
@@ -463,7 +464,7 @@ void car()
     glVertex2d(110,4);
     glEnd();
     glBegin(GL_POLYGON);
-    glColor3ub(0,153,0);
+    glColor3ub(255,255,0);
     glVertex2d(90,25);
     glVertex2d(90,55);
     glVertex2d(110,55);
@@ -473,7 +474,7 @@ void car()
 
     ///FRONT GLASS
     glBegin(GL_POLYGON);
-    glColor3ub(255,255,153);
+    glColor3ub(0,51,0);
     glVertex2d(90,55);
     glVertex2d(85,77);
     glVertex2d(114,77);
@@ -481,7 +482,7 @@ void car()
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(0,153,0);
+    glColor3ub(255,0,0);
     glVertex2d(85,77);
     glVertex2d(75,100);
     glVertex2d(90,110);
@@ -510,7 +511,7 @@ void car()
 
     ///LEFT FRONT LIGHT
     glBegin(GL_POLYGON);
-    glColor3ub(255,255,0);
+    glColor3ub(255,255,255);
     glVertex2d(75,100);
     glVertex2d(85,100);
     glVertex2d(92,105);
@@ -519,7 +520,7 @@ void car()
 
     ///RIGHT FRONT LIGHT
     glBegin(GL_POLYGON);
-    glColor3ub(255,255,0);
+    glColor3ub(255,255,255);
     glVertex2d(125,100);
     glVertex2d(115,100);
     glVertex2d(108,105);
@@ -531,8 +532,8 @@ void car()
     glColor3ub(0,0,0);
     glVertex2d(125,65);
     glVertex2d(129,65);
-    glVertex2d(129,75);
-    glVertex2d(125,75);
+    glVertex2d(129,80);
+    glVertex2d(125,80);
     glEnd();
 
     ///2ND RIGHT WHEEL
@@ -540,8 +541,8 @@ void car()
     glColor3ub(0,0,0);
     glVertex2d(125,28);
     glVertex2d(129,28);
-    glVertex2d(129,38);
-    glVertex2d(125,38);
+    glVertex2d(129,43);
+    glVertex2d(125,43);
     glEnd();
 
     ///3RD RIGHT WHEEL
@@ -549,8 +550,8 @@ void car()
     glColor3ub(0,0,0);
     glVertex2d(71,65);
     glVertex2d(75,65);
-    glVertex2d(75,75);
-    glVertex2d(71,75);
+    glVertex2d(75,80);
+    glVertex2d(71,80);
     glEnd();
 
     ///4TH RIGHT WHEEL
@@ -558,12 +559,12 @@ void car()
     glColor3ub(0,0,0);
     glVertex2d(71,28);
     glVertex2d(75,28);
-    glVertex2d(75,38);
-    glVertex2d(71,38);
+    glVertex2d(75,43);
+    glVertex2d(71,43);
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(255,255,153);
+    glColor3ub(255,0,0);
     glVertex2d(90,25);
     glVertex2d(75,10);
     glVertex2d(90,4);
@@ -573,43 +574,43 @@ void car()
     glEnd();
 
     glBegin(GL_POLYGON);
-    glColor3ub(64,64,64);
+    glColor3ub(255,0,0);
     glVertex2d(90,4);
     glVertex2d(85,11);
     glVertex2d(115,11);
     glVertex2d(110,4);
     glEnd();
 
-    ///1ST BACK RED LIGHT
+    ///1ST BACK WHITE LIGHT
     glBegin(GL_POLYGON);
-    glColor3ub(255,0,0);
+    glColor3ub(255,255,255);
     glVertex2d(90,4);
     glVertex2d(85,11);
     glVertex2d(75,10);
     glVertex2d(90,4);
     glEnd();
 
-    ///2ND BACK RED LIGHT
+    ///2ND BACK WHITE LIGHT
     glBegin(GL_POLYGON);
-    glColor3ub(255,0,0);
+    glColor3ub(255,255,255);
     glVertex2d(110,4);
     glVertex2d(115,11);
     glVertex2d(125,10);
     glVertex2d(110,4);
     glEnd();
 
-    ///1ST GREEN BACK LIGHT
+    ///1ST YELLOW BACK LIGHT
     glBegin(GL_POLYGON);
-    glColor3ub(0,153,0);
+    glColor3ub(255,255,0);
     glVertex2d(75,10);
     glVertex2d(85,11);
     glVertex2d(82,16);
     glVertex2d(75,10);
     glEnd();
 
-    ///2ND GREEN BACK LIGHT
+    ///2ND YELLOW BACK LIGHT
     glBegin(GL_POLYGON);
-    glColor3ub(0,153,0);
+    glColor3ub(255,255,0);
     glVertex2d(125,10);
     glVertex2d(115,11);
     glVertex2d(118,17);
@@ -759,7 +760,7 @@ void opositCar(int i)
 void road()
 {
     glBegin(GL_QUADS);
-    glColor3ub(100,100,100);
+    glColor3ub(65,65,65);
     glVertex2d(20,0);
     glVertex2d(20,700);
     glVertex2d(580,700);
@@ -848,6 +849,7 @@ static void display(void)
         glutIdleFunc(NULL);
         stringWrite(250,380,11,"YOU DIED",1,0,0);
         stringWrite(70,350,11,"GAME OVER! BETTER LUCK NEXT TIME",1,0,0);
+        ///stringWrite(210,320,11,"YOUR SCORE: "+sl,1,1,0);
     }
     glutSwapBuffers();
 }
