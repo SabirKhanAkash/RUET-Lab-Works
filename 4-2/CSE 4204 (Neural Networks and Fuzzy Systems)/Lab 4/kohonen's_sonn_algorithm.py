@@ -15,37 +15,48 @@ n = int(input("Enter number of input node: "))
 d = n
 c = int(input("Enter number of output cluster: "))
 alpha = float(input("Enter the learning rate: "))
+neighbour = 1;
 
 X = np.random.randint(0,2,(n,d))
 
 addZeros = np.zeros((n, 1))
 
-print("\nThe input pattern: \n", X)
-print("\nTotal number of input node: ",n)
+print("\nThe training input data: \n", X)
 print("Total number of features per input node: ",d)
-print("Total number of output clusters: ",c)
 
 X = np.append(X, addZeros, axis=1)
 
 weight = np.random.rand(n,c)
 print("\nThe initial weight: \n", np.round(weight,2))
-iter = int(input("\nEnter the number of iterations: "))
+iter = int(input("\nEnter the number of epochs: "))
 
-for it in range(iter): 
+for it in range(iter):
     for i in range(n):
+        jMin = 0
         distMin = inf
         for j in range(c):
             dist = np.square(distance.euclidean(weight[:,j], X[i,0:d]))
-            if distMin>dist:
-                distMin = dist
+            if neighbour>=dist:
                 jMin = j
-        weight[:, jMin] = weight[:, jMin] + alpha * (X[i,0:d] - weight[:, jMin])  
-    alpha = 0.5*alpha
-    
-print("\nThe final weight: \n",np.round(weight,3))
+                weight[:, jMin] = weight[:, jMin] + alpha*(X[i,0:d] - weight[:, jMin])
+                neighbour = neighbour - alpha*neighbour
+            elif distMin>dist:
+                distMin = dist
+                weight[:, jMin] = weight[:, jMin] + alpha*(X[i,0:d] - weight[:, jMin])
+                neighbour = neighbour - alpha*neighbour
+                
+                
 
-for i in range(n):    
-    cNumber = np.where(weight[i] == np.amax(weight[i]))
-    X[i,d] = cNumber[0]
+print("\nThe final weight: \n",np.round(weight,2))
+
+for p in range(n):
+    jMin = 0
+    distMin = inf
+    for q in range(c):
+        dist = np.square(distance.euclidean(weight[:,q], X[p,0:d]))
+        if distMin>dist:
+            distMin = dist
+            jMin = q
+    X[p,d] = jMin
     
 print("\nThe input node with classified cluster number: \n", X)

@@ -1,68 +1,66 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 18 11:33:14 2022
-
-@author: user
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 18 10:47:49 2022
-
-@author: Akash
-"""
+import numpy as np
 import matplotlib.pyplot as plt
 import math
+import random
 
-football_height=[189];
-football_weight=[85];
-wwe_height=[220];
-wwe_weight=[120];
+football_group =np.array([[189, 85]]);
+wwe_group =np.array([[220, 120]]);
 
 temp_f_dist = [];
 temp_w_dist = [];
 
-count = 1;
+football_height = football_group[:,0];
+football_weight = football_group[:,1];
+wwe_height = wwe_group[:,0];
+wwe_weight = wwe_group[:,1];
 
-while(1):
-    for i in range(True):
+points = int(input("Total number of points: \n"))
 
-        in_height = int(input("Player Height: "));
-        in_weight = int(input("Player Weight: "));
-        count = count + 1;
+for i in range(points):
 
-        if(i>0):
-            for j in range(count):
-                temp_f_dist.append((((abs(in_height-football_height[j]))+(abs(in_weight-football_weight[j])))))
-                temp_w_dist.append((((abs(in_height-wwe_height[j]))+(abs(in_weight-wwe_weight[j])))))
+    # in_height = int(input("Player Height: "));
+    # in_weight = int(input("Player Weight: "));
 
-            a = float(min(temp_f_dist));
-            b = float(min(temp_w_dist));
-            print("Football: "+temp_f_dist+",");
-            print("WWE: "+temp_w_dist+",");
-        elif(i==0):
-            a = (((abs(in_height-football_height[0]))+(abs(in_weight-football_weight[0]))))
-            b = (((abs(in_height-wwe_height[0]))+(abs(in_weight-wwe_weight[0]))))
+    in_height = random.randint(175, 230);
+    in_weight = random.randint(85, 150);
+    print("\nPlayer Height: ",in_height)
+    print("Player Weight: ",in_weight)
+    print("\n")
 
-        if(a<b):
-            football_height.append(in_height);
-            football_weight.append(in_weight);
+    temp_f_dist = [];
+    temp_w_dist = [];
 
-        else:
-            wwe_height.append(in_height);
-            wwe_weight.append(in_weight);
+    if(i>0):
+        for j in range(len(football_group)):
+            temp_f_dist.append(math.sqrt(((abs(in_height-football_group[j][0]))+(abs(in_weight-football_group[j][1])))))
+        for j in range(len(wwe_group)):
+            temp_w_dist.append(math.sqrt(((abs(in_height-wwe_group[j][0]))+(abs(in_weight-wwe_group[j][1])))))
+
+        a = float(min(temp_f_dist));
+        b = float(min(temp_w_dist));
+
+    elif(i==0):
+        a = math.sqrt(((abs(in_height-football_group[0][0]))+(abs(in_weight-football_group[0][1]))))
+        b = math.sqrt(((abs(in_height-wwe_group[0][0]))+(abs(in_weight-wwe_group[0][1]))))
+
+    inp_arr = np.array([[in_height, in_weight]]);
+
+    if(a<b):
+        football_group = np.append( football_group , inp_arr , axis=0 );
+    else:
+        wwe_group = np.append( wwe_group , inp_arr , axis=0 );
+
+    football_height = football_group[:,0];
+    football_weight = football_group[:,1];
+    wwe_height = wwe_group[:,0];
+    wwe_weight = wwe_group[:,1];
 
 
     plt.scatter(football_height,football_weight,label="Football Players",color="green",marker=".",s=100);
-    plt.scatter(wwe_height,wwe_weight,label="WWE Players",color="red",marker="*",s=100);
+    plt.scatter(wwe_height,wwe_weight,label="WWE Players",color="red",marker="+",s=100);
     plt.xlabel("Player's Height");
     plt.ylabel("Player's Weight");
     plt.title('Nearest Neighbour Classification without Rogue Pattern');
     plt.legend();
 
     plt.show();
-
-    #print("Football: ",temp_f_dist,",");
-    #print("WWE: ",temp_w_dist,",");
-    
-
