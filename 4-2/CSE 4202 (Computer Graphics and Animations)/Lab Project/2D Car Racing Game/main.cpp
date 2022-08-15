@@ -1,5 +1,5 @@
 #include"windows.h"
-#ifdef _APPLE_
+#ifdef APPLE
 #include <GLUT/glut.h>
 #else
 #include <GL/glut.h>
@@ -645,7 +645,7 @@ void car()
 void opositCar(int i)
 {
     glPushMatrix();
-    glTranslatef(opositCars[i].opositCarSide*200+100, opositCars[i].opositCarY -= speed*1.5, 0.0);
+    glTranslatef(opositCars[i].opositCarSide*200+100, opositCars[i].opositCarY -= speed*1.00007, 0.0);
     glRotated(180,0,0,1);
     glBegin(GL_POLYGON);
     glColor3ub(0,0,0);
@@ -782,6 +782,15 @@ void laneDevider()
         {
             laneDividers[i].y = 700;
             point++;
+            if(point>50 && point<100)
+                speed = 0.28;
+            else if(point>=100 && point<150)
+                speed = 0.34;
+            else if(point>=200 && point<250)
+                speed = 0.42;
+            else if(point>=250 && point <300)
+                speed = 0.50;
+
         }
     }
 }
