@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1660564631 source:d:\study materials\study\lab\ruet-lab-works\4-2\cse 4202 (computer graphics and animations)\lab project\2d car racing game\main.cpp
+1660594895 source:d:\study materials\study\lab\ruet-lab-works\4-2\cse 4202 (computer graphics and animations)\lab project\2d car racing game\main.cpp
 	"windows.h"
 	<GLUT/glut.h>
 	<GL/glut.h>

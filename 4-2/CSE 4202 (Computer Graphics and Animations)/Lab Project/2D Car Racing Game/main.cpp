@@ -1,18 +1,5 @@
-/*
- * GLUT Shapes Demo
- *
- * Written by Nigel Stewart November 2003
- *
- * This program is test harness for the sphere, cone
- * and torus shapes in GLUT.
- *
- * Spinning wireframe and smooth shaded shapes are
- * displayed until the ESC or q key is pressed.  The
- * number of geometry stacks and slices can be adjusted
- * using the + and - keys.
- */
 #include"windows.h"
-#ifdef __APPLE__
+#ifdef _APPLE_
 #include <GLUT/glut.h>
 #else
 #include <GL/glut.h>
@@ -33,18 +20,15 @@ using namespace std;
 
 struct car{
     int opositCarSide;
-    int opositCarUpDown;
     float opositCarY;
     int r,g,b;
 }opositCars[carNumber];
-
 
 struct laneDivider
 {
     int x;
     float y;
 }laneDividers[lanePoints];
-
 
 int random(int minimum, int mximum)
 {
@@ -55,7 +39,8 @@ int carSide = 0;
 int carUpDown = 1;
 int point = 0;
 int life = 3;
-float speed = 3.8;
+float speed = 0.22;
+
 void stringWrite(int x, int y, int font, std::string s, float r, float g, float b)
 {
     glColor3f(r, g, b);
@@ -69,7 +54,7 @@ void stringWrite(int x, int y, int font, std::string s, float r, float g, float 
                 glutBitmapCharacter(GLUT_BITMAP_9_BY_15, s[i]);
                 break;
             default:
-                glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s[i]);
+                glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
                 break;
         }
     }
@@ -473,7 +458,6 @@ void car()
     glVertex2d(110,25);
     glEnd();
 
-
     ///FRONT GLASS
     glBegin(GL_POLYGON);
     glColor3ub(0,51,0);
@@ -619,7 +603,6 @@ void car()
     glVertex2d(125,10);
     glEnd();
 
-
     ///1ST LEFT CAR DOOR
     glBegin(GL_POLYGON);
     glColor3ub(0,51,0);
@@ -740,7 +723,6 @@ void opositCar(int i)
     glVertex2d(-17,-5);
     glEnd();
 
-
     ///RIGHT GLASS
     glBegin(GL_POLYGON);
     glColor3ub(255,255,255);
@@ -774,7 +756,6 @@ void laneDevider()
 {
     for(int i=0; i<lanePoints; i++)
     {
-
         glPushMatrix();
         glTranslatef(200, laneDividers[i].y, 0);
         glBegin(GL_QUADS);
@@ -815,22 +796,13 @@ static void idle(void)
         }
         if(opositCars[i].opositCarSide == carSide)
         {
-            int a = 105;
-            int b = 30;
-            int l = 1;
-            int u = 4;
-            for(int pq=0; pq<11; pq++)
+            int a = ((carUpDown-1)*65)+100;
+            int b = ((carUpDown-1)*65)+25;
+            if(opositCars[i].opositCarY<a && opositCars[i].opositCarY>=b)
             {
-                if(opositCars[i].opositCarY<a && opositCars[i].opositCarY>=b && carUpDown >= l && carUpDown <=u)
-                {
-                    life--;
-                    opositCars[i].opositCarY = 800+50;
-                    break;
-                }
-                a = a + 75;
-                b = b + 75;
-                l = u + 1;
-                u = l + 2;
+                life--;
+                opositCars[i].opositCarY = 800+50;
+                break;
             }
         }
     }
@@ -853,19 +825,19 @@ static void display(void)
     ostringstream strgg;
     strgg<<life;
     string sl = strgg.str();
-    stringWrite(30,675,11,"Life: "+sl,1,1,1);
+    stringWrite(40,675,11,"Life: "+sl,1,1,1);
 
     ostringstream strg;
     strg<<point;
     sl = strg.str();
-    stringWrite(410,675,11,"Your Score: "+sl,1,1,1);
+    stringWrite(460,675,11,"Score: "+sl,1,1,1);
 
     if(life == 0)
     {
         glutIdleFunc(NULL);
-        stringWrite(250,380,11,"YOU DIED",1,0,0);
-        stringWrite(70,350,11,"GAME OVER! BETTER LUCK NEXT TIME",1,0,0);
-        stringWrite(210,320,11,"YOUR SCORE: "+sl,0,1,0);
+        stringWrite(255,380,11,"YOU DIED",1,0,0);
+        stringWrite(125,350,11,"GAME OVER! BETTER LUCK NEXT TIME",1,0,0);
+        stringWrite(225,320,11,"YOUR SCORE: "+sl,1,1,0);
     }
     glutSwapBuffers();
 }
