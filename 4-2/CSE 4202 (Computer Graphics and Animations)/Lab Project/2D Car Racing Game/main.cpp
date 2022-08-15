@@ -27,12 +27,13 @@
 #include<sstream>
 
 #define carNumber 4
-#define lanePoints 11
+#define lanePoints 15
 
 using namespace std;
 
 struct car{
     int opositCarSide;
+    int opositCarUpDown;
     float opositCarY;
     int r,g,b;
 }opositCars[carNumber];
@@ -51,6 +52,7 @@ int random(int minimum, int mximum)
 }
 
 int carSide = 0;
+int carUpDown = 1;
 int point = 0;
 int life = 3;
 float speed = 3.8;
@@ -451,7 +453,7 @@ void car()
 {
     ///NEW CAR START
     glPushMatrix();
-    glTranslatef(200.0*carSide, 50.0, 0.0);
+    glTranslatef(200.0*carSide, 50.0*carUpDown, 0.0);
     glBegin(GL_POLYGON);
     glColor3ub(255,0,0);
     glVertex2d(90,4);
@@ -813,10 +815,22 @@ static void idle(void)
         }
         if(opositCars[i].opositCarSide == carSide)
         {
-            if(opositCars[i].opositCarY<105 && opositCars[i].opositCarY>=30)
+            int a = 105;
+            int b = 30;
+            int l = 1;
+            int u = 4;
+            for(int pq=0; pq<11; pq++)
             {
-                life--;
-                opositCars[i].opositCarY = 800+50;
+                if(opositCars[i].opositCarY<a && opositCars[i].opositCarY>=b && carUpDown >= l && carUpDown <=u)
+                {
+                    life--;
+                    opositCars[i].opositCarY = 800+50;
+                    break;
+                }
+                a = a + 75;
+                b = b + 75;
+                l = u + 1;
+                u = l + 2;
             }
         }
     }
@@ -827,29 +841,31 @@ static void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3d(1,0,0);
+
     roadSide();
     road();
-
     laneDevider();
     car();
+
     for(int i=0; i<carNumber; i++)
-    {
         opositCar(i);
-    }
-    ostringstream strg;
-    strg<<point;
-    string sl = strg.str();
-    stringWrite(410,675,11,"Your Score: "+sl,1,1,1);
+
     ostringstream strgg;
     strgg<<life;
-    sl = strgg.str();
+    string sl = strgg.str();
     stringWrite(30,675,11,"Life: "+sl,1,1,1);
+
+    ostringstream strg;
+    strg<<point;
+    sl = strg.str();
+    stringWrite(410,675,11,"Your Score: "+sl,1,1,1);
+
     if(life == 0)
     {
         glutIdleFunc(NULL);
         stringWrite(250,380,11,"YOU DIED",1,0,0);
         stringWrite(70,350,11,"GAME OVER! BETTER LUCK NEXT TIME",1,0,0);
-        ///stringWrite(210,320,11,"YOUR SCORE: "+sl,1,1,0);
+        stringWrite(210,320,11,"YOUR SCORE: "+sl,0,1,0);
     }
     glutSwapBuffers();
 }
@@ -865,6 +881,14 @@ void special(int key, int x, int y)
     case GLUT_KEY_RIGHT:
         if(carSide<2)
             carSide++;
+        break;
+    case GLUT_KEY_UP:
+        if(carUpDown<11)
+            carUpDown++;
+        break;
+    case GLUT_KEY_DOWN:
+        if(carUpDown>1)
+            carUpDown--;
         break;
     default:
         break;

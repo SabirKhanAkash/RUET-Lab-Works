@@ -1,15 +1,12 @@
 # depslib dependency file v1.0
-1660564631 source:d:\study materials\study\lab\ruet-lab-works\4-2\cse 4202 (computer graphics and animations)\lab project\2d car racing game\main.cpp
+1660485273 source:d:\study materials\study\lab\ruet-lab-works\4-2\cse 4202 (computer graphics and animations)\lab 4\space\main.cpp
 	"windows.h"
-	<GLUT/glut.h>
-	<GL/glut.h>
-	<stdlib.h>
 	<stdio.h>
+	<string.h>
 	<stdlib.h>
-	<string>
+	<gl/glut.h>
 	<math.h>
-	<iostream>
-	<sstream>
+	<string.h>
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\windows.h
 	<winresrc.h>
@@ -215,6 +212,16 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
+1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
+
+1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
 1595083092 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
@@ -225,16 +232,6 @@
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
 	<GL/gl.h>
-
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
-	<_mingw.h>
-	<stddef.h>
-	<stdarg.h>
-	<sys/types.h>
-
-1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
-	<_mingw.h>
-	<stddef.h>
 
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
